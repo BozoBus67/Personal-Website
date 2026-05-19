@@ -38,7 +38,7 @@ export function Epstein_Clicker_Screen() {
 
   return (
     <Screen_Layout>
-      <h1 style={h1_style()}>Epstein Clicker</h1>
+      <h1 style={h1_style()}>Project EC</h1>
 
       <p style={para_style()}>
         A cookie-clicker–style incremental game built as a desktop app. It
