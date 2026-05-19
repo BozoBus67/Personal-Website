@@ -19,7 +19,6 @@ export function Recommendations_Screen() {
     display: 'flex',
     'flex-direction': 'column',
     gap: '0.5rem',
-    'max-width': '700px',
   })
 
   return (

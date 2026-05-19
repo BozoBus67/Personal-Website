@@ -8,7 +8,6 @@ export function Home_Screen() {
     margin: 0,
     color: t().text,
     'line-height': 1.5,
-    'max-width': '60ch',
   })
 
   return (
