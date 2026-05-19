@@ -45,7 +45,6 @@ export function Projects_Screen() {
           'flex-direction': 'column',
           gap: '1.25rem',
           'margin-top': '0.75rem',
-          'max-width': '700px',
         }}
       >
         <div style={item_style()}>
