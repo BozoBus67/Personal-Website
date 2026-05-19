@@ -1,7 +1,7 @@
 import { useTheme } from '../../shared/constants'
 import { Screen_Layout } from '../../shared/utility_components'
 
-export function Epstein_Clicker_Screen() {
+export function Project_EC_Screen() {
   const t = useTheme
 
   const h1_style = () => ({

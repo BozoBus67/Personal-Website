@@ -27,7 +27,7 @@ const SECTIONS = [
     label: 'Projects',
     children: [
       { path: '/projects', label: 'Overview' },
-      { path: '/projects/epstein-clicker', label: 'Epstein Clicker' },
+      { path: '/projects/project-ec', label: 'Project EC' },
       { path: '/projects/golden-egg', label: 'Golden Egg' },
       { path: '/projects/personal-website', label: 'Personal Website' },
     ],
