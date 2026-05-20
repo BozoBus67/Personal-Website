@@ -1,8 +1,6 @@
 import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
 
-const code_geass_blurb = '...'
-
 export function Recommendations_Screen() {
   const t = useTheme
 
@@ -72,3 +70,5 @@ export function Recommendations_Screen() {
     </Screen_Layout>
   )
 }
+
+const code_geass_blurb = '...'
