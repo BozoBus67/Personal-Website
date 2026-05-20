@@ -82,11 +82,22 @@ export function Recommendations_Screen() {
             style={{
               display: 'flex',
               'flex-direction': 'column',
-              gap: '0.75rem',
-              width: '280px',
+              gap: '0.5rem',
+              width: '200px',
               'flex-shrink': 0,
             }}
           >
+            <p
+              style={{
+                margin: 0,
+                color: t().text_h,
+                'font-size': '1.15rem',
+                'line-height': 1.4,
+                'font-weight': 700,
+              }}
+            >
+              {rec.title}
+            </p>
             {rec.images && (
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {rec.images.map((src) => (
@@ -104,17 +115,6 @@ export function Recommendations_Screen() {
                 ))}
               </div>
             )}
-            <p
-              style={{
-                margin: 0,
-                color: t().text_h,
-                'font-size': '1.15rem',
-                'line-height': 1.4,
-                'font-weight': 700,
-              }}
-            >
-              {rec.title}
-            </p>
           </div>
         ))}
       </div>
