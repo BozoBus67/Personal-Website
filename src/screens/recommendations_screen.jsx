@@ -70,47 +70,54 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      {others.map((rec) => (
-        <div
-          style={{
-            display: 'flex',
-            'align-items': 'center',
-            gap: '1rem',
-            'margin-bottom': '1rem',
-            'flex-wrap': 'wrap',
-          }}
-        >
-          {rec.images && (
-            <div style={{ display: 'flex', gap: '0.5rem', 'flex-shrink': 0 }}>
-              {rec.images.map((src) => (
-                <img
-                  src={src}
-                  alt={rec.title}
-                  style={{
-                    width: '120px',
-                    height: 'auto',
-                    display: 'block',
-                    border: `2px solid ${t().text_h}`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
-          <p
+      <div
+        style={{
+          display: 'flex',
+          'flex-wrap': 'wrap',
+          gap: '1.5rem',
+        }}
+      >
+        {others.map((rec) => (
+          <div
             style={{
-              margin: 0,
-              color: t().text_h,
-              'font-size': '1.15rem',
-              'line-height': 1.6,
-              'font-weight': 700,
-              flex: 1,
-              'min-width': '200px',
+              display: 'flex',
+              'flex-direction': 'column',
+              gap: '0.75rem',
+              width: '280px',
+              'flex-shrink': 0,
             }}
           >
-            {rec.title}
-          </p>
-        </div>
-      ))}
+            {rec.images && (
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                {rec.images.map((src) => (
+                  <img
+                    src={src}
+                    alt={rec.title}
+                    style={{
+                      flex: 1,
+                      'min-width': 0,
+                      height: 'auto',
+                      display: 'block',
+                      border: `2px solid ${t().text_h}`,
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+            <p
+              style={{
+                margin: 0,
+                color: t().text_h,
+                'font-size': '1.15rem',
+                'line-height': 1.4,
+                'font-weight': 700,
+              }}
+            >
+              {rec.title}
+            </p>
+          </div>
+        ))}
+      </div>
     </Screen_Layout>
   )
 }
