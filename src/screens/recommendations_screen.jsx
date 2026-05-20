@@ -19,7 +19,7 @@ export function Recommendations_Screen() {
           'font-weight': 700,
           'font-size': '48px',
           'line-height': 1,
-          margin: '2rem 0 0',
+          margin: '1rem 0 0',
           color: t().text_h,
           'text-align': 'center',
         }}
