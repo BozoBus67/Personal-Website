@@ -61,7 +61,7 @@ export function Recommendations_Screen() {
             'max-width': '100%',
             height: 'auto',
             display: 'block',
-            border: '2px solid #4FC3F7',
+            border: `2px solid ${t().text_h}`,
           }}
         />
         <div style={{ flex: 4 }} />
