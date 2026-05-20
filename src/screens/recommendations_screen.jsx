@@ -6,7 +6,7 @@ export function Recommendations_Screen() {
 
   const h3_style = () => ({
     'font-weight': 700,
-    'font-size': '1.25rem',
+    'font-size': '1.75rem',
     margin: '1rem 0 0.5rem',
     color: t().text_h,
   })
@@ -43,7 +43,8 @@ export function Recommendations_Screen() {
         style={{
           margin: 0,
           'white-space': 'pre-line',
-          color: t().text,
+          color: t().text_h,
+          'font-size': '1.15rem',
           'line-height': 1.6,
         }}
       >
