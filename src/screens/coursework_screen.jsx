@@ -18,6 +18,17 @@ export function Coursework_Screen() {
         Coursework
       </h2>
 
+      <p
+        style={{
+          margin: 0,
+          color: t().text,
+          'font-size': '1.1rem',
+          'text-align': 'center',
+        }}
+      >
+        Some of my favorite courses taken:
+      </p>
+
       <CS246 />
       <CS341 />
       <CS349 />
