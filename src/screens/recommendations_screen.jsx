@@ -84,6 +84,9 @@ export function Recommendations_Screen() {
   )
 }
 
+const REC_IMAGE_WIDTH = '200px'
+const REC_IMAGE_HEIGHT = '300px'
+
 function Rec_Card(props) {
   const t = useTheme
   return (
@@ -110,21 +113,15 @@ function Rec_Card(props) {
         {props.rec.title}
       </p>
       {props.rec.images && (
-        <div
-          style={{
-            display: 'flex',
-            gap: '0.5rem',
-            width: props.rec.image_width || '200px',
-          }}
-        >
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
           {props.rec.images.map((src) => (
             <img
               src={src}
               alt={props.rec.title}
               style={{
-                flex: 1,
-                'min-width': 0,
-                height: 'auto',
+                width: REC_IMAGE_WIDTH,
+                height: REC_IMAGE_HEIGHT,
+                'object-fit': 'cover',
                 display: 'block',
                 border: `2px solid ${t().text_h}`,
               }}
@@ -148,13 +145,12 @@ const rec_rows = [
   [
     { title: 'Arcane', images: [arcane_img] },
     { title: 'The Wolf of Wall Street', images: [wolf_img] },
-    { title: 'Ninjago Season 8', images: [ninjago_img], image_width: '380px' },
+    { title: 'Ninjago Season 8', images: [ninjago_img] },
   ],
   [
     {
-      title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
+      title: 'The Bourne Trilogy',
       images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
-      image_width: '800px',
     },
   ],
 ]
