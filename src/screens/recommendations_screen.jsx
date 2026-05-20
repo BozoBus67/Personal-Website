@@ -71,4 +71,7 @@ export function Recommendations_Screen() {
   )
 }
 
-const code_geass_blurb = `This is my personal favorite. `
+const code_geass_blurb = 
+`This is my favorite show. It's a complete story, through and through.
+The original is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore those.   
+If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
