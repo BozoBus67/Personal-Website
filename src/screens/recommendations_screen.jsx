@@ -79,18 +79,14 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      <div style={{ display: 'flex', 'align-items': 'flex-start' }}>
-        <div style={{ flex: 3 }} />
-        <div style={{ display: 'flex', 'flex-direction': 'column', gap: '1.5rem' }}>
-          {rec_rows.map((row) => (
-            <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '1.5rem' }}>
-              {row.map((rec) => (
-                <Rec_Card rec={rec} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div style={{ flex: 4 }} />
+      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '1.5rem' }}>
+        {rec_rows.map((row) => (
+          <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '1.5rem' }}>
+            {row.map((rec) => (
+              <Rec_Card rec={rec} />
+            ))}
+          </div>
+        ))}
       </div>
     </Screen_Layout>
   )
