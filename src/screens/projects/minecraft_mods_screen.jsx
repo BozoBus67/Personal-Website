@@ -47,6 +47,9 @@ function Golden_Egg() {
     <div>
       <div style={mod_title_style(t)}>Golden Egg (1.20.6, ported to 1.21)</div>
       <p style={mod_blurb_style(t)}>{golden_egg_blurb}</p>
+      <a href="/jars/golden_egg.jar" download style={download_button_style(t)}>
+        Download .jar
+      </a>
     </div>
   )
 }
@@ -57,6 +60,9 @@ function Custom_Mobs() {
     <div>
       <div style={mod_title_style(t)}>Custom Mobs (1.21)</div>
       <p style={mod_blurb_style(t)}>{custom_mobs_blurb}</p>
+      <a href="/jars/custom_mobs.jar" download style={download_button_style(t)}>
+        Download .jar
+      </a>
     </div>
   )
 }
@@ -67,6 +73,9 @@ function Combat_1_8() {
     <div>
       <div style={mod_title_style(t)}>1.8 Combat (1.21)</div>
       <p style={mod_blurb_style(t)}>{combat_blurb}</p>
+      <a href="/jars/combat_1_8.jar" download style={download_button_style(t)}>
+        Download .jar
+      </a>
     </div>
   )
 }
@@ -84,6 +93,19 @@ const mod_blurb_style = (t) => ({
   'font-size': '1.1rem',
   'line-height': 1.6,
   'white-space': 'pre-line',
+})
+
+const download_button_style = (t) => ({
+  display: 'inline-block',
+  'margin-top': '0.75rem',
+  padding: '0.5rem 1rem',
+  background: t().accent_bg,
+  border: `1px solid ${t().accent_border}`,
+  'border-radius': '6px',
+  color: t().accent,
+  'text-decoration': 'none',
+  'font-weight': 600,
+  'font-size': '0.95rem',
 })
 
 const build_blurb =
