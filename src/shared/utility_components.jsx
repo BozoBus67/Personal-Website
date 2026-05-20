@@ -23,6 +23,7 @@ import moon from '../assets/light_dark_toggle_switch/moon.png'
 
 const SECTIONS = [
   { path: '/', label: 'Home' },
+  { path: '/coursework', label: 'Coursework' },
   {
     label: 'Projects',
     children: [
@@ -31,7 +32,6 @@ const SECTIONS = [
       { path: '/projects/others', label: 'Others' },
     ],
   },
-  { path: '/coursework', label: 'Coursework' },
   { path: '/recommendations', label: 'Recommendations' },
   { path: '/contact', label: 'Contact' },
   { path: '/help', label: 'Help' },
