@@ -1,5 +1,6 @@
 import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
+import code_geass_img from '../assets/image.png'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -27,9 +28,8 @@ export function Recommendations_Screen() {
       </h2>
 
       <h3 style={h3_style()}>Code Geass</h3>
-      {/* TODO: replace with `import codeGeass from '../assets/code_geass.png'` and set src={codeGeass} */}
       <img
-        src=""
+        src={code_geass_img}
         alt="Code Geass"
         style={{
           width: '400px',
