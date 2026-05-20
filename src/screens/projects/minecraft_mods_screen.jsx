@@ -1,7 +1,7 @@
 import { useTheme } from '../../shared/constants'
 import { Screen_Layout } from '../../shared/utility_components'
 
-export function Golden_Egg_Screen() {
+export function Minecraft_Mods_Screen() {
   const t = useTheme
 
   const h1_style = () => ({
@@ -38,7 +38,7 @@ export function Golden_Egg_Screen() {
 
   return (
     <Screen_Layout>
-      <h1 style={h1_style()}>Golden Egg</h1>
+      <h1 style={h1_style()}>Minecraft Mods</h1>
 
       <p style={para_style()}>
         A small Minecraft mod that adds one item: the golden egg. Thrown like a

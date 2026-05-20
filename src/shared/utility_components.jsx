@@ -26,12 +26,12 @@ const SECTIONS = [
   {
     label: 'Projects',
     children: [
-      { path: '/projects', label: 'Overview' },
       { path: '/projects/project-ec', label: 'Project EC' },
-      { path: '/projects/golden-egg', label: 'Golden Egg' },
+      { path: '/projects/minecraft-mods', label: 'Minecraft Mods' },
       { path: '/projects/personal-website', label: 'Personal Website' },
     ],
   },
+  { path: '/coursework', label: 'Coursework' },
   { path: '/recommendations', label: 'Recommendations' },
   { path: '/contact', label: 'Contact' },
   { path: '/help', label: 'Help' },
