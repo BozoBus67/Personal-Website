@@ -45,20 +45,27 @@ export function Recommendations_Screen() {
       >
         {code_geass_blurb}
       </p>
-      <img
-        src={code_geass_img}
-        alt="Code Geass"
+      <div
         style={{
-          width: '1000px',
-          'max-width': '100%',
-          height: 'auto',
-          display: 'block',
-          border: '2px solid #4FC3F7',
-          'margin-left': 'auto',
-          'margin-right': '3rem',
+          display: 'flex',
+          'align-items': 'flex-start',
           'margin-bottom': '5rem',
         }}
-      />
+      >
+        <div style={{ flex: 3 }} />
+        <img
+          src={code_geass_img}
+          alt="Code Geass"
+          style={{
+            width: '1000px',
+            'max-width': '100%',
+            height: 'auto',
+            display: 'block',
+            border: '2px solid #4FC3F7',
+          }}
+        />
+        <div style={{ flex: 4 }} />
+      </div>
 
       <p
         style={{
