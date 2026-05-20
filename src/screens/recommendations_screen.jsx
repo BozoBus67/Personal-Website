@@ -1,12 +1,13 @@
 import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
-import code_geass_img from '../assets/recommendations_screen/code_geass.png'
-import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
-import ninjago_img from '../assets/recommendations_screen/ninjago_season_8_city_skyline_red_black.png'
-import wolf_img from '../assets/recommendations_screen/the_wolf_of_wallstreet.jpeg'
-import bourne_identity_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
-import bourne_supremacy_img from '../assets/recommendations_screen/the_bourne_supremacy.jpg'
-import bourne_ultimatum_img from '../assets/recommendations_screen/the_bourne_ultimatum.jpg'
+import code_geass_img from '../assets/recommendations_screen/Code_Geass.png'
+import arcane_thumbnail from '../assets/recommendations_screen/Arcane_Thumbnail.jpg'
+import ninjago_thumbnail from '../assets/recommendations_screen/Ninjago_Season_8_City_Skyline_Red_Black_Thumbnail.png'
+import wolf_thumbnail from '../assets/recommendations_screen/The_Wolf_of_Wall_Street_Thumbnail.jpeg'
+import bourne_identity_thumbnail from '../assets/recommendations_screen/The_Bourne_Identity_Thumbnail.jpg'
+import bourne_supremacy_thumbnail from '../assets/recommendations_screen/The_Bourne_Supremacy_Thumbnail.jpg'
+import bourne_ultimatum_thumbnail from '../assets/recommendations_screen/The_Bourne_Ultimatum_Thumbnail.jpg'
+import squid_game_thumbnail from '../assets/recommendations_screen/Squid_Game_Thumbnail.jpeg'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -52,7 +53,7 @@ export function Recommendations_Screen() {
           'margin-bottom': '5rem',
         }}
       >
-        <div style={{ flex: 3 }} />
+        <div style={{ flex: 2 }} />
         <img
           src={code_geass_img}
           alt="Code Geass"
@@ -61,10 +62,10 @@ export function Recommendations_Screen() {
             'max-width': '100%',
             height: 'auto',
             display: 'block',
-            border: `2px solid ${t().text_h}`,
+            border: '2px solid #4FC3F7',
           }}
         />
-        <div style={{ flex: 4 }} />
+        <div style={{ flex: 3 }} />
       </div>
 
       <p
@@ -149,14 +150,15 @@ const transition_blurb =
 
 const rec_rows = [
   [
-    { title: 'Arcane', images: [arcane_img] },
-    { title: 'The Wolf of Wall Street', images: [wolf_img] },
-    { title: 'Ninjago Season 8', images: [ninjago_img] },
+    { title: 'Arcane', images: [arcane_thumbnail] },
+    { title: 'The Wolf of Wall Street', images: [wolf_thumbnail] },
+    { title: 'Ninjago Season 8', images: [ninjago_thumbnail] },
   ],
   [
     {
       title: 'The Bourne Trilogy',
-      images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
+      images: [bourne_identity_thumbnail, bourne_supremacy_thumbnail, bourne_ultimatum_thumbnail],
     },
+    { title: 'Squid Game', images: [squid_game_thumbnail] },
   ],
 ]
