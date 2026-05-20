@@ -1,6 +1,6 @@
 import { createEffect, onMount, Show } from 'solid-js'
 import { Router, Route, useLocation } from '@solidjs/router'
-import { useTheme, menu_open, sidebar_width } from './shared/constants'
+import { useTheme, menu_open, sidebar_width, PATHS_WITH_BG } from './shared/constants'
 import light_bg from './assets/website_backgrounds/latte_float.jpg'
 import dark_bg from './assets/website_backgrounds/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
@@ -17,8 +17,6 @@ const all_image_assets = import.meta.glob(
   './assets/**/*.{png,jpg,jpeg,webp,gif,svg}',
   { eager: true, query: '?url', import: 'default' },
 )
-
-const PATHS_WITH_BG = new Set(['/', '/contact', '/help'])
 
 function App() {
   const t = useTheme

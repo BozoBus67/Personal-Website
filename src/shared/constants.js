@@ -11,7 +11,8 @@ const get_initial_theme = () => {
 export const themes = {
   light: {
     name: 'light',
-    bg: '#eef4fa',
+    bg: '#ffffff',
+    page_bg: '#a8cde6',
     text: '#4a4452',
     text_h: '#08060d',
     border: '#e5e4e7',
@@ -26,6 +27,7 @@ export const themes = {
   dark: {
     name: 'dark',
     bg: '#313338',
+    page_bg: '#313338',
     text: '#d2d6db',
     text_h: '#f2f3f5',
     border: '#3f4147',
@@ -53,6 +55,8 @@ export const useTheme = () => themes[themeName()]
 
 export const toggleTheme = () =>
   setThemeName((n) => (n === 'light' ? 'dark' : 'light'))
+
+export const PATHS_WITH_BG = new Set(['/', '/contact', '/help'])
 
 export const [menu_open, set_menu_open] = createSignal(true)
 
