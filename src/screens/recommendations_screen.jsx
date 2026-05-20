@@ -93,7 +93,7 @@ function Rec_Card(props) {
         'flex-direction': 'column',
         gap: '0.5rem',
         width: 'max-content',
-        'min-width': props.rec.min_width || '200px',
+        'min-width': '200px',
         'flex-shrink': 0,
       }}
     >
@@ -110,7 +110,13 @@ function Rec_Card(props) {
         {props.rec.title}
       </p>
       {props.rec.images && (
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '0.5rem',
+            width: props.rec.image_width || '200px',
+          }}
+        >
           {props.rec.images.map((src) => (
             <img
               src={src}
@@ -142,12 +148,13 @@ const rec_rows = [
   [
     { title: 'Arcane', images: [arcane_img] },
     { title: 'The Wolf of Wall Street', images: [wolf_img] },
-    { title: 'Ninjago Season 8', images: [ninjago_img], min_width: '380px' },
+    { title: 'Ninjago Season 8', images: [ninjago_img], image_width: '380px' },
   ],
   [
     {
       title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
       images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
+      image_width: '800px',
     },
   ],
 ]
