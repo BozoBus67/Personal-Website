@@ -1,4 +1,12 @@
-import { createSignal } from 'solid-js'
+import { createSignal, createEffect, createRoot } from 'solid-js'
+
+const THEME_STORAGE_KEY = 'theme'
+
+const get_initial_theme = () => {
+  if (typeof localStorage === 'undefined') return 'light'
+  const saved = localStorage.getItem(THEME_STORAGE_KEY)
+  return saved === 'dark' || saved === 'light' ? saved : 'light'
+}
 
 export const themes = {
   light: {
@@ -29,7 +37,15 @@ export const themes = {
   },
 }
 
-export const [themeName, setThemeName] = createSignal('light')
+export const [themeName, setThemeName] = createSignal(get_initial_theme())
+
+createRoot(() => {
+  createEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(THEME_STORAGE_KEY, themeName())
+    }
+  })
+})
 
 export const useTheme = () => themes[themeName()]
 
