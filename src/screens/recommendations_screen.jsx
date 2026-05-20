@@ -83,8 +83,6 @@ export function Recommendations_Screen() {
   )
 }
 
-const REC_IMAGE_ROW_WIDTH = '200px'
-
 function Rec_Card(props) {
   const t = useTheme
   return (
@@ -94,7 +92,7 @@ function Rec_Card(props) {
         'flex-direction': 'column',
         gap: '0.5rem',
         width: 'max-content',
-        'min-width': REC_IMAGE_ROW_WIDTH,
+        'min-width': '200px',
         'flex-shrink': 0,
       }}
     >
@@ -111,13 +109,7 @@ function Rec_Card(props) {
         {props.rec.title}
       </p>
       {props.rec.images && (
-        <div
-          style={{
-            display: 'flex',
-            gap: '0.5rem',
-            width: REC_IMAGE_ROW_WIDTH,
-          }}
-        >
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
           {props.rec.images.map((src) => (
             <img
               src={src}
