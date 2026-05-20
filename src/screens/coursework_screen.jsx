@@ -29,6 +29,7 @@ export function Coursework_Screen() {
         Some of my favorite courses taken:
       </p>
 
+      <CS240E />
       <CS246 />
       <CS341 />
       <CS349 />
