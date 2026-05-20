@@ -31,7 +31,7 @@ function CS246() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS246</div>
+      <div style={course_title_style(t)}>CS246: Designing Medium Programs</div>
       <p style={course_blurb_style(t)}>{cs246_blurb}</p>
     </div>
   )
@@ -49,7 +49,7 @@ function CS341() {
           style={{ color: 'inherit', 'text-decoration': 'none' }}
         >
           CS341
-        </a>
+        </a>: Beginner Algorithms
       </div>
       <p style={course_blurb_style(t)}>{cs341_blurb}</p>
     </div>
@@ -60,7 +60,7 @@ function CS349() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS349</div>
+      <div style={course_title_style(t)}>CS349: Introduction to UI</div>
       <p style={course_blurb_style(t)}>{cs349_blurb}</p>
     </div>
   )
@@ -70,7 +70,7 @@ function CS466() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS466</div>
+      <div style={course_title_style(t)}>CS466: Intermediate Algorithms</div>
       <p style={course_blurb_style(t)}>{cs466_blurb}</p>
     </div>
   )
@@ -80,7 +80,7 @@ function CS763() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS763</div>
+      <div style={course_title_style(t)}>CS763: Computational Geometry</div>
       <p style={course_blurb_style(t)}>{cs763_blurb}</p>
     </div>
   )
