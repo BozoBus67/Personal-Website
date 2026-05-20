@@ -11,7 +11,7 @@ const get_initial_theme = () => {
 export const themes = {
   light: {
     name: 'light',
-    bg: '#ffffff',
+    bg: '#eef4fa',
     text: '#4a4452',
     text_h: '#08060d',
     border: '#e5e4e7',
