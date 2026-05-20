@@ -28,17 +28,6 @@ export function Recommendations_Screen() {
       </h2>
 
       <h3 style={h3_style()}>Code Geass</h3>
-      <img
-        src={code_geass_img}
-        alt="Code Geass"
-        style={{
-          width: '900px',
-          'max-width': '100%',
-          height: 'auto',
-          display: 'block',
-          border: `2px solid ${t().text_h}`,
-        }}
-      />
       <p
         style={{
           margin: 0,
@@ -50,6 +39,17 @@ export function Recommendations_Screen() {
       >
         {code_geass_blurb}
       </p>
+      <img
+        src={code_geass_img}
+        alt="Code Geass"
+        style={{
+          width: '900px',
+          'max-width': '100%',
+          height: 'auto',
+          display: 'block',
+          border: `2px solid ${t().text_h}`,
+        }}
+      />
     </Screen_Layout>
   )
 }

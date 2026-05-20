@@ -1,6 +1,8 @@
 import { createEffect } from 'solid-js'
 import { Router, Route } from '@solidjs/router'
 import { useTheme } from './shared/constants'
+import light_bg from './assets/KqyRp-Y_KZ0.jpg'
+import dark_bg from './assets/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
 import { Contact_Screen } from './screens/contact_screen'
 import { Project_EC_Screen } from './screens/projects/project_ec_screen'
@@ -15,9 +17,21 @@ function App() {
   const t = useTheme
 
   createEffect(() => {
-    document.body.style.background = t().bg
-    document.body.style.color = t().text
-    document.documentElement.style.colorScheme = t().color_scheme
+    const theme = t()
+    const bg_url = theme.name === 'light' ? light_bg : dark_bg
+    const overlay =
+      theme.name === 'light'
+        ? 'rgba(255, 255, 255, 0.7)'
+        : 'rgba(49, 51, 56, 0.7)'
+
+    document.body.style.backgroundImage = `linear-gradient(${overlay}, ${overlay}), url(${bg_url})`
+    document.body.style.backgroundColor = theme.bg
+    document.body.style.backgroundSize = 'cover'
+    document.body.style.backgroundPosition = 'center'
+    document.body.style.backgroundAttachment = 'fixed'
+    document.body.style.backgroundRepeat = 'no-repeat'
+    document.body.style.color = theme.text
+    document.documentElement.style.colorScheme = theme.color_scheme
   })
 
   return (
