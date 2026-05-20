@@ -118,6 +118,18 @@ export function Project_EC_Screen() {
           <Download_Button item={item} />
         ))}
       </div>
+      <p style={{ ...para_style(), 'margin-top': '0.5rem' }}>
+        Or play in your browser at{' '}
+        <a
+          href="https://extended-cookie-clicker.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: t().accent, 'text-decoration': 'none' }}
+        >
+          extended-cookie-clicker.vercel.app
+        </a>
+        .
+      </p>
 
       <h2 style={h2_style()}>Stack</h2>
       <p style={para_style()}>
