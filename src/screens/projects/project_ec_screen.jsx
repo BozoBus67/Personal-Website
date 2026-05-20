@@ -112,14 +112,9 @@ export function Project_EC_Screen() {
         have nothing to do with clicking cookies.
       </p>
 
-      <h2 style={h2_style()}>Download</h2>
-      <div style={download_row_style()}>
-        {DOWNLOADS.map((item) => (
-          <Download_Button item={item} />
-        ))}
-      </div>
-      <p style={{ ...para_style(), 'margin-top': '0.5rem' }}>
-        Or play in your browser at{' '}
+      <h2 style={h2_style()}>Play</h2>
+      <p style={para_style()}>
+        Play in your browser at{' '}
         <a
           href="https://extended-cookie-clicker.vercel.app"
           target="_blank"
@@ -130,6 +125,15 @@ export function Project_EC_Screen() {
         </a>
         .
       </p>
+      <p style={para_style()}>
+        Or download as an app on your computer, but why would you ever do this
+        over the browser version?
+      </p>
+      <div style={download_row_style()}>
+        {DOWNLOADS.map((item) => (
+          <Download_Button item={item} />
+        ))}
+      </div>
 
       <h2 style={h2_style()}>Stack</h2>
       <p style={para_style()}>
