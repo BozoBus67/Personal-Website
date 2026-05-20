@@ -124,7 +124,7 @@ const course_blurb_style = (t) => ({
 })
 
 const cs240e_blurb =
-`Taught by Therese Biedl.`
+`Taught by Therese Biedl. We learned a lot of theoretical data structures, most of which were pretty useless`
 
 const cs246_blurb =
 `This is branded as an object oriented programming course, but it's more of a "how to design medium sized programs" course. As someone whose only prior programming experience are W3School tutorials, this course tuaght me how to actually program something larger than 1 file. This was the starting point for everything I can do now.`
@@ -139,4 +139,4 @@ const cs466_blurb =
 `Currently taking! This course is on randomized, distributed, and streaming algorithms. Taught by Lap Chi Lau. Will probably e the hardest course I ever take.`
 
 const cs763_blurb =
-`Currently taking! Computational geometry.`
+`Currently taking! Also taught by Therese Biedl. Computational geometry.`
