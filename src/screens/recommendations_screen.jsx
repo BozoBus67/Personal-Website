@@ -71,34 +71,23 @@ export function Recommendations_Screen() {
       </p>
 
       {others.map((rec) => (
-        <div style={{ 'margin-bottom': '1rem' }}>
-          <p
-            style={{
-              margin: '0 0 0.5rem',
-              color: t().text_h,
-              'font-size': '1.15rem',
-              'line-height': 1.6,
-              'font-weight': 700,
-            }}
-          >
-            {rec.title}
-          </p>
+        <div
+          style={{
+            display: 'flex',
+            'align-items': 'center',
+            gap: '1rem',
+            'margin-bottom': '1rem',
+            'flex-wrap': 'wrap',
+          }}
+        >
           {rec.images && (
-            <div
-              style={{
-                display: 'flex',
-                gap: '0.75rem',
-                'flex-wrap': 'wrap',
-                'margin-top': '0.5rem',
-              }}
-            >
+            <div style={{ display: 'flex', gap: '0.5rem', 'flex-shrink': 0 }}>
               {rec.images.map((src) => (
                 <img
                   src={src}
                   alt={rec.title}
                   style={{
-                    width: rec.images.length > 1 ? '300px' : '600px',
-                    'max-width': '100%',
+                    width: '120px',
                     height: 'auto',
                     display: 'block',
                     border: `2px solid ${t().text_h}`,
@@ -107,6 +96,19 @@ export function Recommendations_Screen() {
               ))}
             </div>
           )}
+          <p
+            style={{
+              margin: 0,
+              color: t().text_h,
+              'font-size': '1.15rem',
+              'line-height': 1.6,
+              'font-weight': 700,
+              flex: 1,
+              'min-width': '200px',
+            }}
+          >
+            {rec.title}
+          </p>
         </div>
       ))}
     </Screen_Layout>
