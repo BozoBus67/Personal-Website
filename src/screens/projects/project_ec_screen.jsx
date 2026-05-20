@@ -68,6 +68,7 @@ export function Project_EC_Screen() {
     'line-height': 1,
     margin: 0,
     color: t().text_h,
+    'text-align': 'center',
   })
 
   const h2_style = () => ({
