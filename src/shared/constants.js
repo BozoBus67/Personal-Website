@@ -12,7 +12,7 @@ export const themes = {
   light: {
     name: 'light',
     bg: '#ffffff',
-    page_bg: 'rgba(168, 205, 230, 0.5)',
+    page_bg: 'rgba(168, 205, 230, 0.3)',
     text: '#4a4452',
     text_h: '#08060d',
     border: '#e5e4e7',
