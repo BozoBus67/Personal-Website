@@ -13,13 +13,13 @@ import {
   toggleTheme,
   menu_open,
   set_menu_open,
+  sidebar_width,
+  set_sidebar_width,
   is_disclosure_open,
   toggle_disclosure,
 } from './constants'
 import sun from '../assets/sun.png'
 import moon from '../assets/moon.png'
-
-const [sidebar_width, set_sidebar_width] = createSignal(260)
 
 const SECTIONS = [
   { path: '/', label: 'Home' },
