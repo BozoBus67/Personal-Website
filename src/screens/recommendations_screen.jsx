@@ -2,7 +2,8 @@ import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
 import code_geass_img from '../assets/recommendations_screen/code_geass.png'
 import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
-import bourne_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
+import bourne_identity_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
+import bourne_supremacy_img from '../assets/recommendations_screen/the_bourne_supremacy.jpg'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -79,18 +80,29 @@ export function Recommendations_Screen() {
           >
             {rec.title}
           </p>
-          {rec.image && (
-            <img
-              src={rec.image}
-              alt={rec.title}
+          {rec.images && (
+            <div
               style={{
-                width: '600px',
-                'max-width': '100%',
-                height: 'auto',
-                display: 'block',
-                border: `2px solid ${t().text_h}`,
+                display: 'flex',
+                gap: '0.75rem',
+                'flex-wrap': 'wrap',
+                'margin-top': '0.5rem',
               }}
-            />
+            >
+              {rec.images.map((src) => (
+                <img
+                  src={src}
+                  alt={rec.title}
+                  style={{
+                    width: rec.images.length > 1 ? '300px' : '600px',
+                    'max-width': '100%',
+                    height: 'auto',
+                    display: 'block',
+                    border: `2px solid ${t().text_h}`,
+                  }}
+                />
+              ))}
+            </div>
           )}
         </div>
       ))}
@@ -107,8 +119,11 @@ const transition_blurb =
 `There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
 
 const others = [
-  { title: 'Arcane', image: arcane_img },
+  { title: 'Arcane', images: [arcane_img] },
   { title: 'Ninjago Season 8' },
   { title: 'The Wolf of Wall Street' },
-  { title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum', image: bourne_img },
+  {
+    title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
+    images: [bourne_identity_img, bourne_supremacy_img],
+  },
 ]
