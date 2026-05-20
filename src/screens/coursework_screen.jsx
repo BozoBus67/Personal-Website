@@ -43,7 +43,7 @@ function CS240E() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS240E</div>
+      <div style={course_title_style(t)}>CS240E: Data Structures</div>
       <p style={course_blurb_style(t)}>{cs240e_blurb}</p>
     </div>
   )
@@ -124,7 +124,7 @@ const course_blurb_style = (t) => ({
 })
 
 const cs240e_blurb =
-`Taught by Therese Biedl. We learned a lot of theoretical data structures, most of which were pretty useless`
+`Taught by Therese Biedl. We learned a lot of theoretical data structures, most of which were pretty useless in practice, but it was interesting and she was a good teacher with reasonable assignments.`
 
 const cs246_blurb =
 `This is branded as an object oriented programming course, but it's more of a "how to design medium sized programs" course. As someone whose only prior programming experience are W3School tutorials, this course tuaght me how to actually program something larger than 1 file. This was the starting point for everything I can do now.`
