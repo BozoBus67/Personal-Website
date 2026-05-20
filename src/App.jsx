@@ -85,7 +85,7 @@ function Background() {
         bottom: 0,
         'background-image': `linear-gradient(${overlay()}, ${overlay()}), url(${bg_url()})`,
         'background-color': t().bg,
-        'background-size': 'contain',
+        'background-size': 'cover',
         'background-position': 'center',
         'background-repeat': 'no-repeat',
         'z-index': -1,
