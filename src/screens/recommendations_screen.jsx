@@ -90,7 +90,7 @@ const transition_blurb =
 `There are others, but people's watch lists are long enough, so I would just recommend this one if you have the time. But if you're interested, here are more below.`
 
 const others = [
-  'Placeholder one-liner 1.',
-  'Placeholder one-liner 2.',
-  'Placeholder one-liner 3.',
+  'Arcane',
+  'Ninjago Season 8',
+  'The Wolf of Wall Street',
 ]

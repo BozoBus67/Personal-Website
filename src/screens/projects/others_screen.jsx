@@ -90,4 +90,4 @@ const ml_compiler_blurb =
 `A toy neural-network compiler in Rust. Builds a computation DAG from ML ops, applies SSA + reverse-mode autodiff, fuses ops (FUSED_ADD_RELU and friends), allocates registers, lowers to C as the backend instead of going through LLVM IR, then links. Seven phases end-to-end on a tiny model — more an excuse to feel each compiler stage on something I actually understand the math of than a serious tool.`
 
 const personal_website_blurb =
-`You're looking at it right now! This is built with SolidJS, a lightweight React-like framework. I liked the way UI programming feels in React with the JSX elemetns and stuf i feel its most natural defining each widget via a fucntio nliek this but i didnt need the state stuf romreact `
+`You're looking at it right now! This is built with SolidJS, a lightweight React-like framework. I liked React's way of UI programming where you define JSX components via functions, it feels more natural than other frameworks I've experiemnted with such as Vue and Svelte. I didn't need React's state-management machinery, so I opted to just use Solid.`
