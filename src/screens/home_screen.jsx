@@ -6,18 +6,27 @@ export function Home_Screen() {
 
   return (
     <Screen_Layout>
-      <h1
+      <div
         style={{
-          'font-weight': 700,
-          'font-size': '120px',
-          'line-height': 1.1,
-          margin: 0,
-          color: t().text_h,
-          'text-align': 'center',
+          'min-height': 'calc(100vh - 3rem)',
+          display: 'flex',
+          'align-items': 'center',
+          'justify-content': 'center',
         }}
       >
-        Hi! Welcome.
-      </h1>
+        <h1
+          style={{
+            'font-weight': 700,
+            'font-size': '120px',
+            'line-height': 1.1,
+            margin: 0,
+            color: t().text_h,
+            'text-align': 'center',
+          }}
+        >
+          Hi! Welcome.
+        </h1>
+      </div>
     </Screen_Layout>
   )
 }

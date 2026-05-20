@@ -19,6 +19,7 @@ export function Coursework_Screen() {
       </h2>
 
       <CS246 />
+      <CS341 />
       <CS349 />
       <CS466 />
       <CS763 />
@@ -32,6 +33,25 @@ function CS246() {
     <div>
       <div style={course_title_style(t)}>CS246</div>
       <p style={course_blurb_style(t)}>{cs246_blurb}</p>
+    </div>
+  )
+}
+
+function CS341() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>
+        <a
+          href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'none' }}
+        >
+          CS341
+        </a>
+      </div>
+      <p style={course_blurb_style(t)}>{cs341_blurb}</p>
     </div>
   )
 }
@@ -82,13 +102,16 @@ const course_blurb_style = (t) => ({
 })
 
 const cs246_blurb =
-`Object-Oriented Software Development. C++ throughout — classes, inheritance, templates, exceptions, the STL. Design patterns and Unix tooling (shell, make, valgrind) on top. The Waterloo CS course that teaches you to write software, not just code.`
+`This is branded as an object oriented programming course, but it's more of a "how to design medium sized programs" course. As someone whose only prior programming experience are W3School tutorials, this course tuaght me how to actually program something larger than 1 file. This was the starting point for everything I can do now.`
 
 const cs349_blurb =
-`User Interfaces. Event-driven programming, GUI toolkits, MVC. Built small desktop apps with a focus on interaction design — input handling, layout, redraw loops, the actual mechanics behind what a button click does.`
+`Very well designed assignments. A1 was essentially drawing things diectly to a screen canvas, A2 we started abstracting things into widget classes, A3 was raw HTML dom manipulation, and A4 we learned Preact. Very well designed assignments. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
+
+const cs341_blurb =
+`Difficult. We learned standard determinstic algorithm techniques like Divide and Conquer, Greedy Algorithms, and Dynamic Programming, but there was a large emphasis on graph algorithms, as well as CO (Combinatorics and Optimization) style problems, which were often quite difficult. Interestingly, the two hardest problems in the course were not graph related. You can check out the coruse website here: . Taught by Lap Chi Lau. Extremely good lecture notes, but tough.`
 
 const cs466_blurb =
-`Algorithm Design and Analysis. The course that picks up after CS341 — approximation algorithms, randomized algorithms, online algorithms, NP-hardness reductions. Heavier on proofs of correctness and competitive ratios than on implementation.`
+`Currently taking! This course is on randomized, distributed, and streaming algorithms. Taught by Lap Chi Lau. Will probably e the hardest course I ever take.`
 
 const cs763_blurb =
-`Computational Geometry. Convex hulls, Voronoi diagrams, range searching, geometric data structures. Graduate course — a lot of the algorithms feel obvious in 2D and turn into puzzles in higher dimensions.`
+`Currently taking! Computational geometry.`

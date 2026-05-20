@@ -85,5 +85,3 @@ export function Help_Screen() {
     </Screen_Layout>
   )
 }
-
-`This course essentially tuaght me how to program t`

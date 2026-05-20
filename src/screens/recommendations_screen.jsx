@@ -32,7 +32,7 @@ export function Recommendations_Screen() {
         src={code_geass_img}
         alt="Code Geass"
         style={{
-          width: '640px',
+          width: '900px',
           'max-width': '100%',
           height: 'auto',
           display: 'block',
