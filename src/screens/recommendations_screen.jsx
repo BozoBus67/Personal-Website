@@ -121,7 +121,7 @@ function Rec_Card(props) {
               style={{
                 height: REC_IMAGE_HEIGHT,
                 display: 'block',
-                border: '2px solid #FFD700',
+                border: `2px solid ${t().rec_border}`,
               }}
             />
           ))}
