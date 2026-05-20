@@ -26,7 +26,7 @@ export function Others_Screen() {
           'text-align': 'center',
         }}
       >
-        Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, experimental, or incomplete.
+        Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, or experimental.
       </p>
 
       <Personal_Website />
