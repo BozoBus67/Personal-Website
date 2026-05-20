@@ -71,9 +71,9 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '3rem' }}>
+      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '2rem' }}>
         {rec_rows.map((row) => (
-          <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '3rem' }}>
+          <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '2rem' }}>
             {row.map((rec) => (
               <Rec_Card rec={rec} />
             ))}
