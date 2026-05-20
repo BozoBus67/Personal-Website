@@ -70,55 +70,60 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      <div
-        style={{
-          display: 'flex',
-          'flex-wrap': 'wrap',
-          gap: '1.5rem',
-        }}
-      >
-        {others.map((rec) => (
-          <div
-            style={{
-              display: 'flex',
-              'flex-direction': 'column',
-              gap: '0.5rem',
-              width: '200px',
-              'flex-shrink': 0,
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                color: t().text_h,
-                'font-size': '1.15rem',
-                'line-height': 1.4,
-                'font-weight': 700,
-              }}
-            >
-              {rec.title}
-            </p>
-            {rec.images && (
-              <div style={{ display: 'flex', gap: '0.5rem' }}>
-                {rec.images.map((src) => (
-                  <img
-                    src={src}
-                    alt={rec.title}
-                    style={{
-                      flex: 1,
-                      'min-width': 0,
-                      height: 'auto',
-                      display: 'block',
-                      border: `2px solid ${t().text_h}`,
-                    }}
-                  />
-                ))}
-              </div>
-            )}
+      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '1.5rem' }}>
+        {rec_rows.map((row) => (
+          <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '1.5rem' }}>
+            {row.map((rec) => (
+              <Rec_Card rec={rec} />
+            ))}
           </div>
         ))}
       </div>
     </Screen_Layout>
+  )
+}
+
+function Rec_Card(props) {
+  const t = useTheme
+  return (
+    <div
+      style={{
+        display: 'flex',
+        'flex-direction': 'column',
+        gap: '0.5rem',
+        width: '200px',
+        'flex-shrink': 0,
+      }}
+    >
+      <p
+        style={{
+          margin: 0,
+          color: t().text_h,
+          'font-size': '1.15rem',
+          'line-height': 1.4,
+          'font-weight': 700,
+        }}
+      >
+        {props.rec.title}
+      </p>
+      {props.rec.images && (
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          {props.rec.images.map((src) => (
+            <img
+              src={src}
+              alt={props.rec.title}
+              style={{
+                flex: 1,
+                'min-width': 0,
+                height: 'auto',
+                display: 'block',
+                border: `2px solid ${t().text_h}`,
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -130,12 +135,16 @@ If you've never watched anime before or usually watch dubbed, I highly recommend
 const transition_blurb =
 `There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
 
-const others = [
-  { title: 'Arcane', images: [arcane_img] },
-  { title: 'Ninjago Season 8', images: [ninjago_img] },
-  { title: 'The Wolf of Wall Street', images: [wolf_img] },
-  {
-    title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
-    images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
-  },
+const rec_rows = [
+  [
+    { title: 'Arcane', images: [arcane_img] },
+    { title: 'The Wolf of Wall Street', images: [wolf_img] },
+  ],
+  [
+    { title: 'Ninjago Season 8', images: [ninjago_img] },
+    {
+      title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
+      images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
+    },
+  ],
 ]
