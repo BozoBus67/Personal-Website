@@ -32,11 +32,11 @@ export function Recommendations_Screen() {
         src={code_geass_img}
         alt="Code Geass"
         style={{
-          width: '400px',
-          height: '560px',
-          'object-fit': 'cover',
+          width: '640px',
+          'max-width': '100%',
+          height: 'auto',
+          display: 'block',
           border: `2px solid ${t().text_h}`,
-          background: t().bg_alt ?? 'transparent',
         }}
       />
       <p
