@@ -8,7 +8,7 @@ export function Home_Screen() {
     <Screen_Layout>
       <div
         style={{
-          'min-height': 'calc(100vh - 3rem)',
+          flex: 1,
           display: 'flex',
           'align-items': 'center',
           'justify-content': 'center',
