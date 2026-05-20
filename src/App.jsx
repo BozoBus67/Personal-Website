@@ -1,7 +1,7 @@
 import { createEffect, onMount, Show } from 'solid-js'
 import { Router, Route, useLocation } from '@solidjs/router'
 import { useTheme, menu_open, sidebar_width } from './shared/constants'
-import light_bg from './assets/KqyRp-Y_KZ0.jpg'
+import light_bg from './assets/latte_float.jpg'
 import dark_bg from './assets/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
 import { Contact_Screen } from './screens/contact_screen'
