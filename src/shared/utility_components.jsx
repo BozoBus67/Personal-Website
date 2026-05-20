@@ -18,8 +18,8 @@ import {
   is_disclosure_open,
   toggle_disclosure,
 } from './constants'
-import sun from '../assets/sun.png'
-import moon from '../assets/moon.png'
+import sun from '../assets/light_dark_toggle_switch/sun.png'
+import moon from '../assets/light_dark_toggle_switch/moon.png'
 
 const SECTIONS = [
   { path: '/', label: 'Home' },
