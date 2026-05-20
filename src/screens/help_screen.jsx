@@ -44,7 +44,7 @@ function Step(props) {
 export function Help_Screen() {
   const t = useTheme
   return (
-    <Screen_Layout>
+    <Screen_Layout padding_bottom="8rem">
       <div
         style={{
           display: 'flex',

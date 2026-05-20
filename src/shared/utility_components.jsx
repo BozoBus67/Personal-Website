@@ -333,6 +333,10 @@ export function Theme_Toggle() {
   )
 }
 
+const DEFAULT_PADDING_TOP = '3rem'
+const DEFAULT_PADDING_SIDE = '4.5rem'
+const DEFAULT_PADDING_BOTTOM = '5rem'
+
 export function Screen_Layout(props) {
   createEffect(() => {
     if (!menu_open()) return
@@ -353,7 +357,7 @@ export function Screen_Layout(props) {
       <main
         style={{
           'margin-left': menu_open() ? `${sidebar_width()}px` : '60px',
-          padding: '2rem 4.5rem 5rem',
+          padding: `${props.padding_top ?? DEFAULT_PADDING_TOP} ${props.padding_side ?? DEFAULT_PADDING_SIDE} ${props.padding_bottom ?? DEFAULT_PADDING_BOTTOM}`,
           'min-height': '100vh',
           'box-sizing': 'border-box',
           display: 'flex',
