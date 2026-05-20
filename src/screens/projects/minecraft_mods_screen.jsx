@@ -29,6 +29,11 @@ export function Minecraft_Mods_Screen() {
         Personal Fabric mods, working up in complexity.
       </p>
 
+      <div>
+        <div style={mod_title_style(t)}>Build</div>
+        <p style={mod_blurb_style(t)}>{build_blurb}</p>
+      </div>
+
       <Golden_Egg />
       <Custom_Mobs />
       <Combat_1_8 />
@@ -80,6 +85,9 @@ const mod_blurb_style = (t) => ({
   'line-height': 1.6,
   'white-space': 'pre-line',
 })
+
+const build_blurb =
+`All built with Fabric and the fabric-loom Gradle plugin. Loom handles the remapping between yarn (readable names like LivingEntity#takeKnockback), intermediary (stable across versions), and the obfuscated names Minecraft actually ships with — so the code reads in English while binding to production classes. Dev loop is ./gradlew runClient. Mixins go through SpongePowered, registered via a <modid>.mixins.json that fabric-loader picks up at class-load.`
 
 const golden_egg_blurb =
 `Fabric. Adds one item: the golden egg. Thrown like a vanilla egg, but where vanilla rolls 1/8 odds to spawn a chicken, the golden egg always does. Recipe is 8 gold nuggets around an egg, same shape as a glistering melon. No mixins — a custom item that extends vanilla.`
