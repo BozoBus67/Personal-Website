@@ -39,7 +39,14 @@ function ML_Compiler() {
   const t = useTheme
   return (
     <div>
-      <div style={item_title_style(t)}>ML Compiler</div>
+      <a
+        href="https://github.com/BozoBus67/Toy-ML-Compiler"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={item_title_link_style(t)}
+      >
+        ML Compiler
+      </a>
       <p style={item_blurb_style(t)}>{ml_compiler_blurb}</p>
     </div>
   )
@@ -49,17 +56,26 @@ function Personal_Website() {
   const t = useTheme
   return (
     <div>
-      <div style={item_title_style(t)}>Personal Website</div>
+      <a
+        href="https://github.com/BozoBus67/Personal-Website"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={item_title_link_style(t)}
+      >
+        Personal Website
+      </a>
       <p style={item_blurb_style(t)}>{personal_website_blurb}</p>
     </div>
   )
 }
 
-const item_title_style = (t) => ({
+const item_title_link_style = (t) => ({
   'font-weight': 700,
   'font-size': '1.5rem',
   margin: '1rem 0 0.5rem',
-  color: t().text_h,
+  color: t().accent,
+  'text-decoration': 'none',
+  display: 'inline-block',
 })
 
 const item_blurb_style = (t) => ({
