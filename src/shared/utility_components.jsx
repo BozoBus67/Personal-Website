@@ -278,7 +278,7 @@ export function Sidebar(props) {
         height: '100vh',
         width: 'max-content',
         'min-width': '200px',
-        background: t().bg,
+        background: 'transparent',
         'border-right': `1px solid ${t().border}`,
         padding: 0,
         display: 'flex',

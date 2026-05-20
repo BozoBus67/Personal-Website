@@ -1,4 +1,4 @@
-import { createEffect } from 'solid-js'
+import { createEffect, onMount } from 'solid-js'
 import { Router, Route } from '@solidjs/router'
 import { useTheme } from './shared/constants'
 import light_bg from './assets/KqyRp-Y_KZ0.jpg'
@@ -13,39 +13,85 @@ import { Recommendations_Screen } from './screens/recommendations_screen'
 import { Help_Screen } from './screens/help_screen'
 import { Settings_Screen } from './screens/settings_screen'
 
+const all_image_assets = import.meta.glob(
+  './assets/**/*.{png,jpg,jpeg,webp,gif,svg}',
+  { eager: true, query: '?url', import: 'default' },
+)
+
 function App() {
   const t = useTheme
 
+  onMount(() => {
+    for (const url of Object.values(all_image_assets)) {
+      const img = new Image()
+      img.src = url
+    }
+  })
+
   createEffect(() => {
     const theme = t()
-    const bg_url = theme.name === 'light' ? light_bg : dark_bg
-    const overlay =
-      theme.name === 'light'
-        ? 'rgba(255, 255, 255, 0.7)'
-        : 'rgba(49, 51, 56, 0.7)'
-
-    document.body.style.backgroundImage = `linear-gradient(${overlay}, ${overlay}), url(${bg_url})`
-    document.body.style.backgroundColor = theme.bg
-    document.body.style.backgroundSize = 'cover'
-    document.body.style.backgroundPosition = 'center'
-    document.body.style.backgroundAttachment = 'fixed'
-    document.body.style.backgroundRepeat = 'no-repeat'
+    document.body.style.background = 'transparent'
     document.body.style.color = theme.text
+    document.body.style.overscrollBehavior = 'none'
+    document.documentElement.style.overscrollBehavior = 'none'
     document.documentElement.style.colorScheme = theme.color_scheme
   })
 
   return (
-    <Router>
-      <Route path="/" component={Home_Screen} />
-      <Route path="/projects/project-ec" component={Project_EC_Screen} />
-      <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
-      <Route path="/projects/personal-website" component={Personal_Website_Screen} />
-      <Route path="/coursework" component={Coursework_Screen} />
-      <Route path="/recommendations" component={Recommendations_Screen} />
-      <Route path="/contact" component={Contact_Screen} />
-      <Route path="/help" component={Help_Screen} />
-      <Route path="/settings" component={Settings_Screen} />
-    </Router>
+    <>
+      <Background />
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          'overflow-y': 'auto',
+          'overflow-x': 'hidden',
+          'overscroll-behavior': 'contain',
+        }}
+      >
+        <Router>
+          <Route path="/" component={Home_Screen} />
+          <Route path="/projects/project-ec" component={Project_EC_Screen} />
+          <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
+          <Route path="/projects/personal-website" component={Personal_Website_Screen} />
+          <Route path="/coursework" component={Coursework_Screen} />
+          <Route path="/recommendations" component={Recommendations_Screen} />
+          <Route path="/contact" component={Contact_Screen} />
+          <Route path="/help" component={Help_Screen} />
+          <Route path="/settings" component={Settings_Screen} />
+        </Router>
+      </div>
+    </>
+  )
+}
+
+function Background() {
+  const t = useTheme
+  const bg_url = () => (t().name === 'light' ? light_bg : dark_bg)
+  const overlay = () =>
+    t().name === 'light'
+      ? 'rgba(255, 255, 255, 0.7)'
+      : 'rgba(49, 51, 56, 0.7)'
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        'background-image': `linear-gradient(${overlay()}, ${overlay()}), url(${bg_url()})`,
+        'background-color': t().bg,
+        'background-size': 'contain',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat',
+        'z-index': -1,
+        'pointer-events': 'none',
+      }}
+    />
   )
 }
 
