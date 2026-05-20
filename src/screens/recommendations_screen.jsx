@@ -4,6 +4,7 @@ import code_geass_img from '../assets/recommendations_screen/code_geass.png'
 import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
 import bourne_identity_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
 import bourne_supremacy_img from '../assets/recommendations_screen/the_bourne_supremacy.jpg'
+import bourne_ultimatum_img from '../assets/recommendations_screen/the_bourne_ultimatum.jpg'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -124,6 +125,6 @@ const others = [
   { title: 'The Wolf of Wall Street' },
   {
     title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
-    images: [bourne_identity_img, bourne_supremacy_img],
+    images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],
   },
 ]
