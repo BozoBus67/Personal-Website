@@ -28,7 +28,7 @@ const SECTIONS = [
     children: [
       { path: '/projects/project-ec', label: 'Project EC' },
       { path: '/projects/minecraft-mods', label: 'Minecraft Mods' },
-      { path: '/projects/personal-website', label: 'Personal Website' },
+      { path: '/projects/others', label: 'Others' },
     ],
   },
   { path: '/coursework', label: 'Coursework' },
