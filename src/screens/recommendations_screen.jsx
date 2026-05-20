@@ -2,46 +2,6 @@ import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
 import code_geass_img from '../assets/image.png'
 
-function Recommendation_Item(props) {
-  const t = useTheme
-  return (
-    <>
-      <h3
-        style={{
-          'font-weight': 700,
-          'font-size': '1.75rem',
-          margin: '1rem 0 0.5rem',
-          color: t().text_h,
-        }}
-      >
-        {props.item.title}
-      </h3>
-      <p
-        style={{
-          margin: 0,
-          color: t().text_h,
-          'font-size': '1.15rem',
-          'line-height': 1.6,
-          'font-weight': 700,
-        }}
-      >
-        {props.item.tagline}
-      </p>
-      <p
-        style={{
-          margin: '0 0 2rem',
-          'white-space': 'pre-line',
-          color: t().text_h,
-          'font-size': '1.15rem',
-          'line-height': 1.6,
-        }}
-      >
-        {props.item.blurb}
-      </p>
-    </>
-  )
-}
-
 export function Recommendations_Screen() {
   const t = useTheme
 
@@ -104,8 +64,18 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      {others.map((item) => (
-        <Recommendation_Item item={item} />
+      {others.map((line) => (
+        <p
+          style={{
+            margin: '0 0 0.5rem',
+            color: t().text_h,
+            'font-size': '1.15rem',
+            'line-height': 1.6,
+            'font-weight': 700,
+          }}
+        >
+          {line}
+        </p>
       ))}
     </Screen_Layout>
   )
@@ -120,19 +90,7 @@ const transition_blurb =
 `There are others, but people's watch lists are long enough, so I would just recommend this one if you have the time. But if you're interested, here are more below.`
 
 const others = [
-  {
-    title: 'Placeholder Title 1',
-    tagline: 'Bold one-line pitch goes here.',
-    blurb: 'Longer writeup goes here. Replace with the real content.',
-  },
-  {
-    title: 'Placeholder Title 2',
-    tagline: 'Bold one-line pitch goes here.',
-    blurb: 'Longer writeup goes here. Replace with the real content.',
-  },
-  {
-    title: 'Placeholder Title 3',
-    tagline: 'Bold one-line pitch goes here.',
-    blurb: 'Longer writeup goes here. Replace with the real content.',
-  },
+  'Placeholder one-liner 1.',
+  'Placeholder one-liner 2.',
+  'Placeholder one-liner 3.',
 ]
