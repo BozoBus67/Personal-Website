@@ -4,7 +4,7 @@ export const themes = {
   light: {
     name: 'light',
     bg: '#ffffff',
-    text: '#6b6375',
+    text: '#4a4452',
     text_h: '#08060d',
     border: '#e5e4e7',
     code_bg: '#f4f3ec',
@@ -17,7 +17,7 @@ export const themes = {
   dark: {
     name: 'dark',
     bg: '#313338',
-    text: '#b5bac1',
+    text: '#d2d6db',
     text_h: '#f2f3f5',
     border: '#3f4147',
     code_bg: '#2b2d31',
