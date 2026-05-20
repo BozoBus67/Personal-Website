@@ -50,8 +50,6 @@ export function Help_Screen() {
           display: 'flex',
           'flex-direction': 'column',
           gap: '3rem',
-          'padding-top': '1.5rem',
-          'padding-bottom': '5rem',
         }}
       >
         <h2

@@ -37,7 +37,7 @@ function Contact_Contents() {
         'flex-direction': 'column',
         'align-items': 'center',
         'justify-content': 'center',
-        'min-height': 'calc(100vh - 3rem)',
+        flex: 1,
         gap: '2rem',
         'text-align': 'center',
       }}
