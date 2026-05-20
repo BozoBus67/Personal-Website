@@ -2,6 +2,7 @@ import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
 import code_geass_img from '../assets/recommendations_screen/code_geass.png'
 import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
+import ninjago_img from '../assets/recommendations_screen/ninjago_season_8_city_skyline_red_black.png'
 import bourne_identity_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
 import bourne_supremacy_img from '../assets/recommendations_screen/the_bourne_supremacy.jpg'
 import bourne_ultimatum_img from '../assets/recommendations_screen/the_bourne_ultimatum.jpg'
@@ -121,7 +122,7 @@ const transition_blurb =
 
 const others = [
   { title: 'Arcane', images: [arcane_img] },
-  { title: 'Ninjago Season 8' },
+  { title: 'Ninjago Season 8', images: [ninjago_img] },
   { title: 'The Wolf of Wall Street' },
   {
     title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
