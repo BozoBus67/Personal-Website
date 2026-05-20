@@ -20,6 +20,7 @@ export const themes = {
     accent_bg: 'rgba(170, 59, 255, 0.1)',
     accent_border: 'rgba(170, 59, 255, 0.5)',
     hover_bg: '#faf9f3',
+    rec_border: '#000000',
     color_scheme: 'light',
   },
   dark: {
@@ -33,6 +34,7 @@ export const themes = {
     accent_bg: 'rgba(192, 132, 252, 0.15)',
     accent_border: 'rgba(192, 132, 252, 0.5)',
     hover_bg: '#3a3c42',
+    rec_border: '#FFD700',
     color_scheme: 'dark',
   },
 }
