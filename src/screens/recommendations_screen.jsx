@@ -16,62 +16,44 @@ export function Recommendations_Screen() {
       <h2
         style={{
           'font-weight': 700,
-          'font-size': '24px',
+          'font-size': '48px',
           'line-height': 1,
           margin: 0,
           color: t().text_h,
+          'text-align': 'center',
         }}
       >
         Recommendations
       </h2>
-      <p style={{ margin: 0, color: t().text }}>
-        Stuff that was worth the time. Updated whenever I remember to.
-      </p>
 
-      <h3 style={h3_style()}>Anime</h3>
-      <div
+      <h3 style={h3_style()}>Code Geass</h3>
+      {/* TODO: replace with `import codeGeass from '../assets/code_geass.png'` and set src={codeGeass} */}
+      <img
+        src=""
+        alt="Code Geass"
         style={{
-          display: 'flex',
-          gap: '1.25rem',
-          'align-items': 'flex-start',
-          'flex-wrap': 'wrap',
+          width: '400px',
+          height: '560px',
+          'object-fit': 'cover',
+          border: `2px solid ${t().text_h}`,
+          background: t().bg_alt ?? 'transparent',
+        }}
+      />
+      <p
+        style={{
+          margin: 0,
+          'white-space': 'pre-line',
+          color: t().text,
+          'line-height': 1.6,
         }}
       >
-        {/* TODO: replace with `import codeGeass from '../assets/code_geass.png'` and set src={codeGeass} */}
-        <img
-          src=""
-          alt="Code Geass"
-          style={{
-            width: '200px',
-            height: '280px',
-            'object-fit': 'cover',
-            border: `2px solid ${t().text_h}`,
-            background: t().bg_alt ?? 'transparent',
-            'flex-shrink': 0,
-          }}
-        />
-        <div
-          style={{
-            display: 'flex',
-            'flex-direction': 'column',
-            gap: '0.5rem',
-            color: t().text,
-            'line-height': 1.6,
-            'min-width': '240px',
-            flex: 1,
-          }}
-        >
-          <div style={{ 'font-weight': 700, color: t().text_h, 'font-size': '1.1rem' }}>
-            Code Geass
-          </div>
-          <p style={{ margin: 0, 'white-space': 'pre-line' }}>{code_geass_blurb}</p>
-        </div>
-      </div>
+        {code_geass_blurb}
+      </p>
     </Screen_Layout>
   )
 }
 
-const code_geass_blurb = 
+const code_geass_blurb =
 `This is my favorite show. It's a complete story, through and through.
-The original is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore those.   
+The original is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore those.
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
