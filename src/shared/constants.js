@@ -38,6 +38,8 @@ export const toggleTheme = () =>
 
 export const [menu_open, set_menu_open] = createSignal(true)
 
+export const [sidebar_width, set_sidebar_width] = createSignal(260)
+
 const [disclosures, set_disclosures] = createSignal({})
 
 export const [accordion_mode, set_accordion_mode] = createSignal(true)

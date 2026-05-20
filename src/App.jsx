@@ -1,6 +1,6 @@
 import { createEffect, onMount, Show } from 'solid-js'
 import { Router, Route, useLocation } from '@solidjs/router'
-import { useTheme } from './shared/constants'
+import { useTheme, menu_open, sidebar_width } from './shared/constants'
 import light_bg from './assets/KqyRp-Y_KZ0.jpg'
 import dark_bg from './assets/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
@@ -56,12 +56,25 @@ function App() {
 
 function Layout(props) {
   const location = useLocation()
+  let scroll_el
+  let scroll_timeout
+  const on_scroll = () => {
+    if (!scroll_el) return
+    scroll_el.classList.add('is-scrolling')
+    clearTimeout(scroll_timeout)
+    scroll_timeout = setTimeout(() => {
+      scroll_el.classList.remove('is-scrolling')
+    }, 800)
+  }
   return (
     <>
       <Show when={PATHS_WITH_BG.has(location.pathname)}>
         <Background />
       </Show>
       <div
+        ref={scroll_el}
+        class="scroll-container"
+        onScroll={on_scroll}
         style={{
           position: 'fixed',
           top: 0,
@@ -86,12 +99,14 @@ function Background() {
     t().name === 'light'
       ? 'rgba(255, 255, 255, 0.7)'
       : 'rgba(49, 51, 56, 0.7)'
+  const left_offset = () =>
+    menu_open() ? `${sidebar_width()}px` : '60px'
   return (
     <div
       style={{
         position: 'fixed',
         top: 0,
-        left: 0,
+        left: left_offset(),
         right: 0,
         bottom: 0,
         'background-image': `linear-gradient(${overlay()}, ${overlay()}), url(${bg_url()})`,
@@ -101,6 +116,7 @@ function Background() {
         'background-repeat': 'no-repeat',
         'z-index': -1,
         'pointer-events': 'none',
+        transition: 'left 0.25s ease',
       }}
     />
   )
