@@ -54,6 +54,7 @@ export function Recommendations_Screen() {
           height: 'auto',
           display: 'block',
           border: `2px solid ${t().text_h}`,
+          'margin-left': '3rem',
           'margin-bottom': '5rem',
         }}
       />
