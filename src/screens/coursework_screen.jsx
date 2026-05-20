@@ -53,7 +53,7 @@ function CS246() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>CS246: Designing Medium Programs</div>
+      <div style={course_title_style(t)}>CS246: Designing Medium Sized Programs</div>
       <p style={course_blurb_style(t)}>{cs246_blurb}</p>
     </div>
   )
