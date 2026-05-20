@@ -39,6 +39,16 @@ export function Coursework_Screen() {
   )
 }
 
+function CS240E() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>CS240E</div>
+      <p style={course_blurb_style(t)}>{cs240e_blurb}</p>
+    </div>
+  )
+}
+
 function CS246() {
   const t = useTheme
   return (
@@ -112,6 +122,9 @@ const course_blurb_style = (t) => ({
   'line-height': 1.6,
   'white-space': 'pre-line',
 })
+
+const cs240e_blurb =
+`Taught by Therese Biedl.`
 
 const cs246_blurb =
 `This is branded as an object oriented programming course, but it's more of a "how to design medium sized programs" course. As someone whose only prior programming experience are W3School tutorials, this course tuaght me how to actually program something larger than 1 file. This was the starting point for everything I can do now.`
