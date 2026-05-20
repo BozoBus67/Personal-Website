@@ -3,6 +3,7 @@ import { Screen_Layout } from '../shared/utility_components'
 import code_geass_img from '../assets/recommendations_screen/code_geass.png'
 import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
 import ninjago_img from '../assets/recommendations_screen/ninjago_season_8_city_skyline_red_black.png'
+import wolf_img from '../assets/recommendations_screen/the_wolf_of_wallstreet.jpeg'
 import bourne_identity_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
 import bourne_supremacy_img from '../assets/recommendations_screen/the_bourne_supremacy.jpg'
 import bourne_ultimatum_img from '../assets/recommendations_screen/the_bourne_ultimatum.jpg'
@@ -48,7 +49,7 @@ export function Recommendations_Screen() {
         src={code_geass_img}
         alt="Code Geass"
         style={{
-          width: '900px',
+          width: '1000px',
           'max-width': '100%',
           height: 'auto',
           display: 'block',
@@ -123,7 +124,7 @@ const transition_blurb =
 const others = [
   { title: 'Arcane', images: [arcane_img] },
   { title: 'Ninjago Season 8', images: [ninjago_img] },
-  { title: 'The Wolf of Wall Street' },
+  { title: 'The Wolf of Wall Street', images: [wolf_img] },
   {
     title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
     images: [bourne_identity_img, bourne_supremacy_img, bourne_ultimatum_img],

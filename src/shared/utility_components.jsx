@@ -353,7 +353,7 @@ export function Screen_Layout(props) {
       <main
         style={{
           'margin-left': menu_open() ? `${sidebar_width()}px` : '60px',
-          padding: '2.5rem',
+          padding: '2.5rem 4rem',
           display: 'flex',
           'flex-direction': 'column',
           gap: '1rem',
