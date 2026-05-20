@@ -17,14 +17,14 @@ export function Home_Screen() {
         <h1
           style={{
             'font-weight': 700,
-            'font-size': '120px',
+            'font-size': '80px',
             'line-height': 1.1,
             margin: 0,
             color: t().text_h,
             'text-align': 'center',
           }}
         >
-          Hi! Welcome.
+          Hi, I'm Kevin! Welcome.
         </h1>
       </div>
     </Screen_Layout>
