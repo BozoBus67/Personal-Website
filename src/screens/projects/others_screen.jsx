@@ -31,6 +31,7 @@ export function Others_Screen() {
 
       <Personal_Website />
       <ML_Compiler />
+      <Toy_OS />
     </Screen_Layout>
   )
 }
@@ -53,6 +54,17 @@ function Personal_Website() {
       <div style={item_title_style(t)}>Personal Website</div>
       <p style={item_blurb_style(t)}>{personal_website_blurb}</p>
       <Github_Footer href="https://github.com/BozoBus67/Personal-Website" />
+    </div>
+  )
+}
+
+function Toy_OS() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={item_title_style(t)}>Toy OS</div>
+      <p style={item_blurb_style(t)}>{toy_os_blurb}</p>
+      <Github_Footer href="https://github.com/BozoBus67/Toy-OS" />
     </div>
   )
 }
@@ -99,3 +111,6 @@ const ml_compiler_blurb =
 
 const personal_website_blurb =
 `You're looking at it right now! This is built with SolidJS, a lightweight React-like framework. I liked React's way of UI programming where you define JSX components via functions, it feels more natural than other frameworks I've experiemnted with such as Vue and Svelte. I didn't need React's state-management machinery, so I opted to just use Solid.`
+
+const toy_os_blurb =
+`Placeholder blurb. Edit later.`
