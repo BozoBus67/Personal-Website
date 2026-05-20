@@ -1,6 +1,8 @@
 import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
 
+const code_geass_blurb = '...'
+
 export function Recommendations_Screen() {
   const t = useTheme
 
@@ -64,10 +66,7 @@ export function Recommendations_Screen() {
           <div style={{ 'font-weight': 700, color: t().text_h, 'font-size': '1.1rem' }}>
             Code Geass
           </div>
-          <p style={{ margin: 0 }}>
-            Placeholder text. A few sentences on why Code Geass is worth watching go here —
-            the premise, what makes Lelouch tick, the way the show treats consequence. Edit later.
-          </p>
+          <p style={{ margin: 0 }}>{code_geass_blurb}</p>
         </div>
       </div>
     </Screen_Layout>
