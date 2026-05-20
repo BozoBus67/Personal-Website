@@ -39,15 +39,9 @@ function ML_Compiler() {
   const t = useTheme
   return (
     <div>
-      <a
-        href="https://github.com/BozoBus67/Toy-ML-Compiler"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={item_title_link_style(t)}
-      >
-        ML Compiler
-      </a>
+      <div style={item_title_style(t)}>ML Compiler</div>
       <p style={item_blurb_style(t)}>{ml_compiler_blurb}</p>
+      <Github_Footer href="https://github.com/BozoBus67/Toy-ML-Compiler" />
     </div>
   )
 }
@@ -56,26 +50,41 @@ function Personal_Website() {
   const t = useTheme
   return (
     <div>
-      <a
-        href="https://github.com/BozoBus67/Personal-Website"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={item_title_link_style(t)}
-      >
-        Personal Website
-      </a>
+      <div style={item_title_style(t)}>Personal Website</div>
       <p style={item_blurb_style(t)}>{personal_website_blurb}</p>
+      <Github_Footer href="https://github.com/BozoBus67/Personal-Website" />
     </div>
   )
 }
 
-const item_title_link_style = (t) => ({
+function Github_Footer(props) {
+  const t = useTheme
+  return (
+    <p
+      style={{
+        margin: '0.5rem 0 0',
+        color: t().text,
+        'font-size': '0.95rem',
+      }}
+    >
+      If you want, check it out:{' '}
+      <a
+        href={props.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: t().accent, 'text-decoration': 'none' }}
+      >
+        {props.href.replace(/^https?:\/\//, '')}
+      </a>
+    </p>
+  )
+}
+
+const item_title_style = (t) => ({
   'font-weight': 700,
   'font-size': '1.5rem',
   margin: '1rem 0 0.5rem',
-  color: t().accent,
-  'text-decoration': 'none',
-  display: 'inline-block',
+  color: t().text_h,
 })
 
 const item_blurb_style = (t) => ({
