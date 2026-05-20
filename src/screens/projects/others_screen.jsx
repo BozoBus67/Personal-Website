@@ -26,7 +26,7 @@ export function Others_Screen() {
           'text-align': 'center',
         }}
       >
-        Things I kinda did that are kinda experimental, half-finished, or just sitting around.
+        Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, or experimental.
       </p>
 
       <ML_Compiler />
