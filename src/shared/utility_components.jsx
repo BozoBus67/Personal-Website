@@ -83,7 +83,7 @@ function Sidebar_Link(props) {
       onMouseLeave={() => set_hover(false)}
       style={{
         display: 'block',
-        padding: '0.9rem 1rem 0.9rem 1.75rem',
+        padding: '0.9rem 1.75rem',
         color: t().text_h,
         background: get_bg(),
         'border-bottom': `1px solid ${t().border}`,
