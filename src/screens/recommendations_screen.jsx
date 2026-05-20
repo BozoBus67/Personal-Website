@@ -53,9 +53,9 @@ export function Recommendations_Screen() {
           'max-width': '100%',
           height: 'auto',
           display: 'block',
-          border: `2px solid ${t().text_h}`,
+          border: '2px solid #4FC3F7',
           'margin-left': 'auto',
-          'margin-right': 'auto',
+          'margin-right': '8rem',
           'margin-bottom': '5rem',
         }}
       />
@@ -122,7 +122,7 @@ function Rec_Card(props) {
               style={{
                 height: REC_IMAGE_HEIGHT,
                 display: 'block',
-                border: `2px solid ${t().text_h}`,
+                border: '2px solid #FFD700',
               }}
             />
           ))}
