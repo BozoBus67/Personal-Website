@@ -18,7 +18,7 @@ const all_image_assets = import.meta.glob(
   { eager: true, query: '?url', import: 'default' },
 )
 
-const PATHS_WITH_BG = new Set(['/', '/contact'])
+const PATHS_WITH_BG = new Set(['/', '/contact', '/help'])
 
 function App() {
   const t = useTheme
