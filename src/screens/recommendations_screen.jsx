@@ -1,6 +1,8 @@
 import { useTheme } from '../shared/constants'
 import { Screen_Layout } from '../shared/utility_components'
-import code_geass_img from '../assets/image.png'
+import code_geass_img from '../assets/recommendations_screen/code_geass.png'
+import arcane_img from '../assets/recommendations_screen/Arcane.jpg'
+import bourne_img from '../assets/recommendations_screen/the_bourne_identity.jpg'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -64,18 +66,33 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      {others.map((line) => (
-        <p
-          style={{
-            margin: '0 0 0.5rem',
-            color: t().text_h,
-            'font-size': '1.15rem',
-            'line-height': 1.6,
-            'font-weight': 700,
-          }}
-        >
-          {line}
-        </p>
+      {others.map((rec) => (
+        <div style={{ 'margin-bottom': '1rem' }}>
+          <p
+            style={{
+              margin: '0 0 0.5rem',
+              color: t().text_h,
+              'font-size': '1.15rem',
+              'line-height': 1.6,
+              'font-weight': 700,
+            }}
+          >
+            {rec.title}
+          </p>
+          {rec.image && (
+            <img
+              src={rec.image}
+              alt={rec.title}
+              style={{
+                width: '600px',
+                'max-width': '100%',
+                height: 'auto',
+                display: 'block',
+                border: `2px solid ${t().text_h}`,
+              }}
+            />
+          )}
+        </div>
       ))}
     </Screen_Layout>
   )
@@ -87,11 +104,11 @@ The original is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Co
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
-`There are others, but people's watch lists are long enough, so I would just recommend this one if you have the time. But if you're interested, here are more below.`
+`There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
 
 const others = [
-  'Arcane',
-  'Ninjago Season 8',
-  'The Wolf of Wall Street',
-  'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum',
+  { title: 'Arcane', image: arcane_img },
+  { title: 'Ninjago Season 8' },
+  { title: 'The Wolf of Wall Street' },
+  { title: 'The Bourne Trilogy — The Bourne Identity, The Bourne Supremacy, The Bourne Ultimatum', image: bourne_img },
 ]
