@@ -85,7 +85,6 @@ export function Recommendations_Screen() {
   )
 }
 
-const REC_IMAGE_WIDTH = '200px'
 const REC_IMAGE_HEIGHT = '300px'
 
 function Rec_Card(props) {
@@ -109,6 +108,7 @@ function Rec_Card(props) {
           'line-height': 1.4,
           'font-weight': 700,
           'white-space': 'nowrap',
+          'text-align': 'center',
         }}
       >
         {props.rec.title}
@@ -120,9 +120,7 @@ function Rec_Card(props) {
               src={src}
               alt={props.rec.title}
               style={{
-                width: REC_IMAGE_WIDTH,
                 height: REC_IMAGE_HEIGHT,
-                'object-fit': 'cover',
                 display: 'block',
                 border: `2px solid ${t().text_h}`,
               }}
