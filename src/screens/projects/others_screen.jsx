@@ -67,7 +67,6 @@ function Github_Footer(props) {
         'font-size': '0.95rem',
       }}
     >
-      If you want, check it out:{' '}
       <a
         href={props.href}
         target="_blank"
