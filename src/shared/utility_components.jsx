@@ -313,8 +313,8 @@ export function Theme_Toggle() {
       data-menu-keep-open
       style={{
         position: 'fixed',
-        top: '1rem',
-        right: '1rem',
+        top: '0.5rem',
+        right: '0.5rem',
         'z-index': 20,
         border: 'none',
         background: 'transparent',
@@ -353,7 +353,7 @@ export function Screen_Layout(props) {
       <main
         style={{
           'margin-left': menu_open() ? `${sidebar_width()}px` : '60px',
-          padding: '2rem 5rem 5rem',
+          padding: '2rem 4.5rem 5rem',
           'min-height': '100vh',
           'box-sizing': 'border-box',
           display: 'flex',
