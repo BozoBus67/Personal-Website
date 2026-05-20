@@ -19,7 +19,7 @@ export function Recommendations_Screen() {
           'font-weight': 700,
           'font-size': '48px',
           'line-height': 1,
-          margin: 0,
+          margin: '2rem 0 0',
           color: t().text_h,
           'text-align': 'center',
         }}
@@ -48,6 +48,7 @@ export function Recommendations_Screen() {
           height: 'auto',
           display: 'block',
           border: `2px solid ${t().text_h}`,
+          'margin-bottom': '2rem',
         }}
       />
     </Screen_Layout>
