@@ -1,5 +1,5 @@
-import { createEffect, onMount } from 'solid-js'
-import { Router, Route } from '@solidjs/router'
+import { createEffect, onMount, Show } from 'solid-js'
+import { Router, Route, useLocation } from '@solidjs/router'
 import { useTheme } from './shared/constants'
 import light_bg from './assets/KqyRp-Y_KZ0.jpg'
 import dark_bg from './assets/sodium-street-lamps.webp'
@@ -18,6 +18,8 @@ const all_image_assets = import.meta.glob(
   { eager: true, query: '?url', import: 'default' },
 )
 
+const PATHS_WITH_BG = new Set(['/', '/contact'])
+
 function App() {
   const t = useTheme
 
@@ -30,7 +32,7 @@ function App() {
 
   createEffect(() => {
     const theme = t()
-    document.body.style.background = 'transparent'
+    document.body.style.background = theme.bg
     document.body.style.color = theme.text
     document.body.style.overscrollBehavior = 'none'
     document.documentElement.style.overscrollBehavior = 'none'
@@ -38,8 +40,27 @@ function App() {
   })
 
   return (
+    <Router root={Layout}>
+      <Route path="/" component={Home_Screen} />
+      <Route path="/projects/project-ec" component={Project_EC_Screen} />
+      <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
+      <Route path="/projects/personal-website" component={Personal_Website_Screen} />
+      <Route path="/coursework" component={Coursework_Screen} />
+      <Route path="/recommendations" component={Recommendations_Screen} />
+      <Route path="/contact" component={Contact_Screen} />
+      <Route path="/help" component={Help_Screen} />
+      <Route path="/settings" component={Settings_Screen} />
+    </Router>
+  )
+}
+
+function Layout(props) {
+  const location = useLocation()
+  return (
     <>
-      <Background />
+      <Show when={PATHS_WITH_BG.has(location.pathname)}>
+        <Background />
+      </Show>
       <div
         style={{
           position: 'fixed',
@@ -52,17 +73,7 @@ function App() {
           'overscroll-behavior': 'contain',
         }}
       >
-        <Router>
-          <Route path="/" component={Home_Screen} />
-          <Route path="/projects/project-ec" component={Project_EC_Screen} />
-          <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
-          <Route path="/projects/personal-website" component={Personal_Website_Screen} />
-          <Route path="/coursework" component={Coursework_Screen} />
-          <Route path="/recommendations" component={Recommendations_Screen} />
-          <Route path="/contact" component={Contact_Screen} />
-          <Route path="/help" component={Help_Screen} />
-          <Route path="/settings" component={Settings_Screen} />
-        </Router>
+        {props.children}
       </div>
     </>
   )
