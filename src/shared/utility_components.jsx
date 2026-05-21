@@ -17,7 +17,6 @@ import {
   set_sidebar_width,
   is_disclosure_open,
   toggle_disclosure,
-  PATHS_WITH_BG,
 } from './constants'
 import sun from '../assets/light_dark_toggle_switch/sun.png'
 import moon from '../assets/light_dark_toggle_switch/moon.png'
@@ -339,10 +338,6 @@ const DEFAULT_PADDING_SIDE = '4.5rem'
 const DEFAULT_PADDING_BOTTOM = '5rem'
 
 export function Screen_Layout(props) {
-  const t = useTheme
-  const location = useLocation()
-  const has_bg_image = () => PATHS_WITH_BG.has(location.pathname)
-
   createEffect(() => {
     if (!menu_open()) return
     const on_key = (e) => {
@@ -365,7 +360,6 @@ export function Screen_Layout(props) {
           padding: `${props.padding_top ?? DEFAULT_PADDING_TOP} ${props.padding_side ?? DEFAULT_PADDING_SIDE} ${props.padding_bottom ?? DEFAULT_PADDING_BOTTOM}`,
           'min-height': '100vh',
           'box-sizing': 'border-box',
-          background: has_bg_image() ? 'transparent' : t().page_bg,
           display: 'flex',
           'flex-direction': 'column',
           gap: '1rem',
