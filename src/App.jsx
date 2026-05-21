@@ -30,7 +30,7 @@ function App() {
 
   createEffect(() => {
     const theme = t()
-    document.body.style.background = theme.page_bg
+    document.body.style.background = theme.bg
     document.body.style.color = theme.text
     document.body.style.overscrollBehavior = 'none'
     document.documentElement.style.overscrollBehavior = 'none'
@@ -66,7 +66,10 @@ function Layout(props) {
   }
   return (
     <>
-      <Show when={PATHS_WITH_BG.has(location.pathname)}>
+      <Show
+        when={PATHS_WITH_BG.has(location.pathname)}
+        fallback={<Page_Bg />}
+      >
         <Background />
       </Show>
       <div
@@ -87,6 +90,27 @@ function Layout(props) {
         {props.children}
       </div>
     </>
+  )
+}
+
+function Page_Bg() {
+  const t = useTheme
+  const left_offset = () =>
+    menu_open() ? `${sidebar_width()}px` : '60px'
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: left_offset(),
+        right: 0,
+        bottom: 0,
+        background: t().page_bg,
+        'z-index': -1,
+        'pointer-events': 'none',
+        transition: 'left 0.25s ease',
+      }}
+    />
   )
 }
 
