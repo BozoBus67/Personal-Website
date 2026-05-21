@@ -129,12 +129,11 @@ function Rec_Card(props) {
 }
 
 const code_geass_blurb =
-`This is my favorite show. It's a complete story, through and through.
-The original is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them.
+`This is my personal favorite piece of media. The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete. 
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
-`There are others, but people's watch lists are long enough, so I would just recommend this one. I also think But if you have the time and you're interested, here are some more:`
+`There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
 
 const recs = [
   { title: 'Arcane', images: [arcane_thumbnail] },
