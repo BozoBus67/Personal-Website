@@ -30,7 +30,7 @@ function App() {
 
   createEffect(() => {
     const theme = t()
-    document.body.style.background = theme.bg
+    document.body.style.background = theme.page_bg
     document.body.style.color = theme.text
     document.body.style.overscrollBehavior = 'none'
     document.documentElement.style.overscrollBehavior = 'none'
