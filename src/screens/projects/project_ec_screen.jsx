@@ -81,14 +81,16 @@ export function Project_EC_Screen() {
 
   const para_style = () => ({
     margin: 0,
-    color: t().text,
+    color: t().text_h,
+    'font-size': '1.1rem',
     'line-height': 1.5,
   })
 
   const list_style = () => ({
     margin: 0,
     'padding-left': '1.25rem',
-    color: t().text,
+    color: t().text_h,
+    'font-size': '1.1rem',
     'line-height': 1.5,
     display: 'flex',
     'flex-direction': 'column',
