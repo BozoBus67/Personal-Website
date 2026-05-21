@@ -152,6 +152,8 @@ const rec_rows = [
       images: [bourne_identity_thumbnail, bourne_supremacy_thumbnail, bourne_ultimatum_thumbnail],
     },
     { title: 'Squid Game', images: [squid_game_thumbnail] },
+  ],
+  [
     { title: 'Your Lie in April', images: [your_lie_in_april_thumbnail] },
   ],
 ]
