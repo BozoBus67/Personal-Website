@@ -72,13 +72,9 @@ export function Recommendations_Screen() {
         {transition_blurb}
       </p>
 
-      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '2rem' }}>
-        {rec_rows.map((row) => (
-          <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '2rem' }}>
-            {row.map((rec) => (
-              <Rec_Card rec={rec} />
-            ))}
-          </div>
+      <div style={{ display: 'flex', 'flex-wrap': 'wrap', gap: '2rem' }}>
+        {recs.map((rec) => (
+          <Rec_Card rec={rec} />
         ))}
       </div>
     </Screen_Layout>
@@ -140,20 +136,14 @@ If you've never watched anime before or usually watch dubbed, I highly recommend
 const transition_blurb =
 `There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
 
-const rec_rows = [
-  [
-    { title: 'Arcane', images: [arcane_thumbnail] },
-    { title: 'The Wolf of Wall Street', images: [wolf_thumbnail] },
-    { title: 'Ninjago Season 8', images: [ninjago_thumbnail] },
-  ],
-  [
-    {
-      title: 'The Bourne Trilogy',
-      images: [bourne_identity_thumbnail, bourne_supremacy_thumbnail, bourne_ultimatum_thumbnail],
-    },
-    { title: 'Squid Game', images: [squid_game_thumbnail] },
-  ],
-  [
-    { title: 'Your Lie in April', images: [your_lie_in_april_thumbnail] },
-  ],
+const recs = [
+  { title: 'Arcane', images: [arcane_thumbnail] },
+  { title: 'The Wolf of Wall Street', images: [wolf_thumbnail] },
+  { title: 'Ninjago Season 8', images: [ninjago_thumbnail] },
+  {
+    title: 'The Bourne Trilogy',
+    images: [bourne_identity_thumbnail, bourne_supremacy_thumbnail, bourne_ultimatum_thumbnail],
+  },
+  { title: 'Squid Game', images: [squid_game_thumbnail] },
+  { title: 'Your Lie in April', images: [your_lie_in_april_thumbnail] },
 ]
