@@ -65,7 +65,12 @@ export function Settings_Screen() {
           onChange={(e) => set_accordion_mode(e.currentTarget.checked)}
           style={{ width: '1.1rem', height: '1.1rem', cursor: 'pointer' }}
         />
-        <span>Only one sub-category open at a time</span>
+        <span>
+          Only one sub-category open at a time{' '}
+          <span style={{ color: t().text }}>
+            (doesn't do anything atm because only 1 expandable sub-category)
+          </span>
+        </span>
       </label>
     </Screen_Layout>
   )
