@@ -9,6 +9,7 @@ import bourne_supremacy_thumbnail from '../assets/recommendations_screen/The_Bou
 import bourne_ultimatum_thumbnail from '../assets/recommendations_screen/The_Bourne_Ultimatum_Thumbnail.jpg'
 import squid_game_thumbnail from '../assets/recommendations_screen/Squid_Game_Thumbnail.jpeg'
 import your_lie_in_april_thumbnail from '../assets/recommendations_screen/Your_Lie_in_April_Thumbnail.jpg'
+import death_note_thumbnail from '../assets/recommendations_screen/Death_Note_Thumbnail.jpg'
 
 export function Recommendations_Screen() {
   const t = useTheme
@@ -145,4 +146,5 @@ const recs = [
   },
   { title: 'Squid Game', images: [squid_game_thumbnail] },
   { title: 'Your Lie in April', images: [your_lie_in_april_thumbnail] },
+  { title: 'Death Note', images: [death_note_thumbnail] },
 ]
