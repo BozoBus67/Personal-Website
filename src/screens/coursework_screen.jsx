@@ -113,6 +113,7 @@ const course_title_style = (t) => ({
   'font-size': '1.5rem',
   margin: '1rem 0 0.5rem',
   color: t().text_h,
+  'font-family': "'Oxygen', sans-serif",
 })
 
 const course_blurb_style = (t) => ({
