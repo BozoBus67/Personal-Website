@@ -24,7 +24,7 @@ export function Home_Screen() {
             'text-align': 'center',
           }}
         >
-          Hi! Welcome.
+          Hello! Welcome.
         </h1>
       </div>
     </Screen_Layout>
