@@ -65,16 +65,7 @@ function CS341() {
   const t = useTheme
   return (
     <div>
-      <div style={course_title_style(t)}>
-        <a
-          href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'none' }}
-        >
-          CS341
-        </a>: Beginner Algorithms
-      </div>
+      <div style={course_title_style(t)}>CS341: Beginner Algorithms</div>
       <p style={course_blurb_style(t)}>{cs341_blurb}</p>
       <Course_Link href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/" />
     </div>
