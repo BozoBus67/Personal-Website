@@ -45,17 +45,8 @@ function CS240E() {
   return (
     <div>
       <div style={course_title_style(t)}>CS240E: Data Structures</div>
-      <p style={course_blurb_style(t)}>
-        {cs240e_blurb}{' '}
-        <a
-          href="https://student.cs.uwaterloo.ca/~cs240e/w25/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'underline' }}
-        >
-          https://student.cs.uwaterloo.ca/~cs240e/w25/
-        </a>
-      </p>
+      <p style={course_blurb_style(t)}>{cs240e_blurb}</p>
+      <Course_Link href="https://student.cs.uwaterloo.ca/~cs240e/w25/" />
     </div>
   )
 }
@@ -84,17 +75,8 @@ function CS341() {
           CS341
         </a>: Beginner Algorithms
       </div>
-      <p style={course_blurb_style(t)}>
-        {cs341_blurb}{' '}
-        <a
-          href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'underline' }}
-        >
-          https://cs.uwaterloo.ca/~lapchi/cs341-2025/
-        </a>
-      </p>
+      <p style={course_blurb_style(t)}>{cs341_blurb}</p>
+      <Course_Link href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/" />
     </div>
   )
 }
@@ -104,17 +86,8 @@ function CS349() {
   return (
     <div>
       <div style={course_title_style(t)}>CS349: Introduction to UI</div>
-      <p style={course_blurb_style(t)}>
-        {cs349_blurb}{' '}
-        <a
-          href="https://student.cs.uwaterloo.ca/~cs349/1259/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'underline' }}
-        >
-          https://student.cs.uwaterloo.ca/~cs349/1259/
-        </a>
-      </p>
+      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
+      <Course_Link href="https://student.cs.uwaterloo.ca/~cs349/1259/" />
     </div>
   )
 }
@@ -140,17 +113,8 @@ function CS466() {
         color: '#00FFFF',
         'font-family': "'Oxygen', sans-serif",
       }}>CS466: Probabilistic Algorithms</div>
-      <p style={course_blurb_style(t)}>
-        {cs466_blurb}{' '}
-        <a
-          href="https://cs.uwaterloo.ca/~lapchi/cs466-2026/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'underline' }}
-        >
-          https://cs.uwaterloo.ca/~lapchi/cs466-2026/
-        </a>
-      </p>
+      <p style={course_blurb_style(t)}>{cs466_blurb}</p>
+      <Course_Link href="https://cs.uwaterloo.ca/~lapchi/cs466-2026/" />
     </div>
   )
 }
@@ -160,18 +124,30 @@ function Full_Course_List() {
   return (
     <div>
       <div style={course_title_style(t)}>Full Course List</div>
-      <p style={course_blurb_style(t)}>
-        {full_course_list_blurb}{' '}
-        <a
-          href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'inherit', 'text-decoration': 'underline' }}
-        >
-          https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0
-        </a>
-      </p>
+      <p style={course_blurb_style(t)}>{full_course_list_blurb}</p>
+      <Course_Link href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0" />
     </div>
+  )
+}
+
+function Course_Link(props) {
+  const t = useTheme
+  return (
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'block',
+        'margin-top': '0.5rem',
+        color: t().text_h,
+        'text-decoration': 'underline',
+        'font-size': '1.1rem',
+        'line-height': 1.6,
+      }}
+    >
+      {props.href}
+    </a>
   )
 }
 
