@@ -125,19 +125,19 @@ const course_blurb_style = (t) => ({
 })
 
 const cs240e_blurb =
-`Taught by Therese Biedl. We learned a lot of theoretical data structures, most of which were pretty useless in practice, but it was interesting and she was a good teacher with reasonable assignments.`
+`A course on standard data structures, plus some algorithms on string matching, e.g. KMP, Boyer-Moore, as well as algorithms for text compression, e.g. RLE, LZW, bzip2. https://student.cs.uwaterloo.ca/~cs240e/w25/`
 
 const cs246_blurb =
-`This is branded as an object oriented programming course, but it's more of a "how to design medium sized programs" course. As someone whose only prior programming experience are W3School tutorials, this course tuaght me how to actually program something larger than 1 file. This was the starting point for everything I can do now.`
+`The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
 const cs349_blurb =
-`Very well designed assignments. A1 was essentially drawing things diectly to a screen canvas, A2 we started abstracting things into widget classes, A3 was raw HTML dom manipulation, and A4 we learned Preact. Very well designed assignments. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
+`Very well designed assignments. A1 was drawing things directly to a screen canvas, A2 we started abstracting things into widget classes, A3 was raw HTML dom manipulation, and A4 we learned Preact. Very well designed assignments. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
 
 const cs341_blurb =
-`Difficult. We learned standard determinstic algorithm techniques like Divide and Conquer, Greedy Algorithms, and Dynamic Programming, but there was a large emphasis on graph algorithms, as well as CO (Combinatorics and Optimization) style problems, which were often quite difficult. Interestingly, the two hardest problems in the course were not graph related. You can check out the coruse website here: . Taught by Lap Chi Lau. Extremely good lecture notes, but tough.`
+`Difficult. We learned standard deterministic algorithm techniques like Divide and Conquer, Greedy Algorithms, and Dynamic Programming, but there was a large emphasis on graph algorithms, as well as CO (Combinatorics and Optimization) style problems, which were often quite difficult. Interestingly, the two hardest problems in the course were not graph related. You can check out the course website here: . Taught by Lap Chi Lau. Extremely good lecture notes, but tough.`
 
 const cs466_blurb =
-`Currently taking! This course is on randomized, distributed, and streaming algorithms. Taught by Lap Chi Lau. Will probably e the hardest course I ever take.`
+`This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations. https://cs.uwaterloo.ca/~lapchi/cs466-2026/`
 
 const cs763_blurb =
-`Currently taking! Also taught by Therese Biedl. Computational geometry.`
+`Computational geometry.`
