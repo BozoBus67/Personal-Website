@@ -31,8 +31,8 @@ export function Coursework_Screen() {
 
       <CS240E />
       <CS246 />
-      <CS349 />
       <CS341 />
+      <CS349 />
       <CS466 />
       <CS763 />
     </Screen_Layout>
@@ -59,16 +59,6 @@ function CS246() {
   )
 }
 
-function CS349() {
-  const t = useTheme
-  return (
-    <div>
-      <div style={course_title_style(t)}>CS349: Introduction to UI</div>
-      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
-    </div>
-  )
-}
-
 function CS341() {
   const t = useTheme
   return (
@@ -84,6 +74,16 @@ function CS341() {
         </a>: Beginner Algorithms
       </div>
       <p style={course_blurb_style(t)}>{cs341_blurb}</p>
+    </div>
+  )
+}
+
+function CS349() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>CS349: Introduction to UI</div>
+      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
     </div>
   )
 }
@@ -130,11 +130,11 @@ const cs240e_blurb =
 const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
-const cs349_blurb =
-`A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
-
 const cs341_blurb =
 `A standard course on deterministic algorithms. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems. https://cs.uwaterloo.ca/~lapchi/cs341-2025/`
+
+const cs349_blurb =
+`A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
 
 const cs466_blurb =
 `This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations. https://cs.uwaterloo.ca/~lapchi/cs466-2026/`
