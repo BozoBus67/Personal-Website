@@ -33,8 +33,8 @@ export function Coursework_Screen() {
       <CS246 />
       <CS341 />
       <CS349 />
-      <CS466 />
       <CS763 />
+      <CS466 />
     </Screen_Layout>
   )
 }
@@ -88,22 +88,22 @@ function CS349() {
   )
 }
 
-function CS466() {
-  const t = useTheme
-  return (
-    <div>
-      <div style={course_title_style(t)}>CS466: Intermediate Algorithms</div>
-      <p style={course_blurb_style(t)}>{cs466_blurb}</p>
-    </div>
-  )
-}
-
 function CS763() {
   const t = useTheme
   return (
     <div>
       <div style={course_title_style(t)}>CS763: Computational Geometry</div>
       <p style={course_blurb_style(t)}>{cs763_blurb}</p>
+    </div>
+  )
+}
+
+function CS466() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>CS466: Probabilistic Algorithms</div>
+      <p style={course_blurb_style(t)}>{cs466_blurb}</p>
     </div>
   )
 }
@@ -131,13 +131,13 @@ const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
 const cs341_blurb =
-`A standard course on deterministic algorithms. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems. https://cs.uwaterloo.ca/~lapchi/cs341-2025/`
+`A standard course on deterministic algorithms, plus max-flow and NP-complete reductions. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems. https://cs.uwaterloo.ca/~lapchi/cs341-2025/`
 
 const cs349_blurb =
 `A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
 
+const cs763_blurb =
+`We closely followed the textbook "Computational Geometry: Algorithms and Applications" by de Berg, Cheong, van Kreveld, Overmars. Despite being a graduate course, it wasn't too difficult.`
+
 const cs466_blurb =
 `This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations. https://cs.uwaterloo.ca/~lapchi/cs466-2026/`
-
-const cs763_blurb =
-`Computational geometry.`
