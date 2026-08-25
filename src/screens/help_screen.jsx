@@ -70,7 +70,6 @@ export function Help_Screen() {
             display: 'flex',
             'flex-direction': 'column',
             gap: '3rem',
-            'padding-left': '8rem',
           }}
         >
           <Step number="1" text="Click Contact" image={step1} />
