@@ -198,7 +198,7 @@ const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
 const cs341_blurb =
-`A standard course on deterministic algorithms, plus max-flow and NP-complete reductions. A substantial amount of course material focuses on graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems.`
+`A standard course on deterministic algorithms, plus max-flow and NP-complete reductions. A substantial amount of course material focused on graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems.`
 
 const cs349_blurb =
 `A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
