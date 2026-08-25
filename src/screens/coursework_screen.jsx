@@ -26,7 +26,7 @@ export function Coursework_Screen() {
           'text-align': 'center',
         }}
       >
-        Some of my favorite courses taken:
+        Here I list some notable courses I've taken. A full list of couses is availabe At the bottom of this page.
       </p>
 
       <CS240E />
@@ -35,6 +35,7 @@ export function Coursework_Screen() {
       <CS349 />
       <CS763 />
       <CS466 />
+      <Full_Course_List />
     </Screen_Layout>
   )
 }
@@ -148,6 +149,26 @@ function CS466() {
           style={{ color: 'inherit', 'text-decoration': 'underline' }}
         >
           https://cs.uwaterloo.ca/~lapchi/cs466-2026/
+        </a>
+      </p>
+    </div>
+  )
+}
+
+function Full_Course_List() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>Full Course List</div>
+      <p style={course_blurb_style(t)}>
+        AAAAAAA{' '}
+        <a
+          href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'underline' }}
+        >
+          https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0
         </a>
       </p>
     </div>
