@@ -103,7 +103,17 @@ function CS349() {
   return (
     <div>
       <div style={course_title_style(t)}>CS349: Introduction to UI</div>
-      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
+      <p style={course_blurb_style(t)}>
+        {cs349_blurb}{' '}
+        <a
+          href="https://student.cs.uwaterloo.ca/~cs349/1259/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'underline' }}
+        >
+          https://student.cs.uwaterloo.ca/~cs349/1259/
+        </a>
+      </p>
     </div>
   )
 }
