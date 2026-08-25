@@ -31,8 +31,8 @@ export function Coursework_Screen() {
 
       <CS240E />
       <CS246 />
-      <CS341 />
       <CS349 />
+      <CS341 />
       <CS466 />
       <CS763 />
     </Screen_Layout>
@@ -59,6 +59,16 @@ function CS246() {
   )
 }
 
+function CS349() {
+  const t = useTheme
+  return (
+    <div>
+      <div style={course_title_style(t)}>CS349: Introduction to UI</div>
+      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
+    </div>
+  )
+}
+
 function CS341() {
   const t = useTheme
   return (
@@ -74,16 +84,6 @@ function CS341() {
         </a>: Beginner Algorithms
       </div>
       <p style={course_blurb_style(t)}>{cs341_blurb}</p>
-    </div>
-  )
-}
-
-function CS349() {
-  const t = useTheme
-  return (
-    <div>
-      <div style={course_title_style(t)}>CS349: Introduction to UI</div>
-      <p style={course_blurb_style(t)}>{cs349_blurb}</p>
     </div>
   )
 }
