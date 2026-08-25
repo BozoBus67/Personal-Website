@@ -210,4 +210,4 @@ const cs466_blurb =
 `This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations.`
 
 const full_course_list_blurb =
-`Full list of taken and tentative upcong ocurses `
+`Every course I've taken and plan to take:`
