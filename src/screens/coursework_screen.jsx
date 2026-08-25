@@ -29,10 +29,6 @@ export function Coursework_Screen() {
         Some of my favorite courses taken:
       </p>
 
-      <p style={{ color: t().text_h, 'font-size': '2rem', 'text-align': 'center', margin: '1rem 0' }}>
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-      </p>
-
       <CS240E />
       <CS246 />
       <CS341 />
@@ -136,7 +132,13 @@ function CS466() {
   const t = useTheme
   return (
     <div>
-      <div style={{ ...course_title_style(t), color: '#40E0D0' }}>CS466: Probabilistic Algorithms</div>
+      <div style={{
+        'font-weight': 700,
+        'font-size': '1.5rem',
+        margin: '1rem 0 0.5rem',
+        color: '#00FFFF',
+        'font-family': "'Oxygen', sans-serif",
+      }}>CS466: Probabilistic Algorithms</div>
       <p style={course_blurb_style(t)}>
         {cs466_blurb}{' '}
         <a
