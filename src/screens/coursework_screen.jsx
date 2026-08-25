@@ -44,7 +44,17 @@ function CS240E() {
   return (
     <div>
       <div style={course_title_style(t)}>CS240E: Data Structures</div>
-      <p style={course_blurb_style(t)}>{cs240e_blurb}</p>
+      <p style={course_blurb_style(t)}>
+        {cs240e_blurb}{' '}
+        <a
+          href="https://student.cs.uwaterloo.ca/~cs240e/w25/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'underline' }}
+        >
+          https://student.cs.uwaterloo.ca/~cs240e/w25/
+        </a>
+      </p>
     </div>
   )
 }
@@ -73,7 +83,17 @@ function CS341() {
           CS341
         </a>: Beginner Algorithms
       </div>
-      <p style={course_blurb_style(t)}>{cs341_blurb}</p>
+      <p style={course_blurb_style(t)}>
+        {cs341_blurb}{' '}
+        <a
+          href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'underline' }}
+        >
+          https://cs.uwaterloo.ca/~lapchi/cs341-2025/
+        </a>
+      </p>
     </div>
   )
 }
@@ -103,7 +123,17 @@ function CS466() {
   return (
     <div>
       <div style={{ ...course_title_style(t), color: '#06B6D4' }}>CS466: Probabilistic Algorithms</div>
-      <p style={course_blurb_style(t)}>{cs466_blurb}</p>
+      <p style={course_blurb_style(t)}>
+        {cs466_blurb}{' '}
+        <a
+          href="https://cs.uwaterloo.ca/~lapchi/cs466-2026/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', 'text-decoration': 'underline' }}
+        >
+          https://cs.uwaterloo.ca/~lapchi/cs466-2026/
+        </a>
+      </p>
     </div>
   )
 }
@@ -125,13 +155,13 @@ const course_blurb_style = (t) => ({
 })
 
 const cs240e_blurb =
-`A course on standard data structures, plus some algorithms on string matching, e.g. KMP, Boyer-Moore, as well as algorithms for text compression, e.g. RLE, LZW, bzip2. https://student.cs.uwaterloo.ca/~cs240e/w25/`
+`A course on standard data structures, plus some algorithms on string matching, e.g. KMP, Boyer-Moore, as well as algorithms for text compression, e.g. RLE, LZW, bzip2.`
 
 const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
 const cs341_blurb =
-`A standard course on deterministic algorithms, plus max-flow and NP-complete reductions. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems. https://cs.uwaterloo.ca/~lapchi/cs341-2025/`
+`A standard course on deterministic algorithms, plus max-flow and NP-complete reductions. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems.`
 
 const cs349_blurb =
 `A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
@@ -140,4 +170,4 @@ const cs763_blurb =
 `We closely followed the textbook "Computational Geometry: Algorithms and Applications" by de Berg, Cheong, van Kreveld, Overmars. Despite being a graduate course, it wasn't too difficult.`
 
 const cs466_blurb =
-`This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations. https://cs.uwaterloo.ca/~lapchi/cs466-2026/`
+`This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations.`
