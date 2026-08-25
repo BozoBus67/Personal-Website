@@ -136,7 +136,7 @@ function CS466() {
         'font-weight': 700,
         'font-size': '1.5rem',
         margin: '1rem 0 0.5rem',
-        color: '#06B6D4',
+        color: '#40E0D0',
         'font-family': "'Oxygen', sans-serif",
       }}>CS466: Probabilistic Algorithms</div>
       <p style={course_blurb_style(t)}>
