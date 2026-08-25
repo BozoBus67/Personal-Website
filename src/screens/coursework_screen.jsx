@@ -131,10 +131,10 @@ const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
 
 const cs349_blurb =
-`Very well designed assignments. A1 was drawing things directly to a screen canvas, A2 we started abstracting things into widget classes, A3 was raw HTML dom manipulation, and A4 we learned Preact. Very well designed assignments. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
+`A modern course on the inner workings of UI, with very well designed assignments. In A1 we drew things directly to a canvas, in A2 we started abstracting things into widget classes, in A3 we did HTML dom manipulation, and in A4 we learned Preact. Having to implement the subject-observer patterns in A2 and A3 gave good basic understanding of what frameworks like React and Preact were doing underneath.`
 
 const cs341_blurb =
-`Difficult. We learned standard deterministic algorithm techniques like Divide and Conquer, Greedy Algorithms, and Dynamic Programming, but there was a large emphasis on graph algorithms, as well as CO (Combinatorics and Optimization) style problems, which were often quite difficult. Interestingly, the two hardest problems in the course were not graph related. You can check out the course website here: . Taught by Lap Chi Lau. Extremely good lecture notes, but tough.`
+`A standard course on deterministic algorithms. A substantial amount of course material is graph algorithms and CO (Combinatorics and Optimization) style problems. Two very difficult dynamic programming problems. https://cs.uwaterloo.ca/~lapchi/cs341-2025/`
 
 const cs466_blurb =
 `This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations. https://cs.uwaterloo.ca/~lapchi/cs466-2026/`
