@@ -9,12 +9,13 @@ import step5 from '../assets/help_page_stuff/step5.png'
 function Step(props) {
   const t = useTheme
   return (
-    <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.5rem' }}>
+    <div style={{ display: 'flex', 'flex-direction': 'column', 'align-items': 'center', gap: '0.5rem' }}>
       <div
         style={{
           'font-weight': 700,
           color: t().text_h,
           'font-size': '1.6rem',
+          'text-align': 'center',
         }}
       >
         Step {props.number}. {props.text}
@@ -69,6 +70,7 @@ export function Help_Screen() {
           style={{
             display: 'flex',
             'flex-direction': 'column',
+            'align-items': 'center',
             gap: '3rem',
           }}
         >
