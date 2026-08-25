@@ -3,9 +3,9 @@ import { createSignal, createEffect, createRoot } from 'solid-js'
 const THEME_STORAGE_KEY = 'theme'
 
 const get_initial_theme = () => {
-  if (typeof localStorage === 'undefined') return 'light'
+  if (typeof localStorage === 'undefined') return 'dark'
   const saved = localStorage.getItem(THEME_STORAGE_KEY)
-  return saved === 'dark' || saved === 'light' ? saved : 'light'
+  return saved === 'dark' || saved === 'light' ? saved : 'dark'
 }
 
 export const themes = {
