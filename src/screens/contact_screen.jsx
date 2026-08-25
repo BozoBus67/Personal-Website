@@ -46,7 +46,7 @@ function Contact_Contents() {
         label="Personal Email"
         value="666handsomeguy999@gmail.com"
       />
-      <Contact_Item label="Discord" value="thehandsomeguy67420" />
+      <Contact_Item label="Discord" value="thehandsomeguy67410" />
       <Contact_Item
         label="School / Work Email"
         value="k93wang@uwaterloo.ca"
