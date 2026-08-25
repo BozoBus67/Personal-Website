@@ -26,7 +26,7 @@ export function Coursework_Screen() {
           'text-align': 'center',
         }}
       >
-        Here I list some notable courses I've taken. A full list of couses is availabe At the bottom of this page.
+        Here I list some notable courses I've taken. A full list of courses is available at the bottom of this page.
       </p>
 
       <CS240E />
@@ -161,7 +161,7 @@ function Full_Course_List() {
     <div>
       <div style={course_title_style(t)}>Full Course List</div>
       <p style={course_blurb_style(t)}>
-        AAAAAAA{' '}
+        {full_course_list_blurb}{' '}
         <a
           href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0"
           target="_blank"
@@ -208,3 +208,6 @@ const cs763_blurb =
 
 const cs466_blurb =
 `This is the hardest course I've ever taken. We studied various randomized algorithms, basic spectral graph theory, and approximation algorithms via linear program relaxations.`
+
+const full_course_list_blurb =
+`AAAAAAA`
