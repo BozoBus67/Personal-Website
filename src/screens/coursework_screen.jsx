@@ -159,7 +159,7 @@ const course_blurb_style = (t) => ({
 })
 
 const cs240e_blurb =
-`A course on standard data structures, plus some algorithms on string matching, e.g. KMP, Boyer-Moore, as well as algorithms for text compression, e.g. RLE, LZW, bzip2.`
+`A course on standard data structures, plus some algorithms on string matching, e.g. KMP, Boyer-Moore, as well as algorithms for text compression, e.g. RLE, LZW, bzip2. We also covered the external memory model, where algorithms are analyzed by disk block transfers between slow and fast memory rather than raw operation count.`
 
 const cs246_blurb =
 `The first course in this program that teaches you how to structure larger programs. I owe much of what I can do now to this course.`
