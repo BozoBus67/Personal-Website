@@ -6,6 +6,9 @@ import dark_bg from './assets/website_backgrounds/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
 import { Contact_Screen } from './screens/contact_screen'
 import { Project_EC_Screen } from './screens/projects/project_ec_screen'
+import { LLM_Screen } from './screens/projects/llm_screen'
+import { Diffusion_Screen } from './screens/projects/diffusion_screen'
+import { Raft_Screen } from './screens/projects/raft_screen'
 import { Minecraft_Mods_Screen } from './screens/projects/minecraft_mods_screen'
 import { Others_Screen } from './screens/projects/others_screen'
 import { Coursework_Screen } from './screens/coursework_screen'
@@ -41,6 +44,9 @@ function App() {
     <Router root={Layout}>
       <Route path="/" component={Home_Screen} />
       <Route path="/projects/project-ec" component={Project_EC_Screen} />
+      <Route path="/projects/llm" component={LLM_Screen} />
+      <Route path="/projects/diffusion" component={Diffusion_Screen} />
+      <Route path="/projects/raft" component={Raft_Screen} />
       <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
       <Route path="/projects/others" component={Others_Screen} />
       <Route path="/coursework" component={Coursework_Screen} />
