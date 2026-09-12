@@ -33,25 +33,38 @@ export function Diffusion_Screen() {
       <h1 style={h1_style()}>Diffusion model from scratch</h1>
 
       <p style={para_style()}>
-        The follow-up to the LLM work, on the image-generation side. Same idea:
-        build the training loop and the sampling loop by hand instead of
+        Denoising diffusion probabilistic model built from scratch in PyTorch,
+        trained on CIFAR-10 with a time-conditioned UNet denoiser, cosine
+        noise schedule, and DDIM sampling at inference. Same idea as the LLM
+        work: build the training loop and the sampling loop by hand instead of
         black-boxing them.
       </p>
 
-      <h2 style={h2_style()}>Rough plan</h2>
+      <h2 style={h2_style()}>Model</h2>
       <p style={para_style()}>
-        DDPM first (forward noise schedule, reverse denoising network, the
-        whole variational lower-bound training setup), then DDIM sampling for a
-        faster deterministic path at inference time. The backbone is a U-Net
-        with time embeddings and skip connections, which also doubles as the
-        first real CNN I'll build end-to-end. Once the unconditional version is
-        producing something recognizable, add text conditioning via
-        cross-attention.
+        Four-level UNet with a bottleneck self-attention block for the
+        denoiser, 64 base channels, GroupNorm and SiLU throughout. Time
+        conditioning is a sinusoidal timestep embedding projected through a
+        small MLP and injected into every residual block. Cosine noise
+        schedule (Nichol and Dhariwal) with T=1000 diffusion steps. Loss is
+        standard DDPM epsilon-prediction on noisy latents from q_sample.
       </p>
 
-      <h2 style={h2_style()}>Status</h2>
+      <h2 style={h2_style()}>Training and sampling</h2>
       <p style={para_style()}>
-        Not started yet, sequenced after the LLM phases finish.
+        Training loop keeps an EMA copy of the denoiser weights for sampling.
+        Inference uses the DDIM sampler at 50 steps by default, deterministic
+        with eta=0, which trades some sample diversity for far fewer function
+        evaluations than the DDPM ancestral sampler. Fits comfortably on a
+        single 16GB GPU or Apple MPS, a few hours to convergence at these
+        hyperparameters.
+      </p>
+
+      <h2 style={h2_style()}>Evaluation</h2>
+      <p style={para_style()}>
+        FID against real CIFAR-10 test images using InceptionV3 pool3
+        features. Not chasing SOTA numbers, just wanted the whole pipeline in
+        my hands from noise schedule to metric.
       </p>
     </Screen_Layout>
   )
