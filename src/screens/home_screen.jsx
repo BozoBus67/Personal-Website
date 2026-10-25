@@ -3,7 +3,7 @@ import { Screen_Layout } from '../shared/utility_components'
 
 export function Home_Screen() {
   const t = useTheme
-  const glow_color = () => (t().name === 'light' ? '#ffd700' : '#2d0a4a')
+  const glow_color = () => (t().name === 'light' ? '#ffffff' : '#2d0a4a')
   const text_shadow = () => {
     const c = glow_color()
     return `0 0 8px ${c}, 0 0 16px ${c}, 0 0 24px ${c}`
