@@ -335,6 +335,24 @@ export function Theme_Toggle() {
   )
 }
 
+export function Page_Title(props) {
+  const t = useTheme
+  return (
+    <h2
+      style={{
+        'font-weight': 700,
+        'font-size': '48px',
+        'line-height': 1,
+        margin: '0 0 4rem',
+        color: t().text_h,
+        'text-align': 'center',
+      }}
+    >
+      {props.children}
+    </h2>
+  )
+}
+
 export function Github_Button(props) {
   const [hover, set_hover] = createSignal(false)
   return (

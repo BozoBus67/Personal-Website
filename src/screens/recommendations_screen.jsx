@@ -1,5 +1,5 @@
 import { useTheme } from '../shared/constants'
-import { Screen_Layout } from '../shared/utility_components'
+import { Screen_Layout, Page_Title } from '../shared/utility_components'
 import code_geass_img from '../assets/recommendations_screen/Code_Geass.png'
 import arcane_thumbnail from '../assets/recommendations_screen/Arcane_Thumbnail.jpg'
 import ninjago_thumbnail from '../assets/recommendations_screen/Ninjago_Season_8_City_Skyline_Red_Black_Thumbnail.png'
@@ -15,19 +15,8 @@ export function Recommendations_Screen() {
   const t = useTheme
 
   return (
-    <Screen_Layout padding_top="6rem">
-      <h2
-        style={{
-          'font-weight': 700,
-          'font-size': '48px',
-          'line-height': 1,
-          margin: 0,
-          color: t().text_h,
-          'text-align': 'center',
-        }}
-      >
-        Recommendations
-      </h2>
+    <Screen_Layout>
+      <Page_Title>Recommendations</Page_Title>
 
       <p
         style={{

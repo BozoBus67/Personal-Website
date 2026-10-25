@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js'
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout } from '../../shared/utility_components'
+import { Screen_Layout, Page_Title } from '../../shared/utility_components'
 
 const RELEASE_BASE =
   'https://github.com/BozoBus67/PROJECT-EC/releases/download/v1.0.0'
@@ -62,39 +62,11 @@ function Download_Button(props) {
 export function Project_EC_Screen() {
   const t = useTheme
 
-  const h1_style = () => ({
-    'font-weight': 700,
-    'font-size': '40px',
-    'line-height': 1,
-    margin: 0,
-    color: t().text_h,
-    'text-align': 'center',
-  })
-
-  const h2_style = () => ({
-    'font-weight': 700,
-    'font-size': '22px',
-    'line-height': 1,
-    margin: '1rem 0 0',
-    color: t().text_h,
-  })
-
   const para_style = () => ({
     margin: 0,
     color: t().text_h,
     'font-size': '1.1rem',
     'line-height': 1.5,
-  })
-
-  const list_style = () => ({
-    margin: 0,
-    'padding-left': '1.25rem',
-    color: t().text_h,
-    'font-size': '1.1rem',
-    'line-height': 1.5,
-    display: 'flex',
-    'flex-direction': 'column',
-    gap: '0.4rem',
   })
 
   const download_row_style = () => ({
@@ -106,9 +78,9 @@ export function Project_EC_Screen() {
 
   return (
     <Screen_Layout>
-      <h1 style={h1_style()}>Cookie Clicker Plus</h1>
+      <Page_Title>Cookie Clicker Plus</Page_Title>
 
-      <p style={{ ...para_style(), 'margin-top': '6rem' }}>
+      <p style={para_style()}>
         I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features that have nothing to do with clicking cookies.
       </p>
 

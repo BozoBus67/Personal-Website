@@ -1,22 +1,11 @@
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout, Github_Button } from '../../shared/utility_components'
+import { Screen_Layout, Github_Button, Page_Title } from '../../shared/utility_components'
 
 export function Others_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <h2
-        style={{
-          'font-weight': 700,
-          'font-size': '48px',
-          'line-height': 1,
-          margin: 0,
-          color: t().text_h,
-          'text-align': 'center',
-        }}
-      >
-        Others
-      </h2>
+      <Page_Title>Others</Page_Title>
 
       <p
         style={{

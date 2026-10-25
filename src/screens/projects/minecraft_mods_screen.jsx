@@ -1,22 +1,11 @@
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout } from '../../shared/utility_components'
+import { Screen_Layout, Page_Title } from '../../shared/utility_components'
 
 export function Minecraft_Mods_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <h2
-        style={{
-          'font-weight': 700,
-          'font-size': '48px',
-          'line-height': 1,
-          margin: 0,
-          color: t().text_h,
-          'text-align': 'center',
-        }}
-      >
-        Minecraft Mods
-      </h2>
+      <Page_Title>Minecraft Mods</Page_Title>
 
       <p style={mod_blurb_style(t)}>{intro_blurb}</p>
 
