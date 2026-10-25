@@ -73,7 +73,6 @@ export function Project_EC_Screen() {
     display: 'flex',
     'flex-wrap': 'wrap',
     gap: '0.75rem',
-    'margin-top': '0.5rem',
   })
 
   return (
