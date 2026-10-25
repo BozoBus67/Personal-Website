@@ -112,6 +112,11 @@ export function delete_node(id) {
   }
 }
 
+export function reset() {
+  state = initial_state()
+  next_follower = 0
+}
+
 function clone(x) {
   return JSON.parse(JSON.stringify(x))
 }

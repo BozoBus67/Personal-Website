@@ -7,6 +7,7 @@ import {
   tick,
   add_node,
   delete_node,
+  reset,
 } from './raft_mock_backend'
 
 const TICK_INTERVAL_MS = 1000
@@ -44,6 +45,11 @@ export function Raft_Screen() {
     set_cluster(get_state())
   }
 
+  const handle_reset = () => {
+    reset()
+    set_cluster(get_state())
+  }
+
   const toggle_running = () => set_running((r) => !r)
 
   return (
@@ -55,6 +61,7 @@ export function Raft_Screen() {
           toggle_running={toggle_running}
           on_tick={handle_tick}
           on_add_node={handle_add_node}
+          on_reset={handle_reset}
         />
         <Cluster_View cluster={cluster} on_delete={handle_delete_node} />
         <Ops_Panel on_submit={handle_submit} />
@@ -97,7 +104,7 @@ function Demo_Box(props) {
         background: 'rgba(80, 130, 220, 0.15)',
         border: '1px solid rgba(80, 130, 220, 0.35)',
         'border-radius': '12px',
-        padding: '1.5rem',
+        padding: '3.5rem 1.5rem 1.5rem',
         display: 'flex',
         'flex-direction': 'column',
         gap: '1rem',
@@ -112,8 +119,10 @@ function Clock_Controls(props) {
   return (
     <div
       style={{
+        position: 'absolute',
+        top: '1rem',
+        right: '1.25rem',
         display: 'flex',
-        'justify-content': 'center',
         gap: '0.75rem',
       }}
     >
@@ -122,8 +131,9 @@ function Clock_Controls(props) {
           <Pause_Icon />
         </Show>
       </Action_Button>
-      <Action_Button on_click={props.on_tick}>Tick</Action_Button>
+      <Action_Button on_click={props.on_tick}>Step</Action_Button>
       <Add_Node_Button on_click={props.on_add_node} />
+      <Action_Button on_click={props.on_reset}>Reset</Action_Button>
     </div>
   )
 }
