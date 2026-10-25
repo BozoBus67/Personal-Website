@@ -115,12 +115,12 @@ export function Project_EC_Screen() {
       <p style={para_style()}>
         Play in your browser at{' '}
         <a
-          href="https://extended-cookie-clicker.vercel.app"
+          href="https://cookie-clicker-plus.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: t().accent, 'text-decoration': 'none' }}
         >
-          extended-cookie-clicker.vercel.app
+          cookie-clicker-plus.vercel.app
         </a>
         .
       </p>
