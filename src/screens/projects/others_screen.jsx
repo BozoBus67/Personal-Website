@@ -31,7 +31,7 @@ function Toy_OS() {
 function Project_Card(props) {
   const t = useTheme
   return (
-    <div>
+    <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.5rem' }}>
       <div style={title_row_style()}>
         <div style={item_title_style(t)}>{props.title}</div>
         <Github_Button href={props.href} />
@@ -50,7 +50,7 @@ const title_row_style = () => ({
 const item_title_style = (t) => ({
   'font-weight': 700,
   'font-size': '1.5rem',
-  margin: '1rem 0 0.5rem',
+  margin: 0,
   color: t().text_h,
   'font-family': "'Oxygen', sans-serif",
 })

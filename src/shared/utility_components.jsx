@@ -379,15 +379,15 @@ export function Github_Button(props) {
       style={{
         display: 'inline-flex',
         'align-items': 'center',
-        gap: '0.35rem',
-        padding: '0.2rem 0.6rem',
+        gap: '0.4rem',
+        padding: '0.3rem 0.75rem',
         border: `1px solid ${hover() ? '#2ea043' : '#238636'}`,
-        'border-radius': '5px',
+        'border-radius': '6px',
         background: hover() ? '#2ea043' : '#238636',
         color: '#ffffff',
         'text-decoration': 'none',
         'font-weight': 700,
-        'font-size': '0.8rem',
+        'font-size': '0.9rem',
         'white-space': 'nowrap',
         transition: 'background 0.15s ease, border-color 0.15s ease',
       }}
@@ -402,8 +402,8 @@ function External_Link_Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
+      width="13"
+      height="13"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
