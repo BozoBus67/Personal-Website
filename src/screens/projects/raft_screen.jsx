@@ -3,14 +3,14 @@ import { useTheme } from '../../shared/constants'
 import { Screen_Layout, para_style } from '../../shared/utility_components'
 import { get_state, submit_op, tick } from './raft_mock_backend'
 
-const TICK_INTERVAL_MS = 400
+const TICK_INTERVAL_MS = 1000
 
 export function Raft_Screen() {
-  const [mode, set_mode] = createSignal('demo')
+  const [running, set_running] = createSignal(true)
   const [cluster, set_cluster] = createSignal(get_state())
 
   createEffect(() => {
-    if (mode() !== 'demo') return
+    if (!running()) return
     const id = setInterval(() => {
       tick()
       set_cluster(get_state())
@@ -23,94 +23,62 @@ export function Raft_Screen() {
     set_cluster(get_state())
   }
 
-  const handle_step = () => {
+  const handle_tick = () => {
     tick()
     set_cluster(get_state())
   }
 
+  const toggle_running = () => set_running((r) => !r)
+
   return (
     <Screen_Layout>
-      <Mode_Toggle mode={mode} set_mode={set_mode} />
-      <Simulation
-        cluster={cluster}
-        mode={mode}
-        on_submit={handle_submit}
-        on_step={handle_step}
-      />
+      <Demo_Box>
+        <Clock_Controls
+          running={running}
+          toggle_running={toggle_running}
+          on_tick={handle_tick}
+        />
+        <Cluster_View cluster={cluster} />
+        <Ops_Panel on_submit={handle_submit} />
+        <Tick_Counter cluster={cluster} />
+      </Demo_Box>
       <Explainer />
     </Screen_Layout>
   )
 }
 
-function Mode_Toggle(props) {
-  const t = useTheme
-  const [hover, set_hover] = createSignal(null)
-  const button_style = (name) => {
-    const selected = props.mode() === name
-    const hovered = hover() === name && !selected
-    return {
-      padding: '0.5rem 1.25rem',
-      border: 'none',
-      background: selected
-        ? t().code_bg
-        : hovered
-          ? t().hover_bg
-          : 'transparent',
-      color: t().text_h,
-      cursor: 'pointer',
-      'font-family': 'inherit',
-      'font-size': '1rem',
-      'font-weight': selected ? 700 : 400,
-      transition: 'background 0.15s ease',
-    }
-  }
+function Demo_Box(props) {
   return (
-    <div style={{ display: 'flex', 'justify-content': 'center' }}>
-      <div
-        style={{
-          display: 'inline-flex',
-          'border-radius': '999px',
-          border: `1px solid ${t().border}`,
-          overflow: 'hidden',
-        }}
-      >
-        <button
-          onClick={() => props.set_mode('demo')}
-          onMouseEnter={() => set_hover('demo')}
-          onMouseLeave={() => set_hover(null)}
-          style={button_style('demo')}
-        >
-          Demo
-        </button>
-        <button
-          onClick={() => props.set_mode('debug')}
-          onMouseEnter={() => set_hover('debug')}
-          onMouseLeave={() => set_hover(null)}
-          style={button_style('debug')}
-        >
-          Debug
-        </button>
-      </div>
+    <div
+      style={{
+        background: 'rgba(80, 130, 220, 0.15)',
+        border: '1px solid rgba(80, 130, 220, 0.35)',
+        'border-radius': '12px',
+        padding: '1.5rem',
+        display: 'flex',
+        'flex-direction': 'column',
+        gap: '1rem',
+      }}
+    >
+      {props.children}
     </div>
   )
 }
 
-function Simulation(props) {
+function Clock_Controls(props) {
   return (
     <div
       style={{
         display: 'flex',
-        'flex-direction': 'column',
-        gap: '1.5rem',
+        'justify-content': 'center',
+        gap: '0.75rem',
       }}
     >
-      <Cluster_View cluster={props.cluster} />
-      <Controls_Row
-        mode={props.mode}
-        on_submit={props.on_submit}
-        on_step={props.on_step}
+      <Action_Button
+        label={props.running() ? 'Pause' : 'Resume'}
+        on_click={props.toggle_running}
       />
-      <Tick_Counter cluster={props.cluster} />
+      <Action_Button label="Tick" on_click={props.on_tick} />
     </div>
   )
 }
@@ -321,25 +289,6 @@ function Empty_Note() {
   )
 }
 
-function Controls_Row(props) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        gap: '1rem',
-        'justify-content': 'center',
-        'align-items': 'center',
-        'flex-wrap': 'wrap',
-      }}
-    >
-      <Ops_Panel on_submit={props.on_submit} />
-      <Show when={props.mode() === 'debug'}>
-        <Action_Button label="Step" on_click={props.on_step} />
-      </Show>
-    </div>
-  )
-}
-
 function Ops_Panel(props) {
   const t = useTheme
   const [op, set_op] = createSignal('put')
@@ -364,7 +313,15 @@ function Ops_Panel(props) {
   })
 
   return (
-    <div style={{ display: 'flex', gap: '0.5rem', 'align-items': 'center' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'flex-wrap': 'wrap',
+      }}
+    >
       <select
         value={op()}
         onInput={(e) => set_op(e.currentTarget.value)}
@@ -445,8 +402,8 @@ function Explainer() {
     <p style={para_style()}>
       Three Raft nodes in your browser. Submit a put or delete to see the
       leader append the entry to its log, replicate to followers one step at a
-      time, and advance the commit index across the cluster. In Debug mode time
-      only advances when you click Step.
+      time, and advance the commit index across the cluster. Pause the auto
+      tick and click Tick to step one scheduler cycle at a time.
     </p>
   )
 }
