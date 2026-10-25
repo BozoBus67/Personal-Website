@@ -7,7 +7,6 @@ import { Home_Screen } from './screens/home_screen'
 import { Contact_Screen } from './screens/contact_screen'
 import { Project_EC_Screen } from './screens/projects/project_ec_screen'
 import { NanoGPT_Screen } from './screens/projects/nanogpt_screen'
-import { Diffusion_Screen } from './screens/projects/diffusion_screen'
 import { Raft_Screen } from './screens/projects/raft_screen'
 import { Minecraft_Mods_Screen } from './screens/projects/minecraft_mods_screen'
 import { Others_Screen } from './screens/projects/others_screen'
@@ -45,7 +44,6 @@ function App() {
       <Route path="/" component={Home_Screen} />
       <Route path="/projects/project-ec" component={Project_EC_Screen} />
       <Route path="/projects/nanogpt" component={NanoGPT_Screen} />
-      <Route path="/projects/diffusion" component={Diffusion_Screen} />
       <Route path="/projects/raft" component={Raft_Screen} />
       <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
       <Route path="/projects/others" component={Others_Screen} />

@@ -29,7 +29,6 @@ const SECTIONS = [
     children: [
       { path: '/projects/project-ec', label: 'Project EC' },
       { path: '/projects/nanogpt', label: 'NanoGPT' },
-      { path: '/projects/diffusion', label: 'Diffusion' },
       { path: '/projects/raft', label: 'Raft' },
       { path: '/projects/minecraft-mods', label: 'Minecraft Mods' },
       { path: '/projects/others', label: 'Others' },
