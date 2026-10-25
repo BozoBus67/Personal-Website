@@ -27,7 +27,7 @@ const SECTIONS = [
   {
     label: 'Projects',
     children: [
-      { path: '/projects/project-ec', label: 'Project EC' },
+      { path: '/projects/project-ec', label: 'Cookie Clicker Plus' },
       { path: '/projects/nanogpt', label: 'NanoGPT' },
       { path: '/projects/raft', label: 'Raft' },
       { path: '/projects/minecraft-mods', label: 'Minecraft Mods' },

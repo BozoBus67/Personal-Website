@@ -106,13 +106,12 @@ export function Project_EC_Screen() {
 
   return (
     <Screen_Layout>
-      <h1 style={h1_style()}>Project EC</h1>
+      <h1 style={h1_style()}>Cookie Clicker Plus</h1>
 
-      <p style={para_style()}>
+      <p style={{ ...para_style(), 'margin-top': '2rem' }}>
         I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features that have nothing to do with clicking cookies.
       </p>
 
-      <h2 style={h2_style()}>Play</h2>
       <p style={para_style()}>
         Play in your browser at{' '}
         <a
@@ -136,45 +135,8 @@ export function Project_EC_Screen() {
 
       <h2 style={h2_style()}>Stack</h2>
       <p style={para_style()}>
-        The client is Electron + Vite, with React and Redux on the frontend and
-        Tailwind for styling. Routing uses react-router in hash mode so it works
-        inside a packaged Electron build. The backend is Python (FastAPI),
-        backed by Supabase for auth and Postgres for game state. PostHog handles
-        analytics. The music player wraps the YouTube IFrame Player so audio
-        keeps playing across screen navigation.
+        I built the frontend with Electron, Vite, React, and Redux, styled with Tailwind. Routing uses react-router in hash mode so it works inside the packaged Electron build. The backend is Python with FastAPI, Supabase for auth, and Postgres for game state. I also added PostHog for analytics and a music player that wraps the YouTube IFrame Player so audio keeps playing between screens.
       </p>
-
-      <h2 style={h2_style()}>Features</h2>
-      <ul style={list_style()}>
-        <li>
-          <strong>Core loop.</strong> Click cookies, buy buildings, accumulate
-          currency, unlock more buildings.
-        </li>
-        <li>
-          <strong>Auction house.</strong> Time-windowed listings between
-          players.
-        </li>
-        <li>
-          <strong>Mastery scrolls.</strong> Unlockables that gate cosmetics and
-          modes — extra themes, joke toggles, certain features.
-        </li>
-        <li>
-          <strong>Chess.</strong> Play Stockfish at variable strength.
-          Lazy-loaded so chess.js and the engine wrapper don't bloat startup.
-        </li>
-        <li>
-          <strong>Music player.</strong> Persistent YouTube-backed playlists,
-          shuffle, volume control.
-        </li>
-        <li>
-          <strong>Theming.</strong> Default cookie-clicker art, plus light
-          parchment and dark themes unlocked through gameplay.
-        </li>
-        <li>
-          <strong>Premium tiers.</strong> Three tiers behind paid scrolls,
-          gating a subset of features.
-        </li>
-      </ul>
 
     </Screen_Layout>
   )
