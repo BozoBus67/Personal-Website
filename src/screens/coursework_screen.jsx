@@ -5,18 +5,9 @@ export function Coursework_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <Page_Title>Coursework</Page_Title>
-
-      <p
-        style={{
-          margin: 0,
-          color: t().text,
-          'font-size': '1.1rem',
-          'text-align': 'center',
-        }}
-      >
-        Here I list some notable courses I've taken. A full list of courses is available at the bottom of this page.
-      </p>
+      <Page_Title description="Here I list some notable courses I've taken. A full list of courses is available at the bottom of this page.">
+        Coursework
+      </Page_Title>
 
       <CS240E />
       <CS246 />

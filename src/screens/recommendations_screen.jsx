@@ -20,7 +20,7 @@ export function Recommendations_Screen() {
 
       <p
         style={{
-          margin: '0 0 3rem',
+          margin: '0 0 1.5rem',
           'white-space': 'pre-line',
           color: t().text_h,
           'font-size': '1.15rem',

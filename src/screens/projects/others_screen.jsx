@@ -5,18 +5,9 @@ export function Others_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <Page_Title>Others</Page_Title>
-
-      <p
-        style={{
-          margin: 0,
-          color: t().text,
-          'font-size': '1.1rem',
-          'text-align': 'center',
-        }}
-      >
-        Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, or experimental.
-      </p>
+      <Page_Title description="Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, or experimental.">
+        Others
+      </Page_Title>
 
       <Personal_Website />
       <ML_Compiler />

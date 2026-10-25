@@ -338,18 +338,32 @@ export function Theme_Toggle() {
 export function Page_Title(props) {
   const t = useTheme
   return (
-    <h2
-      style={{
-        'font-weight': 700,
-        'font-size': '48px',
-        'line-height': 1,
-        margin: '0 0 3rem',
-        color: t().text_h,
-        'text-align': 'center',
-      }}
-    >
-      {props.children}
-    </h2>
+    <div style={{ margin: '0 0 3rem' }}>
+      <h2
+        style={{
+          'font-weight': 700,
+          'font-size': '48px',
+          'line-height': 1,
+          margin: 0,
+          color: t().text_h,
+          'text-align': 'center',
+        }}
+      >
+        {props.children}
+      </h2>
+      <Show when={props.description}>
+        <p
+          style={{
+            margin: '1rem 0 0',
+            color: t().text,
+            'font-size': '1.1rem',
+            'text-align': 'center',
+          }}
+        >
+          {props.description}
+        </p>
+      </Show>
+    </div>
   )
 }
 
