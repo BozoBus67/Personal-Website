@@ -89,24 +89,12 @@ function Demo_Iframe() {
 function Notes() {
   return (
     <p style={para_style()}>
-      The model uses a Transformer architecture with 8 blocks, d_model 384,
-      context length 512, and 8 attention heads split into 2 groups of 4 for
-      GQA — each group of 4 query heads shares one K and one V projection,
-      cutting the KV cache 4x versus full MHA. SwiGLU is used as the
-      activation in the MLP. On top of the main architecture, various modern
-      additions were layered in: RoPE for positional encoding, RMSNorm
-      instead of LayerNorm, tied input/output embeddings, and a per-block KV
-      cache so each decode step only computes K and V for the new token.
-      Tokenizer is a byte-level BPE trained on the TinyStories corpus itself
-      with a reserved endoftext token. ~13M params total. Pretrained on
-      TinyStories (~500M tokens) with AdamW, cosine LR + warmup, gradient
-      clipping, mixed precision where the device supports it — converges to
-      val loss ~1.07 nats with the train/val gap holding ~0.02 nats the
-      whole way, so it's generalizing, not memorizing. Inference uses
-      temperature-scaled multinomial sampling (temp=0 falls back to argmax)
-      and stops on endoftext or max_new_tokens. Served through Gradio on
-      HuggingFace Spaces ZeroGPU; the 145MB checkpoint ships to the Space
-      over git-lfs.
+      The model uses a Transformer architecture with 8 blocks. There are 8 attention heads, split into 2 groups of 4 for GQA. 
+      The Tokenizer is a byte-level BPE trained on the TinyStories corpus itself with a reserved endoftext token. 
+      The optimizer is AdamW with a cosine learning rate schedule and linear warmup. 
+      SwiGLU is used as the activation in the MLP. 
+      
+      On top of the main architecture, various modern additions were layered in, such as: RoPE for positional encoding, RMSNorm instead of LayerNorm, tied input/output embeddings, a per-block KV cache so each decode step only computes K and V for the new token, gradient clipping, etc. 
     </p>
   )
 }
