@@ -608,10 +608,10 @@ function Explainer() {
   return (
     <>
       <p style={para_style()}>
-        I built a toy implementation of the Raft consensus algorithm, running as a mock cluster right in your browser. It simulates leader election, log replication, and commits across the nodes you see above.
+        I built an implementation of the Raft consensus algorithm. The mock cluster above simulates leader election, log replication, and commits across the nodes you see.
       </p>
       <p style={para_style()}>
-        The control row above the cluster lets you pause the clock, step one tick at a time, add nodes, or reset the simulation. You can submit put/delete operations at the bottom — they go to the leader, replicate to the followers, commit once a majority of nodes ack, then apply to each node's kv store. Hover any node tile and click the × that appears to delete it; killing the current leader will trigger a new election within a few ticks.
+        The implementation is in Go, following the paper's Figure 2 faithfully — randomized 250-500ms election timeouts, the up-to-date log restriction on vote granting, AppendEntries with prev-log consistency checks and a ConflictTerm/ConflictIndex backup optimization, commit-only-current-term counting, and fsync-before-reply persistence of term/votedFor/log. The demo above is a JavaScript mock of the same algorithm so it can run client-side without a backend.
       </p>
     </>
   )
