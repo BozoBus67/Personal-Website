@@ -99,7 +99,7 @@ const intro_blurb =
 `A few Fabric mods I built. All with fabric-loom which is the Gradle plugin that handles the name remapping and runs the dev client.`
 
 const golden_egg_blurb =
-`Fabric. Adds one item: the golden egg. Thrown like a vanilla egg, but where vanilla rolls 1/8 odds to spawn a chicken, the golden egg always does. Recipe is 8 gold nuggets around an egg, same shape as a glistering melon. No mixins — a custom item that extends vanilla.`
+`Added a crafting recipe where you craft a golden egg from an egg and eight gold nuggets. A golden egg can be thrown and will always spawn a chicken, as opposed to a vanilla egg which only has a 1/8 chance.`
 
 const custom_mobs_blurb =
 `Fabric. Two new hostile mobs added from scratch — entity types, AI, attributes, renderers, spawn eggs, biome rules, loot tables, sound events. Spawn entries are additive and weighted into village biomes (plains, savanna, desert, taiga, snowy_plains) so the mobs cluster where villages do. Still no mixins — Fabric's registry surface covers it.`
