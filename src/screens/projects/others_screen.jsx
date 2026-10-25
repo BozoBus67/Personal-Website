@@ -5,8 +5,6 @@ export function Others_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <h1 style={{ 'font-size': '120px', 'font-weight': 900, color: 'red', margin: 0, 'text-align': 'center' }}>AAAAAAAAAA</h1>
-
       <Page_Title description="Some additional projects that are smaller in scale and don't really warrant a page dedicated to them, or experimental.">
         Others
       </Page_Title>
