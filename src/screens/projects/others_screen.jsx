@@ -114,4 +114,4 @@ const personal_website_blurb =
 `You're looking at it right now! This is built with SolidJS, a lightweight React-like framework. I liked React's way of UI programming where you define JSX components via functions, it feels more natural than other frameworks I've experimented with such as Vue and Svelte. I didn't need React's state-management machinery, so I opted to just use Solid.`
 
 const toy_os_blurb =
-`I was quite dissatisfied with my school's underwhelming OS course and decided to try building one myself to learn how they actually work. Incomplete.`
+`I was quite dissatisfied with my school's underwhelming OS course and decided to try building one myself to learn how they actually work. This project is incomplete.`
