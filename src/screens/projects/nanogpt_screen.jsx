@@ -42,13 +42,9 @@ function Demo_Iframe() {
   )
 }
 
-export function NanoGPT_Screen() {
+function Writeup() {
   return (
-    <Screen_Layout>
-      <h1 style={h1_style()}>NanoGPT</h1>
-      <Open_Link />
-      <Demo_Iframe />
-
+    <>
       <h2 style={h2_style()}>Model</h2>
       <p style={para_style()}>
         Six Transformer blocks, 384-dim residual stream, six attention heads,
@@ -86,6 +82,17 @@ export function NanoGPT_Screen() {
         the UI, HuggingFace Spaces with ZeroGPU for hosting. Training ran on
         a local machine; the checkpoint ships to the Space via git-lfs.
       </p>
+    </>
+  )
+}
+
+export function NanoGPT_Screen() {
+  return (
+    <Screen_Layout>
+      <h1 style={h1_style()}>NanoGPT</h1>
+      <Open_Link />
+      <Demo_Iframe />
+      <Writeup />
     </Screen_Layout>
   )
 }
