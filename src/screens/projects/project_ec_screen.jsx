@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js'
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout, Page_Title } from '../../shared/utility_components'
+import { Screen_Layout, Page_Title, para_style } from '../../shared/utility_components'
 
 const RELEASE_BASE =
   'https://github.com/BozoBus67/PROJECT-EC/releases/download/v1.0.0'
@@ -61,13 +61,6 @@ function Download_Button(props) {
 
 export function Project_EC_Screen() {
   const t = useTheme
-
-  const para_style = () => ({
-    margin: 0,
-    color: t().text_h,
-    'font-size': '1.1rem',
-    'line-height': 1.5,
-  })
 
   const download_row_style = () => ({
     display: 'flex',

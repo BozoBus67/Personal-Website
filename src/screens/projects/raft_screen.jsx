@@ -53,7 +53,7 @@ export function Raft_Screen() {
   const toggle_running = () => set_running((r) => !r)
 
   return (
-    <Screen_Layout padding_top="6rem">
+    <Screen_Layout>
       <Intro />
       <Demo_Box>
         <Clock_Controls
