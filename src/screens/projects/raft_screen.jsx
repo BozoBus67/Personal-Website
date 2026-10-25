@@ -31,7 +31,7 @@ export function Raft_Screen() {
   const toggle_running = () => set_running((r) => !r)
 
   return (
-    <Screen_Layout>
+    <Screen_Layout padding_top="6rem">
       <Demo_Box>
         <Clock_Controls
           running={running}
@@ -74,12 +74,30 @@ function Clock_Controls(props) {
         gap: '0.75rem',
       }}
     >
-      <Action_Button
-        label={props.running() ? 'Pause' : 'Resume'}
-        on_click={props.toggle_running}
-      />
-      <Action_Button label="Tick" on_click={props.on_tick} />
+      <Action_Button on_click={props.toggle_running}>
+        <Show when={props.running()} fallback={<Play_Icon />}>
+          <Pause_Icon />
+        </Show>
+      </Action_Button>
+      <Action_Button on_click={props.on_tick}>Tick</Action_Button>
     </div>
+  )
+}
+
+function Pause_Icon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <rect x="4" y="3" width="3" height="10" />
+      <rect x="9" y="3" width="3" height="10" />
+    </svg>
+  )
+}
+
+function Play_Icon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <polygon points="4,3 13,8 4,13" />
+    </svg>
   )
 }
 
@@ -350,7 +368,7 @@ function Ops_Panel(props) {
           style={field_style()}
         />
       </Show>
-      <Action_Button label="Submit" on_click={handle_submit} />
+      <Action_Button on_click={handle_submit}>Submit</Action_Button>
     </div>
   )
 }
@@ -373,10 +391,13 @@ function Action_Button(props) {
         'font-size': '0.95rem',
         'font-weight': 600,
         cursor: 'pointer',
+        display: 'inline-flex',
+        'align-items': 'center',
+        'justify-content': 'center',
         transition: 'background 0.15s ease, border-color 0.15s ease',
       }}
     >
-      {props.label}
+      {props.children}
     </button>
   )
 }
@@ -398,12 +419,5 @@ function Tick_Counter(props) {
 }
 
 function Explainer() {
-  return (
-    <p style={para_style()}>
-      Three Raft nodes in your browser. Submit a put or delete to see the
-      leader append the entry to its log, replicate to followers one step at a
-      time, and advance the commit index across the cluster. Pause the auto
-      tick and click Tick to step one scheduler cycle at a time.
-    </p>
-  )
+  return <p style={para_style()}>(explainer coming later)</p>
 }
