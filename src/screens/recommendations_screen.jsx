@@ -141,7 +141,7 @@ const code_geass_description =
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
-`If you have the time and you're interested, here are some others I've enjoyed:`
+`If you have the time and you're interested, here are some others:`
 
 const recs = [
   { title: 'Arcane', images: [arcane_thumbnail] },
