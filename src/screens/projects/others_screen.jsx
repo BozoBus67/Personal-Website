@@ -50,6 +50,7 @@ const title_row_style = () => ({
 const item_title_style = (t) => ({
   'font-weight': 700,
   'font-size': '1.5rem',
+  'line-height': 1,
   margin: 0,
   color: t().text_h,
   'font-family': "'Oxygen', sans-serif",
