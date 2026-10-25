@@ -94,7 +94,7 @@ function Notes() {
       The optimizer is AdamW with a cosine learning rate schedule and linear warmup. 
       SwiGLU is used as the activation in the MLP. 
       
-      On top of the main architecture, various modern additions were layered in, such as: RoPE for positional encoding, RMSNorm instead of LayerNorm, tied input/output embeddings, a per-block KV cache so each decode step only computes K and V for the new token, gradient clipping, etc. 
+      On top of the main architecture, various modern additions were layered in, such as: RoPE for positional encoding, RMSNorm instead of LayerNorm, tied input/output embeddings, a per-block KV cache so each decode step only computes K and V for the new token, skip connections, gradient clipping, etc. 
     </p>
   )
 }
