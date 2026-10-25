@@ -14,13 +14,6 @@ import death_note_thumbnail from '../assets/recommendations_screen/Death_Note_Th
 export function Recommendations_Screen() {
   const t = useTheme
 
-  const h3_style = () => ({
-    'font-weight': 700,
-    'font-size': '1.75rem',
-    margin: '1rem 0 0.5rem',
-    color: t().text_h,
-  })
-
   return (
     <Screen_Layout>
       <h2
@@ -36,7 +29,6 @@ export function Recommendations_Screen() {
         Recommendations
       </h2>
 
-      <h3 style={h3_style()}>Code Geass</h3>
       <p
         style={{
           margin: 0,
