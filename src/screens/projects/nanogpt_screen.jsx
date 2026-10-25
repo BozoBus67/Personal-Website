@@ -1,63 +1,53 @@
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout } from '../../shared/utility_components'
+import {
+  Screen_Layout,
+  h1_style,
+  h2_style,
+  para_style,
+} from '../../shared/utility_components'
 
-export function NanoGPT_Screen() {
+function Open_Link() {
   const t = useTheme
+  return (
+    <p style={para_style()}>
+      Or{' '}
+      <a
+        href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: t().accent, 'text-decoration': 'none' }}
+      >
+        open it on HuggingFace
+      </a>
+      .
+    </p>
+  )
+}
 
-  const h1_style = () => ({
-    'font-weight': 700,
-    'font-size': '40px',
-    'line-height': 1,
-    margin: 0,
-    color: t().text_h,
-    'text-align': 'center',
-  })
-
-  const h2_style = () => ({
-    'font-weight': 700,
-    'font-size': '22px',
-    'line-height': 1,
-    margin: '1rem 0 0',
-    color: t().text_h,
-  })
-
-  const para_style = () => ({
-    margin: 0,
-    color: t().text_h,
-    'font-size': '1.1rem',
-    'line-height': 1.5,
-  })
-
+function Demo_Iframe() {
+  const t = useTheme
   const iframe_style = () => ({
     width: '100%',
     height: '700px',
     border: `1px solid ${t().border}`,
     'border-radius': '8px',
-    'background': t().code_bg,
+    background: t().code_bg,
   })
+  return (
+    <iframe
+      src="https://BozoBus67-NanoGPT.hf.space"
+      title="NanoGPT demo"
+      style={iframe_style()}
+    />
+  )
+}
 
+export function NanoGPT_Screen() {
   return (
     <Screen_Layout>
       <h1 style={h1_style()}>NanoGPT</h1>
-
-      <p style={para_style()}>
-        Or{' '}
-        <a
-          href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: t().accent, 'text-decoration': 'none' }}
-        >
-          open it on HuggingFace
-        </a>
-        .
-      </p>
-
-      <iframe
-        src="https://BozoBus67-NanoGPT.hf.space"
-        title="NanoGPT demo"
-        style={iframe_style()}
-      />
+      <Open_Link />
+      <Demo_Iframe />
 
       <h2 style={h2_style()}>Model</h2>
       <p style={para_style()}>

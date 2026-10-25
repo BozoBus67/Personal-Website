@@ -336,6 +336,30 @@ export function Theme_Toggle() {
   )
 }
 
+export const h1_style = () => ({
+  'font-weight': 700,
+  'font-size': '40px',
+  'line-height': 1,
+  margin: 0,
+  color: useTheme().text_h,
+  'text-align': 'center',
+})
+
+export const h2_style = () => ({
+  'font-weight': 700,
+  'font-size': '22px',
+  'line-height': 1,
+  margin: '1rem 0 0',
+  color: useTheme().text_h,
+})
+
+export const para_style = () => ({
+  margin: 0,
+  color: useTheme().text_h,
+  'font-size': '1.1rem',
+  'line-height': 1.5,
+})
+
 const DEFAULT_PADDING_TOP = '3rem'
 const DEFAULT_PADDING_SIDE = '4.5rem'
 const DEFAULT_PADDING_BOTTOM = '5rem'
