@@ -96,7 +96,7 @@ const download_button_style = (t) => ({
 })
 
 const intro_blurb =
-`I made various Minecraft mods using Fabric Loader and the fabric-loom Gradle plugin.`
+`I made various Minecraft mods using Fabric Loader and the fabric-loom Gradle plugin for Minecraft version 1.21.0.`
 
 const golden_egg_blurb =
 `Added a crafting recipe where you craft a golden egg from an egg and eight gold nuggets. A golden egg can be thrown and will always spawn a chicken, as opposed to a vanilla egg, which has a 1/8 chance to spawn a chicken.`
