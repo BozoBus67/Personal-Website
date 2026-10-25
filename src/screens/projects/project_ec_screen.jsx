@@ -106,7 +106,7 @@ export function Project_EC_Screen() {
       </div>
 
       <p style={para_style()}>
-        This is a webapp, also available as a desktop app via Electron. The frontend is built with Vite, React, and Redux, styled with Tailwind. The backend is built with Python and FastAPI. Supabase handles auth and the Postgres database. I also added integrations like Stripe for payments, PostHog for analytics, and a music player that wraps the YouTube IFrame Player so audio keeps playing between screens.
+        This is a webapp, also available as a desktop app via Electron. The frontend is built with Vite, React, and Redux, styled with Tailwind. The backend is built with Python and FastAPI. Supabase handles auth and the Postgres database. I also added various add-ons like an auction house, lootboxes, Stripe for payments, PostHog for analytics, and a music player that wraps the YouTube IFrame Player so audio keeps playing between screens.
       </p>
 
     </Screen_Layout>
