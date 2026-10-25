@@ -108,7 +108,7 @@ export function Project_EC_Screen() {
     <Screen_Layout>
       <h1 style={h1_style()}>Cookie Clicker Plus</h1>
 
-      <p style={{ ...para_style(), 'margin-top': '4rem' }}>
+      <p style={{ ...para_style(), 'margin-top': '6rem' }}>
         I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features that have nothing to do with clicking cookies.
       </p>
 
