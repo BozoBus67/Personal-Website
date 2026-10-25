@@ -55,7 +55,7 @@ export function Recommendations_Screen() {
       />
       <p
         style={{
-          margin: '0 0 5rem',
+          margin: '0 0 3rem',
           'white-space': 'pre-line',
           color: t().text_h,
           'font-size': '1.15rem',
@@ -64,6 +64,14 @@ export function Recommendations_Screen() {
       >
         {code_geass_description}
       </p>
+
+      <hr
+        style={{
+          border: 'none',
+          'border-top': `1px solid ${t().border}`,
+          margin: '0 0 3rem',
+        }}
+      />
 
       <p
         style={{
