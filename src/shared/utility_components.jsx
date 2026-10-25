@@ -379,14 +379,15 @@ export function Github_Button(props) {
       style={{
         display: 'inline-flex',
         'align-items': 'center',
-        gap: '0.5rem',
-        padding: '0.75rem 1.25rem',
+        gap: '0.4rem',
+        padding: '0.35rem 0.85rem',
         border: `1px solid ${hover() ? '#2ea043' : '#238636'}`,
-        'border-radius': '8px',
+        'border-radius': '6px',
         background: hover() ? '#2ea043' : '#238636',
         color: '#ffffff',
         'text-decoration': 'none',
         'font-weight': 700,
+        'font-size': '0.9rem',
         'white-space': 'nowrap',
         transition: 'background 0.15s ease, border-color 0.15s ease',
       }}
