@@ -42,45 +42,43 @@ function Demo_Iframe() {
   )
 }
 
-function Writeup() {
+function Notes() {
   return (
     <>
       <h2 style={h2_style()}>Model</h2>
       <p style={para_style()}>
-        Six Transformer blocks, 384-dim residual stream, six attention heads,
-        rotary position embeddings, grouped-query attention (configurable
-        n_kv_heads so the same code path covers MHA/GQA/MQA), SwiGLU MLP,
-        RMSNorm, weight-tied input and output embeddings. Context length 512.
-        Vocab is a custom byte-level BPE trained on the TinyStories corpus,
-        with a reserved endoftext token.
+        6 Transformer blocks, d_model 384, 6 attention heads. GQA is wired in
+        through n_kv_heads so the same code path does MHA, GQA, or MQA
+        depending on config. RoPE for positions, SwiGLU in the MLP, RMSNorm
+        instead of LayerNorm, tied input/output embeddings. Context 512.
+        Tokenizer is a byte-level BPE I trained on the TinyStories corpus
+        itself, with a reserved endoftext token. Comes out to ~13M params.
       </p>
 
       <h2 style={h2_style()}>Training</h2>
       <p style={para_style()}>
-        Pretrained on the full TinyStories corpus (~500M tokens) with AdamW,
-        cosine LR schedule, warmup, gradient clipping, and mixed-precision
-        where the device supports it. The run converges to a val loss around
-        1.07 nats, with the train/val gap holding around 0.02 nats throughout
-        — 13M parameters across 500M tokens doesn't have the capacity to
-        memorize, so it has to generalize. Spot-checking generated chunks
-        against the corpus confirms it: short common phrases match, longer
-        contiguous spans don't.
+        TinyStories, roughly 500M tokens. AdamW, cosine LR with warmup,
+        gradient clipping, mixed precision on devices that support it. Val
+        loss sits around 1.07 nats and the train/val gap holds ~0.02 nats the
+        whole way — 13M params over 500M tokens is way under memorization
+        capacity, so it has to actually generalize. Grepping chunks of the
+        output against the corpus confirms it: short common phrases hit,
+        longer spans don't.
       </p>
 
       <h2 style={h2_style()}>Inference</h2>
       <p style={para_style()}>
-        Autoregressive decode with a per-block KV cache, so each new token
-        only computes its own K and V and attends over the stored prefix.
-        Temperature-scaled multinomial sampling, with temperature 0 falling
-        back to argmax. Generation stops at the endoftext token or at the
-        requested max new tokens, whichever comes first.
+        Autoregressive loop with a KV cache per attention block. Each new
+        step only computes K and V for the one new token; the rest is read
+        out of the cache. Temperature sampling, temp=0 falls back to argmax.
+        Stops when it emits endoftext or hits max_new_tokens.
       </p>
 
       <h2 style={h2_style()}>Stack</h2>
       <p style={para_style()}>
-        Python and PyTorch for the model, custom BPE tokenizer, Gradio for
-        the UI, HuggingFace Spaces with ZeroGPU for hosting. Training ran on
-        a local machine; the checkpoint ships to the Space via git-lfs.
+        PyTorch for the model, custom BPE tokenizer, Gradio for the UI,
+        HuggingFace Spaces on ZeroGPU for hosting. Trained locally; the
+        145MB checkpoint ships to the Space over git-lfs.
       </p>
     </>
   )
@@ -92,7 +90,7 @@ export function NanoGPT_Screen() {
       <h1 style={h1_style()}>NanoGPT</h1>
       <Open_Link />
       <Demo_Iframe />
-      <Writeup />
+      <Notes />
     </Screen_Layout>
   )
 }
