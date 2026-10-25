@@ -1,3 +1,4 @@
+import { createSignal } from 'solid-js'
 import { useTheme } from '../../shared/constants'
 import {
   Screen_Layout,
@@ -5,7 +6,7 @@ import {
   para_style,
 } from '../../shared/utility_components'
 
-function Intro() {
+function Intro_Text() {
   const t = useTheme
   return (
     <p style={{ ...para_style(), 'font-size': '1.5rem' }}>
@@ -21,6 +22,50 @@ function Intro() {
       </a>
       .
     </p>
+  )
+}
+
+function Github_Button() {
+  const t = useTheme
+  const [hover, set_hover] = createSignal(false)
+  return (
+    <a
+      href="https://github.com/BozoBus67/Nano-GPT-From-Scratch"
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => set_hover(true)}
+      onMouseLeave={() => set_hover(false)}
+      style={{
+        display: 'inline-block',
+        padding: '0.75rem 1.25rem',
+        border: `1px solid ${hover() ? t().accent : t().accent_border}`,
+        'border-radius': '8px',
+        background: hover() ? t().accent_bg : 'transparent',
+        color: t().text_h,
+        'text-decoration': 'none',
+        'font-weight': 700,
+        'white-space': 'nowrap',
+        transition: 'background 0.15s ease, border-color 0.15s ease',
+      }}
+    >
+      GitHub
+    </a>
+  )
+}
+
+function Intro() {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        'align-items': 'center',
+        'justify-content': 'space-between',
+        gap: '1.5rem',
+      }}
+    >
+      <Intro_Text />
+      <Github_Button />
+    </div>
   )
 }
 
