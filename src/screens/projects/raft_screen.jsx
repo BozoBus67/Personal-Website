@@ -429,7 +429,7 @@ function Ops_Panel(props) {
         'flex-wrap': 'wrap',
       }}
     >
-      <Op_Toggle op={op} set_op={set_op} />
+      <Op_Dropdown op={op} set_op={set_op} />
       <input
         placeholder="key"
         value={key()}
@@ -439,56 +439,119 @@ function Ops_Panel(props) {
         }}
         style={field_style()}
       />
-      <Show when={op() === 'put'}>
-        <input
-          placeholder="value"
-          value={value()}
-          onInput={(e) => set_value(e.currentTarget.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') handle_submit()
-          }}
-          style={field_style()}
-        />
-      </Show>
+      <input
+        placeholder="value"
+        value={value()}
+        disabled={op() === 'delete'}
+        onInput={(e) => set_value(e.currentTarget.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') handle_submit()
+        }}
+        style={{
+          ...field_style(),
+          opacity: op() === 'delete' ? 0.4 : 1,
+          cursor: op() === 'delete' ? 'not-allowed' : 'text',
+        }}
+      />
       <Action_Button on_click={handle_submit}>Submit</Action_Button>
     </div>
   )
 }
 
-function Op_Toggle(props) {
+function Op_Dropdown(props) {
   const t = useTheme
-  const button_style = (name) => {
-    const selected = props.op() === name
-    return {
-      padding: '0.4rem 0.75rem',
-      border: 'none',
-      background: selected ? t().code_bg : 'transparent',
-      color: t().text_h,
-      cursor: 'pointer',
-      'font-family': 'inherit',
-      'font-size': '0.95rem',
-      'font-weight': selected ? 700 : 400,
-      transition: 'background 0.15s ease',
+  const [open, set_open] = createSignal(false)
+
+  createEffect(() => {
+    if (!open()) return
+    const handle_outside = (e) => {
+      if (!e.target.closest('[data-op-dropdown]')) {
+        set_open(false)
+      }
     }
+    document.addEventListener('click', handle_outside)
+    onCleanup(() => document.removeEventListener('click', handle_outside))
+  })
+
+  const handle_select = (op) => {
+    props.set_op(op)
+    set_open(false)
   }
+
+  return (
+    <div data-op-dropdown style={{ position: 'relative' }}>
+      <button
+        onClick={() => set_open(!open())}
+        style={{
+          padding: '0.4rem 0.6rem',
+          border: `1px solid ${t().border}`,
+          'border-radius': '6px',
+          background: t().code_bg,
+          color: t().text_h,
+          'font-family': 'inherit',
+          'font-size': '0.95rem',
+          cursor: 'pointer',
+          'min-width': '5rem',
+          display: 'inline-flex',
+          'align-items': 'center',
+          'justify-content': 'space-between',
+          gap: '0.5rem',
+        }}
+      >
+        <span>{props.op()}</span>
+        <span style={{ 'font-size': '0.7rem', opacity: 0.6 }}>▾</span>
+      </button>
+      <Show when={open()}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 'calc(100% + 4px)',
+            left: 0,
+            right: 0,
+            background: t().code_bg,
+            border: `1px solid ${t().border}`,
+            'border-radius': '6px',
+            overflow: 'hidden',
+            'z-index': 10,
+          }}
+        >
+          <Dropdown_Option
+            label="put"
+            selected={props.op() === 'put'}
+            on_click={() => handle_select('put')}
+          />
+          <Dropdown_Option
+            label="delete"
+            selected={props.op() === 'delete'}
+            on_click={() => handle_select('delete')}
+          />
+        </div>
+      </Show>
+    </div>
+  )
+}
+
+function Dropdown_Option(props) {
+  const t = useTheme
+  const [hover, set_hover] = createSignal(false)
   return (
     <div
+      onClick={props.on_click}
+      onMouseEnter={() => set_hover(true)}
+      onMouseLeave={() => set_hover(false)}
       style={{
-        display: 'inline-flex',
-        'border-radius': '6px',
-        border: `1px solid ${t().border}`,
-        overflow: 'hidden',
+        padding: '0.5rem 0.75rem',
+        background: hover()
+          ? t().hover_bg
+          : props.selected
+            ? t().accent_bg
+            : 'transparent',
+        color: t().text_h,
+        cursor: 'pointer',
+        'font-size': '0.95rem',
       }}
     >
-      <button onClick={() => props.set_op('put')} style={button_style('put')}>
-        put
-      </button>
-      <button
-        onClick={() => props.set_op('delete')}
-        style={button_style('delete')}
-      >
-        delete
-      </button>
+      {props.label}
     </div>
   )
 }
