@@ -62,7 +62,27 @@ export const [menu_open, set_menu_open] = createSignal(true)
 
 export const [sidebar_width, set_sidebar_width] = createSignal(260)
 
-const [disclosures, set_disclosures] = createSignal({})
+const DISCLOSURES_STORAGE_KEY = 'disclosures'
+
+const get_initial_disclosures = () => {
+  if (typeof localStorage === 'undefined') return {}
+  try {
+    const parsed = JSON.parse(localStorage.getItem(DISCLOSURES_STORAGE_KEY))
+    return parsed && typeof parsed === 'object' ? parsed : {}
+  } catch {
+    return {}
+  }
+}
+
+const [disclosures, set_disclosures] = createSignal(get_initial_disclosures())
+
+createRoot(() => {
+  createEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(DISCLOSURES_STORAGE_KEY, JSON.stringify(disclosures()))
+    }
+  })
+})
 
 export const [accordion_mode, set_accordion_mode] = createSignal(true)
 
