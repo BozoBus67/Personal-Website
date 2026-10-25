@@ -62,7 +62,7 @@ function Notes() {
   return (
     <p style={para_style()}>
       The model uses a Transformer architecture with 8 blocks. There are 8 attention heads, split into 2 groups of 4 for GQA. 
-      The Tokenizer is a byte-level BPE trained on the TinyStories corpus itself with a reserved endoftext token. 
+      The Tokenizer is a byte-level BPE trained on the TinyStories corpus itself.
       The optimizer is AdamW with a cosine learning rate schedule and linear warmup. 
       SwiGLU is used as the activation in the MLP. 
       
