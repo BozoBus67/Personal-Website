@@ -608,16 +608,10 @@ function Explainer() {
   return (
     <>
       <p style={para_style()}>
-        Raft is a distributed consensus algorithm. The problem it solves: you have a cluster of machines running the same program, and they need to agree on a sequence of operations even when some of them fail or get disconnected. "Agree" means every machine ends up with the same ordered log, so applying the log in order lands them all in the same state.
+        I built a toy implementation of the Raft consensus algorithm, running as a mock cluster right in your browser. It simulates leader election, log replication, and commits across the nodes you see above.
       </p>
       <p style={para_style()}>
-        The core trick is to elect one node as the leader. Clients send operations to the leader, which appends them to its log, replicates them to the followers, and once a majority of nodes have the entry, the leader commits it — tells everyone it's safe to apply.
-      </p>
-      <p style={para_style()}>
-        In the demo above, each tile is a node. "term" is the current election round. "commit" is the index of the latest committed log entry. "applied" is the index of the latest entry applied to the local kv store. The log shows what each node knows; dim entries aren't committed yet. The leader has a purple badge.
-      </p>
-      <p style={para_style()}>
-        Submit put/delete ops at the bottom — they go to the leader, replicate down to the followers, commit once a majority ack, then apply to each node's kv store. Use the control row above the cluster to pause/step the clock or add nodes. Deleting the current leader (hover a tile and click the × that appears) forces an election, and the remaining nodes will promote a new leader within a few ticks.
+        The control row above the cluster lets you pause the clock, step one tick at a time, add nodes, or reset the simulation. You can submit put/delete operations at the bottom — they go to the leader, replicate to the followers, commit once a majority of nodes ack, then apply to each node's kv store. Hover any node tile and click the × that appears to delete it; killing the current leader will trigger a new election within a few ticks.
       </p>
     </>
   )
