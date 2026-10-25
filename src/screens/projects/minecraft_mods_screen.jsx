@@ -96,13 +96,13 @@ const download_button_style = (t) => ({
 })
 
 const intro_blurb =
-`A few Fabric mods I built. All with fabric-loom which is the Gradle plugin that handles the name remapping and runs the dev client.`
+`I made various Minecraft mods using Fabric Loader and the fabric-loom Gradle plugin.`
 
 const golden_egg_blurb =
 `Added a crafting recipe where you craft a golden egg from an egg and eight gold nuggets. A golden egg can be thrown and will always spawn a chicken, as opposed to a vanilla egg which has a 1/8 chance to spawn a chicken.`
 
 const custom_mobs_blurb =
-`Fabric. Two new hostile mobs added from scratch — entity types, AI, attributes, renderers, spawn eggs, biome rules, loot tables, sound events. Spawn entries are additive and weighted into village biomes (plains, savanna, desert, taiga, snowy_plains) so the mobs cluster where villages do. Still no mixins — Fabric's registry surface covers it.`
+`I made two custom hostile mobs with attributes, renderers, biome rules, loot tables, and sound events, along with their spawn eggs.`
 
 const combat_blurb =
 `Fabric, all behavior in SpongePowered mixins. Restores 1.8-style PvP: drops the 1.9 attack cooldown, kills sprint-reset on hit, removes the on-ground gate on knockback's Y component so mid-air hits actually launch, restores the 1.54 sneak eye height. Singleplayer-focused — vanilla MP servers are knockback-authoritative.`
