@@ -176,14 +176,6 @@ export function Project_EC_Screen() {
         </li>
       </ul>
 
-      <h2 style={h2_style()}>Notes</h2>
-      <p style={para_style()}>
-        A lot of state ended up in Redux that could've been local component
-        state. If I started over I'd be more careful about which slices are
-        actually shared and which are just convenient to reach from anywhere.
-        The chess integration also got tangled with global game state in a way
-        that made the lazy-load split harder than it needed to be.
-      </p>
     </Screen_Layout>
   )
 }
