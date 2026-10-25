@@ -343,7 +343,7 @@ export function Page_Title(props) {
         'font-weight': 700,
         'font-size': '48px',
         'line-height': 1,
-        margin: '0 0 4rem',
+        margin: '0 0 3rem',
         color: t().text_h,
         'text-align': 'center',
       }}
@@ -428,7 +428,7 @@ export const para_style = () => ({
   'line-height': 1.5,
 })
 
-const DEFAULT_PADDING_TOP = '3rem'
+const DEFAULT_PADDING_TOP = '4rem'
 const DEFAULT_PADDING_SIDE = '4.5rem'
 const DEFAULT_PADDING_BOTTOM = '5rem'
 
