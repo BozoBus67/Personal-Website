@@ -608,10 +608,7 @@ function Explainer() {
   return (
     <>
       <p style={para_style()}>
-        I built an implementation of the Raft consensus algorithm. The mock cluster above simulates leader election, log replication, and commits across the nodes you see.
-      </p>
-      <p style={para_style()}>
-        The implementation is in Go, following the paper's Figure 2 faithfully — randomized 250-500ms election timeouts, the up-to-date log restriction on vote granting, AppendEntries with prev-log consistency checks and a ConflictTerm/ConflictIndex backup optimization, commit-only-current-term counting, and fsync-before-reply persistence of term/votedFor/log. The demo above is a JavaScript mock of the same algorithm so it can run client-side without a backend.
+        I built an implementation of the Raft consensus algorithm. The implementation is in Go, compiled to WebAssembly so it runs directly in your browser. The cluster above shows leader election, log replication, and commits across the nodes.
       </p>
     </>
   )
