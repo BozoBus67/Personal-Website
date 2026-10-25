@@ -1,23 +1,23 @@
 import { useTheme } from '../../shared/constants'
 import {
   Screen_Layout,
-  h1_style,
   h2_style,
   para_style,
 } from '../../shared/utility_components'
 
-function Open_Link() {
+function Intro() {
   const t = useTheme
   return (
-    <p style={para_style()}>
-      Or{' '}
+    <p style={{ ...para_style(), 'font-size': '1.5rem' }}>
+      Below you can play around with a NanoGPT I built. You can also access
+      it directly on HuggingFace{' '}
       <a
         href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
         target="_blank"
         rel="noopener noreferrer"
         style={{ color: t().accent, 'text-decoration': 'none' }}
       >
-        open it on HuggingFace
+        here
       </a>
       .
     </p>
@@ -87,8 +87,7 @@ function Notes() {
 export function NanoGPT_Screen() {
   return (
     <Screen_Layout>
-      <h1 style={h1_style()}>NanoGPT</h1>
-      <Open_Link />
+      <Intro />
       <Demo_Iframe />
       <Notes />
     </Screen_Layout>
