@@ -83,6 +83,35 @@ export function tick() {
   }
 }
 
+export function add_node() {
+  const next_id =
+    state.nodes.length === 0
+      ? 1
+      : Math.max(...state.nodes.map((n) => n.id)) + 1
+  const leader = state.nodes.find((n) => n.role === 'Leader')
+  const term = leader ? leader.term : 1
+  state.nodes.push({
+    id: next_id,
+    role: 'Follower',
+    term,
+    log: [{ term: 0, op: 'sentinel' }],
+    commitIndex: 0,
+    lastApplied: 0,
+    kv: {},
+  })
+}
+
+export function delete_node(id) {
+  const node = state.nodes.find((n) => n.id === id)
+  if (!node) return
+  const was_leader = node.role === 'Leader'
+  state.nodes = state.nodes.filter((n) => n.id !== id)
+  if (was_leader) {
+    const promote = state.nodes.find((n) => n.role === 'Follower')
+    if (promote) promote.role = 'Leader'
+  }
+}
+
 function clone(x) {
   return JSON.parse(JSON.stringify(x))
 }

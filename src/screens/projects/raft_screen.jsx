@@ -1,7 +1,13 @@
 import { createSignal, createEffect, onCleanup, Index, Show } from 'solid-js'
 import { useTheme } from '../../shared/constants'
 import { Screen_Layout, para_style } from '../../shared/utility_components'
-import { get_state, submit_op, tick } from './raft_mock_backend'
+import {
+  get_state,
+  submit_op,
+  tick,
+  add_node,
+  delete_node,
+} from './raft_mock_backend'
 
 const TICK_INTERVAL_MS = 1000
 
@@ -28,6 +34,16 @@ export function Raft_Screen() {
     set_cluster(get_state())
   }
 
+  const handle_add_node = () => {
+    add_node()
+    set_cluster(get_state())
+  }
+
+  const handle_delete_node = (id) => {
+    delete_node(id)
+    set_cluster(get_state())
+  }
+
   const toggle_running = () => set_running((r) => !r)
 
   return (
@@ -37,8 +53,9 @@ export function Raft_Screen() {
           running={running}
           toggle_running={toggle_running}
           on_tick={handle_tick}
+          on_add_node={handle_add_node}
         />
-        <Cluster_View cluster={cluster} />
+        <Cluster_View cluster={cluster} on_delete={handle_delete_node} />
         <Ops_Panel on_submit={handle_submit} />
         <Tick_Counter cluster={cluster} />
       </Demo_Box>
@@ -81,8 +98,13 @@ function Clock_Controls(props) {
         </Show>
       </Action_Button>
       <Action_Button on_click={props.on_tick}>Tick</Action_Button>
+      <Add_Node_Button on_click={props.on_add_node} />
     </div>
   )
+}
+
+function Add_Node_Button(props) {
+  return <Action_Button on_click={props.on_click}>+ Node</Action_Button>
 }
 
 function Pause_Icon() {
@@ -113,7 +135,7 @@ function Cluster_View(props) {
       }}
     >
       <Index each={props.cluster().nodes}>
-        {(node) => <Node_Tile node={node()} />}
+        {(node) => <Node_Tile node={node()} on_delete={props.on_delete} />}
       </Index>
     </div>
   )
@@ -121,9 +143,13 @@ function Cluster_View(props) {
 
 function Node_Tile(props) {
   const t = useTheme
+  const [hover, set_hover] = createSignal(false)
   return (
     <div
+      onMouseEnter={() => set_hover(true)}
+      onMouseLeave={() => set_hover(false)}
       style={{
+        position: 'relative',
         border: `1px solid ${t().border}`,
         'border-radius': '8px',
         padding: '1rem',
@@ -134,6 +160,33 @@ function Node_Tile(props) {
         gap: '0.75rem',
       }}
     >
+      <Show when={hover()}>
+        <button
+          onClick={() => props.on_delete(props.node.id)}
+          aria-label={`Delete node ${props.node.id}`}
+          style={{
+            position: 'absolute',
+            top: '0.5rem',
+            right: '0.5rem',
+            width: '20px',
+            height: '20px',
+            'border-radius': '50%',
+            border: `1px solid ${t().text_h}`,
+            background: t().code_bg,
+            color: t().text_h,
+            'font-size': '0.75rem',
+            'font-weight': 700,
+            cursor: 'pointer',
+            display: 'inline-flex',
+            'align-items': 'center',
+            'justify-content': 'center',
+            padding: 0,
+            'line-height': 1,
+          }}
+        >
+          ×
+        </button>
+      </Show>
       <Node_Header id={props.node.id} role={props.node.role} />
       <Node_Stats
         term={props.node.term}
@@ -341,14 +394,7 @@ function Ops_Panel(props) {
         'flex-wrap': 'wrap',
       }}
     >
-      <select
-        value={op()}
-        onInput={(e) => set_op(e.currentTarget.value)}
-        style={field_style()}
-      >
-        <option value="put">put</option>
-        <option value="delete">delete</option>
-      </select>
+      <Op_Toggle op={op} set_op={set_op} />
       <input
         placeholder="key"
         value={key()}
@@ -370,6 +416,44 @@ function Ops_Panel(props) {
         />
       </Show>
       <Action_Button on_click={handle_submit}>Submit</Action_Button>
+    </div>
+  )
+}
+
+function Op_Toggle(props) {
+  const t = useTheme
+  const button_style = (name) => {
+    const selected = props.op() === name
+    return {
+      padding: '0.4rem 0.75rem',
+      border: 'none',
+      background: selected ? t().code_bg : 'transparent',
+      color: t().text_h,
+      cursor: 'pointer',
+      'font-family': 'inherit',
+      'font-size': '0.95rem',
+      'font-weight': selected ? 700 : 400,
+      transition: 'background 0.15s ease',
+    }
+  }
+  return (
+    <div
+      style={{
+        display: 'inline-flex',
+        'border-radius': '6px',
+        border: `1px solid ${t().border}`,
+        overflow: 'hidden',
+      }}
+    >
+      <button onClick={() => props.set_op('put')} style={button_style('put')}>
+        put
+      </button>
+      <button
+        onClick={() => props.set_op('delete')}
+        style={button_style('delete')}
+      >
+        delete
+      </button>
     </div>
   )
 }
