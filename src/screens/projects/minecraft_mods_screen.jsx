@@ -20,7 +20,7 @@ function Golden_Egg() {
   const t = useTheme
   return (
     <div>
-      <div style={mod_title_style(t)}>Golden Egg (1.20.6, ported to 1.21)</div>
+      <div style={mod_title_style(t)}>Golden Egg</div>
       <p style={mod_blurb_style(t)}>{golden_egg_blurb}</p>
       <a href="/jars/golden_egg.jar" download style={download_button_style(t)}>
         Download .jar
@@ -33,7 +33,7 @@ function Custom_Mobs() {
   const t = useTheme
   return (
     <div>
-      <div style={mod_title_style(t)}>Custom Mobs (1.21)</div>
+      <div style={mod_title_style(t)}>Custom Mobs</div>
       <p style={mod_blurb_style(t)}>{custom_mobs_blurb}</p>
       <a href="/jars/custom_mobs.jar" download style={download_button_style(t)}>
         Download .jar
@@ -46,7 +46,7 @@ function Combat_1_8() {
   const t = useTheme
   return (
     <div>
-      <div style={mod_title_style(t)}>1.8 Combat (1.21)</div>
+      <div style={mod_title_style(t)}>1.8 Combat</div>
       <p style={mod_blurb_style(t)}>{combat_blurb}</p>
       <a href="/jars/combat_1_8.jar" download style={download_button_style(t)}>
         Download .jar
