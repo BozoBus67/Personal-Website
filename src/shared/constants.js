@@ -30,7 +30,7 @@ export const themes = {
     page_bg: '#313338',
     text: '#d2d6db',
     text_h: '#f2f3f5',
-    border: '#3f4147',
+    border: '#55575d',
     code_bg: '#2b2d31',
     accent: '#c084fc',
     accent_bg: 'rgba(192, 132, 252, 0.15)',

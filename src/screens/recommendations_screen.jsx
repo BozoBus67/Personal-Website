@@ -68,7 +68,7 @@ export function Recommendations_Screen() {
       <hr
         style={{
           border: 'none',
-          'border-top': `1px solid ${t().border}`,
+          'border-top': '1px solid #4FC3F7',
           margin: '0 0 3rem',
         }}
       />
