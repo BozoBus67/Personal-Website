@@ -126,8 +126,7 @@ export function Project_EC_Screen() {
         .
       </p>
       <p style={para_style()}>
-        Or download as an app on your computer, but why would you ever do this
-        over the browser version?
+        You can also download them as a desktop app.
       </p>
       <div style={download_row_style()}>
         {DOWNLOADS.map((item) => (
