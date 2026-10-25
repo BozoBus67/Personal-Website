@@ -15,7 +15,7 @@ export function Recommendations_Screen() {
   const t = useTheme
 
   return (
-    <Screen_Layout>
+    <Screen_Layout padding_top="6rem">
       <h2
         style={{
           'font-weight': 700,
@@ -31,7 +31,7 @@ export function Recommendations_Screen() {
 
       <p
         style={{
-          margin: '0 0 1rem',
+          margin: '0 0 3rem',
           'white-space': 'pre-line',
           color: t().text_h,
           'font-size': '1.15rem',
