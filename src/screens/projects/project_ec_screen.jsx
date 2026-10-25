@@ -109,7 +109,7 @@ export function Project_EC_Screen() {
       <h1 style={h1_style()}>Project EC</h1>
 
       <p style={para_style()}>
-        I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features unrelated to clicking cookies.
+        I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features that have nothing to do with clicking cookies.
       </p>
 
       <h2 style={h2_style()}>Play</h2>
