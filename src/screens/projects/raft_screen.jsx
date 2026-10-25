@@ -608,7 +608,7 @@ function Explainer() {
   return (
     <>
       <p style={para_style()}>
-        I built an implementation of the Raft consensus algorithm. The mock cluster above simulates leader election, log replication, and commits across the nodes you see. The implementation is in Go, compiled to WebAssembly to run in the browser.
+        I built an implementation of the Raft consensus algorithm. The mock cluster above simulates leader election, log replication, and commits across the nodes you see. The implementation is in Go, compiled to WebAssembly to run in the browser. In addition to the core consensus and log replication, I also added cluster membership changes and log compaction, so it really covers the full thing.
       </p>
     </>
   )
