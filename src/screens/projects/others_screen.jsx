@@ -1,5 +1,5 @@
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout } from '../../shared/utility_components'
+import { Screen_Layout, Github_Button } from '../../shared/utility_components'
 
 export function Others_Screen() {
   const t = useTheme
@@ -42,7 +42,9 @@ function ML_Compiler() {
     <div>
       <div style={item_title_style(t)}>ML Compiler</div>
       <p style={item_blurb_style(t)}>{ml_compiler_blurb}</p>
-      <Github_Footer href="https://github.com/BozoBus67/Toy-ML-Compiler" />
+      <div style={button_wrapper_style()}>
+        <Github_Button href="https://github.com/BozoBus67/Toy-ML-Compiler" />
+      </div>
     </div>
   )
 }
@@ -53,7 +55,9 @@ function Personal_Website() {
     <div>
       <div style={item_title_style(t)}>Personal Website</div>
       <p style={item_blurb_style(t)}>{personal_website_blurb}</p>
-      <Github_Footer href="https://github.com/BozoBus67/Personal-Website" />
+      <div style={button_wrapper_style()}>
+        <Github_Button href="https://github.com/BozoBus67/Personal-Website" />
+      </div>
     </div>
   )
 }
@@ -64,32 +68,14 @@ function Toy_OS() {
     <div>
       <div style={item_title_style(t)}>Toy OS</div>
       <p style={item_blurb_style(t)}>{toy_os_blurb}</p>
-      <Github_Footer href="https://github.com/BozoBus67/Toy-OS" />
+      <div style={button_wrapper_style()}>
+        <Github_Button href="https://github.com/BozoBus67/Toy-OS" />
+      </div>
     </div>
   )
 }
 
-function Github_Footer(props) {
-  const t = useTheme
-  return (
-    <p
-      style={{
-        margin: '0.5rem 0 0',
-        color: t().text,
-        'font-size': '0.95rem',
-      }}
-    >
-      <a
-        href={props.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ color: t().accent, 'text-decoration': 'none' }}
-      >
-        {props.href.replace(/^https?:\/\//, '')}
-      </a>
-    </p>
-  )
-}
+const button_wrapper_style = () => ({ 'margin-top': '0.75rem' })
 
 const item_title_style = (t) => ({
   'font-weight': 700,
@@ -108,10 +94,10 @@ const item_blurb_style = (t) => ({
 })
 
 const ml_compiler_blurb =
-`A toy neural-network compiler in Rust. Builds a computation DAG from ML ops, applies SSA + reverse-mode autodiff, fuses ops (FUSED_ADD_RELU and friends), allocates registers, lowers to C as the backend instead of going through LLVM IR, then links. Seven phases end-to-end on a tiny model — more an excuse to feel each compiler stage on something I actually understand the math of than a serious tool.`
+`I built a tiny neural-network compiler in Rust that builds a computation DAG from ML ops. In addition to the main functionality, it applies SSA and reverse-mode autodiff and fuses some operations.`
 
 const personal_website_blurb =
-`You're looking at it right now! This is built with SolidJS, a lightweight React-like framework. I liked React's way of UI programming where you define JSX components via functions, it feels more natural than other frameworks I've experimented with such as Vue and Svelte. I didn't need React's state-management machinery, so I opted to just use Solid.`
+`You're looking at it right now! This is built with SolidJS.`
 
 const toy_os_blurb =
 `I was quite dissatisfied with my school's underwhelming OS course and decided to try building one myself to learn how they actually work. This project is incomplete.`

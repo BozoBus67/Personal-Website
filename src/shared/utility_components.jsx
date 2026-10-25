@@ -335,6 +335,57 @@ export function Theme_Toggle() {
   )
 }
 
+export function Github_Button(props) {
+  const [hover, set_hover] = createSignal(false)
+  return (
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => set_hover(true)}
+      onMouseLeave={() => set_hover(false)}
+      style={{
+        display: 'inline-flex',
+        'align-items': 'center',
+        gap: '0.5rem',
+        padding: '0.75rem 1.25rem',
+        border: `1px solid ${hover() ? '#2ea043' : '#238636'}`,
+        'border-radius': '8px',
+        background: hover() ? '#2ea043' : '#238636',
+        color: '#ffffff',
+        'text-decoration': 'none',
+        'font-weight': 700,
+        'white-space': 'nowrap',
+        transition: 'background 0.15s ease, border-color 0.15s ease',
+      }}
+    >
+      GitHub
+      <External_Link_Icon />
+    </a>
+  )
+}
+
+function External_Link_Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    </svg>
+  )
+}
+
 export const h1_style = () => ({
   'font-weight': 700,
   'font-size': '40px',
