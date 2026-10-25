@@ -2,6 +2,8 @@ import {
   useTheme,
   accordion_mode,
   set_accordion_mode,
+  menu_open,
+  set_menu_open,
   themeName,
   toggleTheme,
 } from '../shared/constants'
@@ -69,6 +71,29 @@ export function Settings_Screen() {
           Only one sub-category open at a time{' '}
           <span style={{ color: t().text }}>
             (doesn't do anything atm because only 1 expandable sub-category)
+          </span>
+        </span>
+      </label>
+      <label
+        style={{
+          display: 'flex',
+          'align-items': 'center',
+          gap: '0.6rem',
+          color: t().text_h,
+          cursor: 'pointer',
+          'margin-top': '0.5rem',
+        }}
+      >
+        <input
+          type="checkbox"
+          checked={menu_open()}
+          onChange={(e) => set_menu_open(e.currentTarget.checked)}
+          style={{ width: '1.1rem', height: '1.1rem', cursor: 'pointer' }}
+        />
+        <span>
+          Toggle left panel{' '}
+          <span style={{ color: t().text }}>
+            (you can also do this via esc)
           </span>
         </span>
       </label>
