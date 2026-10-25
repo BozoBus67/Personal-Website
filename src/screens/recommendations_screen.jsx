@@ -130,7 +130,8 @@ function Rec_Card(props) {
 }
 
 const code_geass_blurb =
-`This is my personal favorite piece of media. The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete. 
+`This is my personal favorite piece of media.
+The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete.
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
