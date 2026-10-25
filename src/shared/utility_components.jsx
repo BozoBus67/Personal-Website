@@ -28,7 +28,6 @@ const SECTIONS = [
     label: 'Projects',
     children: [
       { path: '/projects/project-ec', label: 'Project EC' },
-      { path: '/projects/llm', label: 'LLM' },
       { path: '/projects/nanogpt', label: 'NanoGPT' },
       { path: '/projects/diffusion', label: 'Diffusion' },
       { path: '/projects/raft', label: 'Raft' },
