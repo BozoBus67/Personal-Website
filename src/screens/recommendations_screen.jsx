@@ -31,15 +31,16 @@ export function Recommendations_Screen() {
 
       <p
         style={{
-          margin: 0,
+          margin: '0 0 1rem',
           'white-space': 'pre-line',
           color: t().text_h,
           'font-size': '1.15rem',
           'line-height': 1.6,
         }}
       >
-        {code_geass_blurb}
+        {intro_blurb}
       </p>
+
       <img
         src={code_geass_img}
         alt="Code Geass"
@@ -49,9 +50,20 @@ export function Recommendations_Screen() {
           height: 'auto',
           display: 'block',
           border: '2px solid #4FC3F7',
-          'margin-bottom': '5rem',
+          'margin-bottom': '1rem',
         }}
       />
+      <p
+        style={{
+          margin: '0 0 5rem',
+          'white-space': 'pre-line',
+          color: t().text_h,
+          'font-size': '1.15rem',
+          'line-height': 1.6,
+        }}
+      >
+        {code_geass_description}
+      </p>
 
       <p
         style={{
@@ -121,13 +133,15 @@ function Rec_Card(props) {
   )
 }
 
-const code_geass_blurb =
-`This is my personal favorite piece of media.
-The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete.
+const intro_blurb =
+`Here I list some shows and movies I liked and would recommend to other people. There are several, but people's watch lists are long enough, so I'll just recommend my favorite.`
+
+const code_geass_description =
+`The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete.
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
-`There are others, but people's watch lists are long enough, so I would just recommend this one. But if you have the time and you're interested, here are some more:`
+`If you have the time and you're interested, here are some others I've enjoyed:`
 
 const recs = [
   { title: 'Arcane', images: [arcane_thumbnail] },
