@@ -104,6 +104,7 @@ function Demo_Box(props) {
         background: 'rgba(80, 130, 220, 0.15)',
         border: '1px solid rgba(80, 130, 220, 0.35)',
         'border-radius': '12px',
+        margin: '1.5rem 0',
         padding: '3.5rem 1.5rem 1.5rem',
         display: 'flex',
         'flex-direction': 'column',
