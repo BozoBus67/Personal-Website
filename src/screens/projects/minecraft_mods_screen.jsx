@@ -105,4 +105,4 @@ const custom_mobs_blurb =
 `I made two custom hostile mobs with attributes, renderers, biome rules, loot tables, and sound events, along with their spawn eggs.`
 
 const combat_blurb =
-`Fabric, all behavior in SpongePowered mixins. Restores 1.8-style PvP: drops the 1.9 attack cooldown, kills sprint-reset on hit, removes the on-ground gate on knockback's Y component so mid-air hits actually launch, restores the 1.54 sneak eye height. Singleplayer-focused — vanilla MP servers are knockback-authoritative.`
+`For combat, I used mixins to restore the combat mechanics from Minecraft 1.8 in Minecraft 1.21. I removed the attack cooldown, restored sprint-reset on hit, and restored other subtle combat behaviors as faithfully as I could.`
