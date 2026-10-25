@@ -51,6 +51,7 @@ function Demo_Box(props) {
   return (
     <div
       style={{
+        position: 'relative',
         background: 'rgba(80, 130, 220, 0.15)',
         border: '1px solid rgba(80, 130, 220, 0.35)',
         'border-radius': '12px',
@@ -407,10 +408,12 @@ function Tick_Counter(props) {
   return (
     <div
       style={{
-        'text-align': 'center',
-        'font-size': '0.85rem',
+        position: 'absolute',
+        top: '1rem',
+        left: '1.25rem',
+        'font-size': '0.95rem',
+        'font-weight': 700,
         color: t().text_h,
-        opacity: 0.6,
       }}
     >
       tick: {props.cluster().tick}
