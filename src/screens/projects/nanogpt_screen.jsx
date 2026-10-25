@@ -2,7 +2,6 @@ import { createSignal } from 'solid-js'
 import { useTheme } from '../../shared/constants'
 import {
   Screen_Layout,
-  h2_style,
   para_style,
 } from '../../shared/utility_components'
 
@@ -89,43 +88,23 @@ function Demo_Iframe() {
 
 function Notes() {
   return (
-    <>
-      <h2 style={h2_style()}>Model</h2>
-      <p style={para_style()}>
-        6 Transformer blocks, d_model 384, 6 attention heads. GQA is wired in
-        through n_kv_heads so the same code path does MHA, GQA, or MQA
-        depending on config. RoPE for positions, SwiGLU in the MLP, RMSNorm
-        instead of LayerNorm, tied input/output embeddings. Context 512.
-        Tokenizer is a byte-level BPE I trained on the TinyStories corpus
-        itself, with a reserved endoftext token. Comes out to ~13M params.
-      </p>
-
-      <h2 style={h2_style()}>Training</h2>
-      <p style={para_style()}>
-        TinyStories, roughly 500M tokens. AdamW, cosine LR with warmup,
-        gradient clipping, mixed precision on devices that support it. Val
-        loss sits around 1.07 nats and the train/val gap holds ~0.02 nats the
-        whole way — 13M params over 500M tokens is way under memorization
-        capacity, so it has to actually generalize. Grepping chunks of the
-        output against the corpus confirms it: short common phrases hit,
-        longer spans don't.
-      </p>
-
-      <h2 style={h2_style()}>Inference</h2>
-      <p style={para_style()}>
-        Autoregressive loop with a KV cache per attention block. Each new
-        step only computes K and V for the one new token; the rest is read
-        out of the cache. Temperature sampling, temp=0 falls back to argmax.
-        Stops when it emits endoftext or hits max_new_tokens.
-      </p>
-
-      <h2 style={h2_style()}>Stack</h2>
-      <p style={para_style()}>
-        PyTorch for the model, custom BPE tokenizer, Gradio for the UI,
-        HuggingFace Spaces on ZeroGPU for hosting. Trained locally; the
-        145MB checkpoint ships to the Space over git-lfs.
-      </p>
-    </>
+    <p style={para_style()}>
+      The model uses a Transformer architecture with 8 blocks. There are 8
+      attention heads split into 2 groups of 4 for GQA — each group of 4
+      query heads shares one K and one V projection, which cuts the KV cache
+      4x versus full MHA. d_model is 384, context length 512, RoPE for
+      positions, SwiGLU MLP, RMSNorm, tied input/output embeddings. Tokenizer
+      is a byte-level BPE I trained on the TinyStories corpus itself with a
+      reserved endoftext token. Comes out to ~13M params. Pretrained on
+      TinyStories (~500M tokens) with AdamW, cosine LR + warmup, gradient
+      clipping, mixed precision where the device supports it — converges to
+      val loss ~1.07 nats with the train/val gap holding ~0.02 nats the
+      whole way, so it's generalizing, not memorizing. Inference uses a KV
+      cache per block, temperature-scaled multinomial sampling (temp=0 falls
+      back to argmax), and stops on endoftext or max_new_tokens. Served
+      through Gradio on HuggingFace Spaces ZeroGPU; the 145MB checkpoint
+      ships to the Space over git-lfs.
+    </p>
   )
 }
 
