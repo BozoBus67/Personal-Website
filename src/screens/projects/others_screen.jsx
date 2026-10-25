@@ -37,45 +37,36 @@ export function Others_Screen() {
 }
 
 function ML_Compiler() {
-  const t = useTheme
-  return (
-    <div>
-      <div style={item_title_style(t)}>ML Compiler</div>
-      <p style={item_blurb_style(t)}>{ml_compiler_blurb}</p>
-      <div style={button_wrapper_style()}>
-        <Github_Button href="https://github.com/BozoBus67/Toy-ML-Compiler" />
-      </div>
-    </div>
-  )
+  return <Project_Card title="ML Compiler" blurb={ml_compiler_blurb} href="https://github.com/BozoBus67/Toy-ML-Compiler" />
 }
 
 function Personal_Website() {
-  const t = useTheme
-  return (
-    <div>
-      <div style={item_title_style(t)}>Personal Website</div>
-      <p style={item_blurb_style(t)}>{personal_website_blurb}</p>
-      <div style={button_wrapper_style()}>
-        <Github_Button href="https://github.com/BozoBus67/Personal-Website" />
-      </div>
-    </div>
-  )
+  return <Project_Card title="Personal Website" blurb={personal_website_blurb} href="https://github.com/BozoBus67/Personal-Website" />
 }
 
 function Toy_OS() {
+  return <Project_Card title="Toy OS" blurb={toy_os_blurb} href="https://github.com/BozoBus67/Toy-OS" />
+}
+
+function Project_Card(props) {
   const t = useTheme
   return (
     <div>
-      <div style={item_title_style(t)}>Toy OS</div>
-      <p style={item_blurb_style(t)}>{toy_os_blurb}</p>
-      <div style={button_wrapper_style()}>
-        <Github_Button href="https://github.com/BozoBus67/Toy-OS" />
+      <div style={title_row_style()}>
+        <div style={item_title_style(t)}>{props.title}</div>
+        <Github_Button href={props.href} />
       </div>
+      <p style={item_blurb_style(t)}>{props.blurb}</p>
     </div>
   )
 }
 
-const button_wrapper_style = () => ({ 'margin-top': '0.75rem' })
+const title_row_style = () => ({
+  display: 'flex',
+  'align-items': 'center',
+  'justify-content': 'space-between',
+  gap: '1.5rem',
+})
 
 const item_title_style = (t) => ({
   'font-weight': 700,
