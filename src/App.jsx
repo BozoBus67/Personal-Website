@@ -74,7 +74,7 @@ function Layout(props) {
         when={PATHS_WITH_BG.has(location.pathname)}
         fallback={<Page_Bg />}
       >
-        <Background />
+        <Background full_opacity={location.pathname === '/'} />
       </Show>
       <div
         ref={scroll_el}
@@ -118,7 +118,7 @@ function Page_Bg() {
   )
 }
 
-function Background() {
+function Background(props) {
   const t = useTheme
   const bg_url = () => (t().name === 'light' ? light_bg : dark_bg)
   const overlay = () =>
@@ -127,6 +127,10 @@ function Background() {
       : 'rgba(49, 51, 56, 0.7)'
   const left_offset = () =>
     menu_open() ? `${sidebar_width()}px` : '60px'
+  const bg_image = () =>
+    props.full_opacity
+      ? `url(${bg_url()})`
+      : `linear-gradient(${overlay()}, ${overlay()}), url(${bg_url()})`
   return (
     <div
       style={{
@@ -135,7 +139,7 @@ function Background() {
         left: left_offset(),
         right: 0,
         bottom: 0,
-        'background-image': `linear-gradient(${overlay()}, ${overlay()}), url(${bg_url()})`,
+        'background-image': bg_image(),
         'background-color': t().bg,
         'background-size': 'cover',
         'background-position': 'center',
