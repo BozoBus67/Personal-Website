@@ -41,20 +41,16 @@ export function NanoGPT_Screen() {
       <h1 style={h1_style()}>NanoGPT</h1>
 
       <p style={para_style()}>
-        A 13M-parameter decoder-only Transformer trained from scratch on
-        TinyStories, deployed as a live Gradio demo. Nothing is loaded from
-        HuggingFace: the tokenizer, model code, training loop, and checkpoint
-        are all mine. The Space below runs the real model on a ZeroGPU slot.
-      </p>
-
-      <h2 style={h2_style()}>Try it</h2>
-      <p style={para_style()}>
-        Type a prompt, pick max new tokens and temperature, hit Submit. Keep
-        prompts short and in the TinyStories register (small children, simple
-        verbs, no abstractions) — this model has never seen anything else. It
-        is pretrained only, no SFT or RLHF, so it won't follow instructions
-        or answer questions. It also runs on free-tier ZeroGPU, so the first
-        request after a cold start takes a few seconds to warm up.
+        Or{' '}
+        <a
+          href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: t().accent, 'text-decoration': 'none' }}
+        >
+          open it on HuggingFace
+        </a>
+        .
       </p>
 
       <iframe
