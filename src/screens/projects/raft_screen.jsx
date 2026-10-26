@@ -1,6 +1,6 @@
 import { createSignal, createEffect, onCleanup, Index, Show } from 'solid-js'
 import { useTheme } from '../../shared/constants'
-import { Screen_Layout, para_style, Github_Button } from '../../shared/utility_components'
+import { Screen_Layout, para_style, Github_Button, Page_Title } from '../../shared/utility_components'
 import {
   get_state,
   submit_op,
@@ -8,7 +8,7 @@ import {
   add_node,
   delete_node,
   reset,
-} from './raft_mock_backend'
+} from './raft_wasm_backend'
 
 const TICK_INTERVAL_MS = 1000
 
@@ -74,25 +74,18 @@ export function Raft_Screen() {
 
 function Intro() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        'align-items': 'center',
-        'justify-content': 'space-between',
-        gap: '1.5rem',
-      }}
-    >
-      <Intro_Text />
-      <Github_Button href="https://github.com/BozoBus67/Raft" />
+    <div style={{ position: 'relative' }}>
+      <Page_Title>Raft</Page_Title>
+      <div
+        style={{
+          position: 'absolute',
+          top: '0.5rem',
+          right: 0,
+        }}
+      >
+        <Github_Button href="https://github.com/BozoBus67/Raft" />
+      </div>
     </div>
-  )
-}
-
-function Intro_Text() {
-  return (
-    <p style={{ ...para_style(), 'font-size': '1.5rem' }}>
-      Below is a toy Raft consensus implementation I built, running as a mock cluster in your browser. You can add nodes, submit put/delete operations, pause the clock, and watch leader elections and log replication happen tick by tick.
-    </p>
   )
 }
 
@@ -104,7 +97,6 @@ function Demo_Box(props) {
         background: 'rgba(80, 130, 220, 0.15)',
         border: '1px solid rgba(80, 130, 220, 0.35)',
         'border-radius': '12px',
-        margin: '1.5rem 0',
         padding: '3.5rem 1.5rem 1.5rem',
         display: 'flex',
         'flex-direction': 'column',

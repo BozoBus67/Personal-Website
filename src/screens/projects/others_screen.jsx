@@ -25,7 +25,7 @@ function Personal_Website() {
 }
 
 function Toy_OS() {
-  return <Project_Card title="Toy OS" blurb={toy_os_blurb} href="https://github.com/BozoBus67/Toy-OS" />
+  return <Project_Card title="Toy OS" blurb={toy_os_blurb} />
 }
 
 function Project_Card(props) {
@@ -34,7 +34,7 @@ function Project_Card(props) {
     <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.5rem' }}>
       <div style={title_row_style()}>
         <div style={item_title_style(t)}>{props.title}</div>
-        <Github_Button href={props.href} />
+        {props.href && <Github_Button href={props.href} />}
       </div>
       <p style={item_blurb_style(t)}>{props.blurb}</p>
     </div>
