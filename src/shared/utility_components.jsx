@@ -338,7 +338,7 @@ export function Theme_Toggle() {
 export function Page_Title(props) {
   const t = useTheme
   return (
-    <div style={{ margin: '0 0 3rem' }}>
+    <div style={{ margin: '0 0 2rem' }}>
       <h2
         style={{
           'font-weight': 700,
@@ -443,7 +443,7 @@ export const para_style = () => ({
   'line-height': 1.5,
 })
 
-const DEFAULT_PADDING_TOP = '4rem'
+const DEFAULT_PADDING_TOP = '4.5rem'
 const DEFAULT_PADDING_SIDE = '4.5rem'
 const DEFAULT_PADDING_BOTTOM = '5rem'
 
