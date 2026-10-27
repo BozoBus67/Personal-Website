@@ -7,26 +7,15 @@ import {
   themeName,
   toggleTheme,
 } from '../shared/constants'
-import { Screen_Layout } from '../shared/utility_components'
+import { Screen_Layout, Page_Title } from '../shared/utility_components'
 
 export function Settings_Screen() {
   const t = useTheme
   return (
     <Screen_Layout>
-      <h2
-        style={{
-          'font-weight': 700,
-          'font-size': '24px',
-          'line-height': 1,
-          margin: 0,
-          color: t().text_h,
-        }}
-      >
+      <Page_Title description="In case you're a control freak">
         Settings
-      </h2>
-      <p style={{ margin: 0, color: t().text }}>
-        In case you're a control freak
-      </p>
+      </Page_Title>
       <label
         style={{
           display: 'flex',

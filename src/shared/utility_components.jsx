@@ -20,6 +20,8 @@ import {
 } from './constants'
 import sun from '../assets/light_dark_toggle_switch/sun.png'
 import moon from '../assets/light_dark_toggle_switch/moon.png'
+import parchment from '../assets/parchment.png'
+import starry_sky from '../assets/starry_sky.png'
 
 const SECTIONS = [
   { path: '/', label: 'Home' },
@@ -45,8 +47,12 @@ function Sidebar_Link(props) {
   const location = useLocation()
   const [hover, set_hover] = createSignal(false)
   const is_active = () => location.pathname === props.section.path
-  const get_bg = () =>
-    is_active() ? t().code_bg : hover() ? t().hover_bg : 'transparent'
+  const get_bg = () => {
+    const is_dark = t().name === 'dark'
+    if (is_active()) return is_dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)'
+    if (hover()) return is_dark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)'
+    return 'transparent'
+  }
   if (props.indent) {
     return (
       <A
@@ -114,7 +120,9 @@ function Sidebar_Disclosure(props) {
           width: '100%',
           padding: 0,
           color: t().text_h,
-          background: hover() ? t().hover_bg : 'transparent',
+          background: hover()
+            ? (t().name === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)')
+            : 'transparent',
           border: 'none',
           'font-size': '1.5rem',
           'font-family': 'inherit',
@@ -280,7 +288,11 @@ export function Sidebar(props) {
         height: '100vh',
         width: 'max-content',
         'min-width': '200px',
-        background: 'transparent',
+        background: t().name === 'light'
+          ? `linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url(${parchment})`
+          : `linear-gradient(rgba(49,51,56,0.82), rgba(49,51,56,0.82)), url(${starry_sky})`,
+        'background-size': 'cover',
+        'background-position': 'center',
         'border-right': `1px solid ${t().border}`,
         padding: 0,
         display: 'flex',
@@ -347,6 +359,10 @@ export function Page_Title(props) {
           margin: 0,
           color: t().text_h,
           'text-align': 'center',
+          'text-shadow': (() => {
+            const c = t().name === 'light' ? '#bfdbfe' : '#1a2d6b'
+            return `0 0 8px ${c}, 0 0 16px ${c}, 0 0 24px ${c}`
+          })(),
         }}
       >
         {props.children}
@@ -358,6 +374,7 @@ export function Page_Title(props) {
             color: t().text,
             'font-size': '1.1rem',
             'text-align': 'center',
+            'white-space': 'pre-line',
           }}
         >
           {props.description}
@@ -449,9 +466,8 @@ const DEFAULT_PADDING_BOTTOM = '5rem'
 
 export function Screen_Layout(props) {
   createEffect(() => {
-    if (!menu_open()) return
     const on_key = (e) => {
-      if (e.key === 'Escape') set_menu_open(false)
+      if (e.key === 'Escape') set_menu_open((v) => !v)
     }
     document.addEventListener('keydown', on_key)
     onCleanup(() => {

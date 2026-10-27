@@ -3,10 +3,10 @@ import { Screen_Layout } from '../shared/utility_components'
 
 export function Home_Screen() {
   const t = useTheme
-  const glow_color = () => (t().name === 'light' ? '#ffffff' : '#2d0a4a')
+  const glow_color = () => (t().name === 'light' ? '#ffffff' : '#000000')
   const text_shadow = () => {
     const c = glow_color()
-    return `0 0 8px ${c}, 0 0 16px ${c}, 0 0 24px ${c}`
+    return `0 0 6px ${c}, 0 0 12px ${c}, 0 0 18px ${c}`
   }
 
   return (
@@ -15,8 +15,9 @@ export function Home_Screen() {
         style={{
           flex: 1,
           display: 'flex',
-          'align-items': 'center',
+          'align-items': 'flex-start',
           'justify-content': 'center',
+          'padding-top': '28vh',
         }}
       >
         <h1

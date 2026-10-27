@@ -15,7 +15,7 @@ export const themes = {
     page_bg: 'rgba(50, 160, 240, 0.15)',
     text: '#4a4452',
     text_h: '#08060d',
-    border: '#e5e4e7',
+    border: '#9ca3af',
     code_bg: '#f4f3ec',
     accent: '#aa3bff',
     accent_bg: 'rgba(170, 59, 255, 0.1)',

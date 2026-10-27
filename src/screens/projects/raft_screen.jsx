@@ -13,7 +13,7 @@ import {
 const TICK_INTERVAL_MS = 1000
 
 export function Raft_Screen() {
-  const [running, set_running] = createSignal(true)
+  const [running, set_running] = createSignal(false)
   const [cluster, set_cluster] = createSignal(get_state())
 
   createEffect(() => {

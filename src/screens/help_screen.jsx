@@ -16,6 +16,7 @@ function Step(props) {
           color: t().text_h,
           'font-size': '1.6rem',
           'text-align': 'center',
+          'font-family': "'Comic Sans MS', 'Comic Sans', cursive",
         }}
       >
         Step {props.number}. {props.text}
