@@ -47,6 +47,10 @@ function ensure_ready() {
 // render has WASM in flight.
 if (typeof window !== 'undefined') ensure_ready()
 
+export function wait_ready() {
+  return ensure_ready()
+}
+
 export function get_state() {
   if (typeof window === 'undefined' || !window.raftReady) return EMPTY_STATE
   return window.raftGetState()
@@ -75,4 +79,14 @@ export function delete_node(id) {
 export function reset() {
   if (typeof window === 'undefined' || !window.raftReady) return
   window.raftReset()
+}
+
+export function shutdown() {
+  if (typeof window === 'undefined' || !window.raftReady) return
+  window.raftShutdown()
+}
+
+export function start() {
+  if (typeof window === 'undefined' || !window.raftReady) return
+  window.raftStart()
 }

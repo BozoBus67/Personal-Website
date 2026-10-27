@@ -134,9 +134,12 @@ function CS480() {
 
 function Full_Course_List() {
   return (
-    <div>
-      <Course_Title href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0">
-        Full Course List
+    <div style={{ 'text-align': 'center', 'margin-top': '1.5rem' }}>
+      <Course_Title
+        href="https://docs.google.com/spreadsheets/d/1IwaYNhCEy5anOaNXzIjaTLys7r3DP2efDOYdtB7jQ3M/edit?gid=0#gid=0"
+        size="1.3rem"
+      >
+        full list of courses
       </Course_Title>
     </div>
   )

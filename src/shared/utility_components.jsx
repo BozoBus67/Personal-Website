@@ -15,12 +15,14 @@ import {
   set_menu_open,
   sidebar_width,
   set_sidebar_width,
+  sidebar_scroll,
+  set_sidebar_scroll,
   is_disclosure_open,
   toggle_disclosure,
 } from './constants'
 import sun from '../assets/light_dark_toggle_switch/sun.png'
 import moon from '../assets/light_dark_toggle_switch/moon.png'
-import parchment from '../assets/parchment.png'
+import forest from '../assets/forest.png'
 import starry_sky from '../assets/starry_sky.png'
 
 const SECTIONS = [
@@ -39,6 +41,7 @@ const SECTIONS = [
   { path: '/recommendations', label: 'Recommendations' },
   { path: '/contact', label: 'Contact' },
   { path: '/help', label: 'Help' },
+  { path: '/gallery', label: 'Gallery' },
   { path: '/settings', label: 'Settings' },
 ]
 
@@ -270,17 +273,29 @@ export function Sidebar(props) {
   let nav_el
   onMount(() => {
     if (!nav_el) return
+    nav_el.scrollTop = sidebar_scroll()
     const obs = new ResizeObserver(([entry]) => {
       if (entry) set_sidebar_width(entry.contentRect.width)
     })
     obs.observe(nav_el)
     onCleanup(() => obs.disconnect())
   })
+  let scroll_timeout
+  const handle_scroll = (e) => {
+    set_sidebar_scroll(e.currentTarget.scrollTop)
+    nav_el?.classList.add('is-scrolling')
+    clearTimeout(scroll_timeout)
+    scroll_timeout = setTimeout(() => {
+      nav_el?.classList.remove('is-scrolling')
+    }, 500)
+  }
   return (
     <nav
       ref={nav_el}
       aria-hidden={!props.open}
       data-menu-keep-open
+      class="scroll-container"
+      onScroll={handle_scroll}
       style={{
         position: 'fixed',
         top: 0,
@@ -288,11 +303,13 @@ export function Sidebar(props) {
         height: '100vh',
         width: 'max-content',
         'min-width': '200px',
-        background: t().name === 'light'
-          ? `linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url(${parchment})`
+        'background-color': t().bg,
+        'background-image': t().name === 'light'
+          ? `linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url(${forest})`
           : `linear-gradient(rgba(49,51,56,0.82), rgba(49,51,56,0.82)), url(${starry_sky})`,
-        'background-size': 'cover',
-        'background-position': 'center',
+        'background-size': 'cover, cover',
+        'background-position': 'center, center',
+        'background-repeat': 'no-repeat, no-repeat',
         'border-right': `1px solid ${t().border}`,
         padding: 0,
         display: 'flex',
@@ -301,6 +318,8 @@ export function Sidebar(props) {
         transition: 'transform 0.25s ease',
         'z-index': 10,
         'box-sizing': 'border-box',
+        'overflow-y': 'auto',
+        'overflow-x': 'hidden',
       }}
     >
       <For each={SECTIONS}>

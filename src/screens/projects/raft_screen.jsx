@@ -8,6 +8,8 @@ import {
   add_node,
   delete_node,
   reset,
+  shutdown,
+  wait_ready,
 } from './raft_wasm_backend'
 
 const TICK_INTERVAL_MS = 1000
@@ -15,6 +17,13 @@ const TICK_INTERVAL_MS = 1000
 export function Raft_Screen() {
   const [running, set_running] = createSignal(false)
   const [cluster, set_cluster] = createSignal(get_state())
+
+  wait_ready().then(() => {
+    reset()
+    set_cluster(get_state())
+  })
+
+  onCleanup(() => shutdown())
 
   createEffect(() => {
     if (!running()) return
@@ -97,7 +106,7 @@ function Demo_Box(props) {
         background: 'rgba(80, 130, 220, 0.15)',
         border: '1px solid rgba(80, 130, 220, 0.35)',
         'border-radius': '12px',
-        padding: '3.5rem 1.5rem 1.5rem',
+        padding: '5rem 1.5rem 1.5rem',
         display: 'flex',
         'flex-direction': 'column',
         gap: '1rem',
@@ -303,14 +312,16 @@ function Log_View(props) {
     <div style={{ display: 'flex', 'flex-direction': 'column', gap: '0.1rem' }}>
       <Section_Label>log</Section_Label>
       <Show when={entries().length > 0} fallback={<Empty_Note />}>
-        <Index each={entries()}>
-          {(entry) => (
-            <Log_Entry
-              entry={entry()}
-              committed={entry().index <= props.commit}
-            />
-          )}
-        </Index>
+        <div style={{ 'max-height': '12rem', 'overflow-y': 'auto', display: 'flex', 'flex-direction': 'column', gap: '0.1rem' }}>
+          <Index each={entries()}>
+            {(entry) => (
+              <Log_Entry
+                entry={entry()}
+                committed={entry().index <= props.commit}
+              />
+            )}
+          </Index>
+        </div>
       </Show>
     </div>
   )
@@ -552,6 +563,8 @@ function Dropdown_Option(props) {
 function Action_Button(props) {
   const t = useTheme
   const [hover, set_hover] = createSignal(false)
+  const bg_rest = () => (t().name === 'light' ? 'rgba(170, 59, 255, 0.1)' : 'rgba(192, 132, 252, 0.18)')
+  const bg_hover = () => (t().name === 'light' ? 'rgba(170, 59, 255, 0.2)' : 'rgba(192, 132, 252, 0.3)')
   return (
     <button
       onClick={props.on_click}
@@ -561,7 +574,7 @@ function Action_Button(props) {
         padding: '0.4rem 1rem',
         border: `1px solid ${hover() ? t().accent : t().accent_border}`,
         'border-radius': '6px',
-        background: hover() ? t().accent_bg : 'transparent',
+        background: hover() ? bg_hover() : bg_rest(),
         color: t().text_h,
         'font-family': 'inherit',
         'font-size': '0.95rem',

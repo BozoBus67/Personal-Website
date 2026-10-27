@@ -7,21 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Oxygen:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Kevin's Personal Website</title>
-    <script>
-      if (location.hostname === 'bozobus67.vercel.app') {
-        document.title = "BozoBus67";
-      }
-    </script>
+    <title>BozoBus67</title>
     <style>
       main { font-family: Arial, sans-serif; }
       main h2, main h3 { font-family: 'Oxygen', sans-serif; }
-      .scroll-container { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+      .scroll-container { scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color 0.5s ease; }
       .scroll-container.is-scrolling { scrollbar-color: rgba(120, 120, 120, 0.55) transparent; }
       .scroll-container::-webkit-scrollbar { width: 10px; height: 10px; }
       .scroll-container::-webkit-scrollbar-track { background: transparent; }
-      .scroll-container::-webkit-scrollbar-thumb { background: transparent; border-radius: 5px; transition: background 0.3s ease; }
-      .scroll-container.is-scrolling::-webkit-scrollbar-thumb { background: rgba(120, 120, 120, 0.55); }
+      .scroll-container::-webkit-scrollbar-thumb { background-color: rgba(120, 120, 120, 0); border-radius: 5px; transition: background-color 0.5s ease; }
+      .scroll-container.is-scrolling::-webkit-scrollbar-thumb { background-color: rgba(120, 120, 120, 0.55); }
     </style>
   </head>
   <body style="margin: 0; font-family: 'Nunito', system-ui, -apple-system, sans-serif;">

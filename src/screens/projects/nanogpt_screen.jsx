@@ -15,7 +15,7 @@ function Intro_Text() {
         href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ color: t().accent, 'text-decoration': 'none' }}
+        style={{ color: t().name === 'light' ? '#1e40af' : '#60a5fa', 'text-decoration': 'underline' }}
       >
         here
       </a>

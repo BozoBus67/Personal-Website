@@ -15,7 +15,7 @@ export function Recommendations_Screen() {
   const t = useTheme
 
   return (
-    <Screen_Layout>
+    <Screen_Layout padding_bottom="7rem">
       <Page_Title>Recommendations</Page_Title>
 
       <p

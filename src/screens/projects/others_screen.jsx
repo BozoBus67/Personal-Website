@@ -25,7 +25,7 @@ function Personal_Website() {
 }
 
 function Toy_OS() {
-  return <Project_Card title="Toy OS" blurb={toy_os_blurb} />
+  return <Project_Card title="Toy OS" blurb={toy_os_blurb} href="https://github.com/BozoBus67/Toy-OS" />
 }
 
 function Project_Card(props) {

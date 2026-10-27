@@ -1,6 +1,6 @@
 import { createEffect, onMount, Show } from 'solid-js'
 import { Router, Route, useLocation } from '@solidjs/router'
-import { useTheme, menu_open, sidebar_width, PATHS_WITH_BG } from './shared/constants'
+import { useTheme, menu_open, sidebar_width, PATHS_WITH_BG, show_bg_everywhere } from './shared/constants'
 import light_bg from './assets/website_backgrounds/latte_float.jpg'
 import dark_bg from './assets/website_backgrounds/sodium-street-lamps.webp'
 import { Home_Screen } from './screens/home_screen'
@@ -12,6 +12,7 @@ import { Minecraft_Mods_Screen } from './screens/projects/minecraft_mods_screen'
 import { Others_Screen } from './screens/projects/others_screen'
 import { Coursework_Screen } from './screens/coursework_screen'
 import { Recommendations_Screen } from './screens/recommendations_screen'
+import { Gallery_Screen } from './screens/gallery_screen'
 import { Help_Screen } from './screens/help_screen'
 import { Settings_Screen } from './screens/settings_screen'
 
@@ -49,6 +50,7 @@ function App() {
       <Route path="/projects/others" component={Others_Screen} />
       <Route path="/coursework" component={Coursework_Screen} />
       <Route path="/recommendations" component={Recommendations_Screen} />
+      <Route path="/gallery" component={Gallery_Screen} />
       <Route path="/contact" component={Contact_Screen} />
       <Route path="/help" component={Help_Screen} />
       <Route path="/settings" component={Settings_Screen} />
@@ -66,12 +68,12 @@ function Layout(props) {
     clearTimeout(scroll_timeout)
     scroll_timeout = setTimeout(() => {
       scroll_el.classList.remove('is-scrolling')
-    }, 800)
+    }, 500)
   }
   return (
     <>
       <Show
-        when={PATHS_WITH_BG.has(location.pathname)}
+        when={PATHS_WITH_BG.has(location.pathname) || show_bg_everywhere()}
         fallback={<Page_Bg />}
       >
         <Background full_opacity={location.pathname === '/'} />

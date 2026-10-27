@@ -58,9 +58,29 @@ export const toggleTheme = () =>
 
 export const PATHS_WITH_BG = new Set(['/', '/contact', '/help'])
 
+const SHOW_BG_EVERYWHERE_KEY = 'show_bg_everywhere'
+
+const get_initial_show_bg_everywhere = () => {
+  if (typeof localStorage === 'undefined') return false
+  return localStorage.getItem(SHOW_BG_EVERYWHERE_KEY) === 'true'
+}
+
+export const [show_bg_everywhere, set_show_bg_everywhere] =
+  createSignal(get_initial_show_bg_everywhere())
+
+createRoot(() => {
+  createEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(SHOW_BG_EVERYWHERE_KEY, String(show_bg_everywhere()))
+    }
+  })
+})
+
 export const [menu_open, set_menu_open] = createSignal(true)
 
 export const [sidebar_width, set_sidebar_width] = createSignal(260)
+
+export const [sidebar_scroll, set_sidebar_scroll] = createSignal(0)
 
 const DISCLOSURES_STORAGE_KEY = 'disclosures'
 
