@@ -124,7 +124,7 @@ function Background(props) {
   const overlay = () =>
     t().name === 'light'
       ? 'rgba(255, 255, 255, 0.4)'
-      : 'rgba(49, 51, 56, 0.55)'
+      : 'rgba(49, 51, 56, 0.5)'
   const left_offset = () =>
     menu_open() ? `${sidebar_width()}px` : '60px'
   const bg_image = () =>

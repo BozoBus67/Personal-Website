@@ -158,7 +158,7 @@ function Inline_Link(props) {
 function Course_Title(props) {
   const t = useTheme
   const text_color = () => props.color ?? t().text_h
-  const glow_color = () => (t().name === 'light' ? '#fefce8' : '#4d2008')
+  const glow_color = () => (t().name === 'light' ? '#cce4ff' : '#1a2d6b')
   const base = () => ({
     'font-weight': 700,
     'font-size': props.size ?? '1.5rem',

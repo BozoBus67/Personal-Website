@@ -359,10 +359,6 @@ export function Page_Title(props) {
           margin: 0,
           color: t().text_h,
           'text-align': 'center',
-          'text-shadow': (() => {
-            const c = t().name === 'light' ? '#bfdbfe' : '#1a2d6b'
-            return `0 0 8px ${c}, 0 0 16px ${c}, 0 0 24px ${c}`
-          })(),
         }}
       >
         {props.children}
