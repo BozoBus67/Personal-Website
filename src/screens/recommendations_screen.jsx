@@ -134,7 +134,8 @@ const intro_blurb =
 `Here I list some shows and movies I liked and would recommend to other people. There are several, but people's watch lists are long enough, so I'll just recommend my favorite.`
 
 const code_geass_description =
-`The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them. The story is fully complete.
+`The canonical anime is 2 seasons, titled "Code Geass: Lelouch of the Rebellion" and "Code Geass: Lelouch of the Rebellion R2" precisely. There are many spinoffs, ignore them.
+The show is fully complete.
 If you've never watched anime before or usually watch dubbed, I highly recommend watching the subbed version.`
 
 const transition_blurb =
