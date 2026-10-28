@@ -61,7 +61,7 @@ export function Settings_Screen() {
         <span>
           Only one sub-category open at a time{' '}
           <span style={{ color: t().text }}>
-            (doesn't do anything atm because only 1 expandable sub-category)
+            (doesn't do anything at the moment because only 1 expandable sub-category)
           </span>
         </span>
       </label>
@@ -107,7 +107,7 @@ export function Settings_Screen() {
         <span>
           Show background image on every page{' '}
           <span style={{ color: t().text }}>
-            (... home, contact, and help always show it)
+            (home, contact, and help always show it)
           </span>
         </span>
       </label>
