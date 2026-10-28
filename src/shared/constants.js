@@ -3,9 +3,14 @@ import { createSignal, createEffect, createRoot } from 'solid-js'
 const THEME_STORAGE_KEY = 'theme'
 
 const get_initial_theme = () => {
-  if (typeof localStorage === 'undefined') return 'dark'
-  const saved = localStorage.getItem(THEME_STORAGE_KEY)
-  return saved === 'dark' || saved === 'light' ? saved : 'dark'
+  if (typeof localStorage !== 'undefined') {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY)
+    if (saved === 'dark' || saved === 'light') return saved
+  }
+  if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+  }
+  return 'light'
 }
 
 export const themes = {
@@ -43,18 +48,16 @@ export const themes = {
 
 export const [themeName, setThemeName] = createSignal(get_initial_theme())
 
-createRoot(() => {
-  createEffect(() => {
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(THEME_STORAGE_KEY, themeName())
-    }
-  })
-})
-
 export const useTheme = () => themes[themeName()]
 
 export const toggleTheme = () =>
-  setThemeName((n) => (n === 'light' ? 'dark' : 'light'))
+  setThemeName((n) => {
+    const next = n === 'light' ? 'dark' : 'light'
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(THEME_STORAGE_KEY, next)
+    }
+    return next
+  })
 
 export const PATHS_WITH_BG = new Set(['/', '/contact', '/help'])
 

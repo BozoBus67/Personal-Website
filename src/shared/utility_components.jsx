@@ -280,21 +280,15 @@ export function Sidebar(props) {
     obs.observe(nav_el)
     onCleanup(() => obs.disconnect())
   })
-  let scroll_timeout
   const handle_scroll = (e) => {
     set_sidebar_scroll(e.currentTarget.scrollTop)
-    nav_el?.classList.add('is-scrolling')
-    clearTimeout(scroll_timeout)
-    scroll_timeout = setTimeout(() => {
-      nav_el?.classList.remove('is-scrolling')
-    }, 500)
   }
   return (
     <nav
       ref={nav_el}
       aria-hidden={!props.open}
       data-menu-keep-open
-      class="scroll-container"
+      class="sidebar-scroll"
       onScroll={handle_scroll}
       style={{
         position: 'fixed',
