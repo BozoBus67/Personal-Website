@@ -25,9 +25,16 @@ function App() {
   const t = useTheme
 
   onMount(() => {
-    for (const url of Object.values(all_image_assets)) {
-      const img = new Image()
-      img.src = url
+    const preload = () => {
+      for (const url of Object.values(all_image_assets)) {
+        const img = new Image()
+        img.src = url
+      }
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(preload, { timeout: 3000 })
+    } else {
+      setTimeout(preload, 2000)
     }
   })
 

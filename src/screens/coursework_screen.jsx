@@ -215,7 +215,7 @@ const cs341_blurb =
 `A standard course on basic algorithms, plus max-flow and NP-complete reductions.`
 
 const cs346_blurb =
-`A group project course on building a cross-platform application. We worked in teams of four to design, build, and ship a Kotlin/Compose Multiplatform app over the term, with lectures covering agile practices, testing, and shipping.`
+`A group project course on building a cross-platform application. We worked in teams of four to design, build, and ship a Kotlin/Compose Multiplatform app over the term, with lectures covering agile practices, AAAAAA, and shipping.`
 
 const cs348_blurb =
 `A standard intro to databases course. We covered the relational model, SQL, normalization, transactions, and indexing, with a decent amount of time spent on query planning and the internals of how databases execute queries.`
