@@ -8,6 +8,7 @@ import { Contact_Screen } from './screens/contact_screen'
 import { Project_EC_Screen } from './screens/projects/project_ec_screen'
 import { NanoGPT_Screen } from './screens/projects/nanogpt_screen'
 import { Raft_Screen } from './screens/projects/raft_screen'
+import { Task_Queue_Screen } from './screens/projects/task_queue_screen'
 import { Minecraft_Mods_Screen } from './screens/projects/minecraft_mods_screen'
 import { Others_Screen } from './screens/projects/others_screen'
 import { Coursework_Screen } from './screens/coursework_screen'
@@ -53,6 +54,7 @@ function App() {
       <Route path="/projects/project-ec" component={Project_EC_Screen} />
       <Route path="/projects/nanogpt" component={NanoGPT_Screen} />
       <Route path="/projects/raft" component={Raft_Screen} />
+      <Route path="/projects/task-queue" component={Task_Queue_Screen} />
       <Route path="/projects/minecraft-mods" component={Minecraft_Mods_Screen} />
       <Route path="/projects/others" component={Others_Screen} />
       <Route path="/coursework" component={Coursework_Screen} />
