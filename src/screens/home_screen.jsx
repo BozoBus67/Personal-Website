@@ -15,9 +15,8 @@ export function Home_Screen() {
         style={{
           flex: 1,
           display: 'flex',
-          'align-items': 'flex-start',
+          'align-items': 'center',
           'justify-content': 'center',
-          'padding-top': '28vh',
         }}
       >
         <h1
