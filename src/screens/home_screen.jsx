@@ -31,7 +31,7 @@ export function Home_Screen() {
             'text-shadow': text_shadow(),
           }}
         >
-          Hello! Welcome.
+          Hi
         </h1>
       </div>
     </Screen_Layout>
