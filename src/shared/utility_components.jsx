@@ -33,8 +33,8 @@ const SECTIONS = [
     children: [
       { path: '/projects/project-ec', label: 'Cookie Clicker Plus' },
       { path: '/projects/nanogpt', label: 'NanoGPT' },
-      { path: '/projects/raft', label: 'Raft' },
       { path: '/projects/task-queue', label: 'Task Queue' },
+      { path: '/projects/raft', label: 'Raft' },
       { path: '/projects/minecraft-mods', label: 'Minecraft Mods' },
       { path: '/projects/others', label: 'Others' },
     ],

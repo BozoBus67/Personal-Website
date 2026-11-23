@@ -76,25 +76,21 @@ export function Project_EC_Screen() {
     <Screen_Layout>
       <Page_Title>Cookie Clicker Plus</Page_Title>
 
-      <div style={{ display: 'flex', 'align-items': 'flex-start', 'justify-content': 'space-between', gap: '1.5rem' }}>
-        <p style={{ ...para_style(), margin: 0, flex: 1 }}>
-          I remade a version of the popular web game Cookie Clicker with a bunch of add-ons on top. It started as an excuse to learn Electron and ended up with a real backend, multi-user state, and a handful of features that have nothing to do with clicking cookies.
+      <div style={{ display: 'flex', 'align-items': 'flex-start', gap: '1.5rem' }}>
+        <p style={{ ...para_style(), margin: 0 }}>
+          I added pay2win and lootboxes to cookie clicker. Play{' '}
+          <a
+            href="https://cookie-clicker-plus.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: t().name === 'light' ? '#1e40af' : '#60a5fa', 'text-decoration': 'underline' }}
+          >
+            here
+          </a>
+          {' '}in your browser.
         </p>
         <Github_Button href="https://github.com/BozoBus67/PROJECT-EC" />
       </div>
-
-      <p style={para_style()}>
-        Play in your browser at{' '}
-        <a
-          href="https://cookie-clicker-plus.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: t().name === 'light' ? '#1e40af' : '#60a5fa', 'text-decoration': 'underline' }}
-        >
-          cookie-clicker-plus.vercel.app
-        </a>
-        .
-      </p>
       <p style={para_style()}>
         You can also download them as a desktop app.
       </p>
@@ -105,8 +101,7 @@ export function Project_EC_Screen() {
       </div>
 
       <p style={para_style()}>
-        This is a webapp, also available as a desktop app via Electron. The frontend is built with Vite, React, and Redux, styled with Tailwind. The backend is built with Python and FastAPI. Supabase handles auth and the Postgres database. I also added various add-ons like an auction house, lootboxes, Stripe for payments, PostHog for analytics, and a music player that wraps the YouTube IFrame Player so audio keeps playing between screens.
-      </p>
+        This is a webapp, also available as a desktop app via Electron. The frontend is built with Vite, React, and Redux, styled with Tailwind. The backend is built with Python and FastAPI, and connects to Supabase for auth and Postgres.      </p>
 
     </Screen_Layout>
   )

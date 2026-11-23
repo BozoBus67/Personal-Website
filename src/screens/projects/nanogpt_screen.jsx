@@ -9,17 +9,14 @@ function Intro_Text() {
   const t = useTheme
   return (
     <p style={{ ...para_style(), 'font-size': '1.5rem' }}>
-      Below you can play around with a NanoGPT I built. You can also access
-      it directly on HuggingFace{' '}
       <a
         href="https://huggingface.co/spaces/BozoBus67/NanoGPT"
         target="_blank"
         rel="noopener noreferrer"
         style={{ color: t().name === 'light' ? '#1e40af' : '#60a5fa', 'text-decoration': 'underline' }}
       >
-        here
+        View on HuggingFace
       </a>
-      .
     </p>
   )
 }
