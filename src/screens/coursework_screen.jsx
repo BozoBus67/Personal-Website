@@ -47,7 +47,7 @@ function CS341() {
   const t = useTheme
   return (
     <div>
-      <Course_Title href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/notes.html">CS341: Basic Algorithms</Course_Title>
+      <Course_Title href="https://cs.uwaterloo.ca/~lapchi/cs341-2025/notes.html">CS341: Algorithms 1</Course_Title>
       <p style={course_blurb_style(t)}>{cs341_blurb}</p>
     </div>
   )
@@ -110,7 +110,7 @@ function CS466() {
         href="https://cs.uwaterloo.ca/~lapchi/cs466-2026/"
         color={t().color_scheme === 'dark' ? '#00FFFF' : '#6d28d9'}
       >
-        CS466: Randomized & Approximation Algorithms
+        CS466: Algorithms 2
       </Course_Title>
       <p style={course_blurb_style(t)}>{cs466_blurb}</p>
     </div>
@@ -209,25 +209,25 @@ const cs240e_blurb =
 `In addition to basic data structures, we learned some algorithms for string matching (KMP, Boyer-Moore) and some algorithms for text compression (RLE, LZW, bzip2). We also covered the basics of external memory model.`
 
 const cs246_blurb =
-`A standard course on programming via the object-oriented paradigm. This was the first course that actually taught me how to program, and I owe much of what I can do now as a programmer to this course.`
+`I owe much of what I can do now as a programmer to this course.`
 
 const cs341_blurb =
-`A standard course on basic algorithms, plus max-flow and NP-complete reductions.`
+`A standard course on leetcode-style algorithms, including max-flow and NP-complete reductions.`
 
 const cs346_blurb =
-`A group project course on building a cross-platform application. We worked in teams of four to design, build, and ship a Kotlin/Compose Multiplatform app over the term, with lectures covering agile practices, testing, and shipping.`
+`You make an Android app in groups of 4.`
 
 const cs348_blurb =
-`A standard intro to databases course. We covered the relational model, SQL, normalization, transactions, and indexing, with a decent amount of time spent on query planning and the internals of how databases execute queries.`
+`Covers SQL and basic transactional properties like ACID, plus some minor optimizations.`
 
 const cs349_blurb =
-`Very modern. Very well designed assignments that taught how UI works at every layer. (unfortunately I think assignments require waterloo login to view)`
+`Very well designed assignments.`
 
 const cs763_blurb =
-`Most of the material was based on the textbook "Computational Geometry: Algorithms and Applications" by de Berg, Cheong, van Kreveld, Overmars. We covered some additional topics such as the straight skeleton of a polygon, and basic robot motion planning. `
+`We follow the textbook "Computational Geometry: Algorithms and Applications" by de Berg, Cheong, van Kreveld, and Overmars, and covered some additional topics such as the straight skeleton of a polygon and basic robot motion planning.`
 
 const cs466_blurb =
-`We studied various randomized algorithms and probabilistic methods, basic spectral graph theory, and approximation algorithms via linear program relaxations.`
+`We studied various randomized algorithms and probabilistic methods, basic spectral graph theory, and approximation algorithms via linear program relaxations. Sublinear algorithms, streaming algorithms, and the multiplicative weights update method were also explored.`
 
 const cs480_blurb =
-`A modern course on machine learning. In additional to classical stuff such as gragient boosting and CNNs which we covedleriar in the course, we are currently studying LLMs and Diffusion models.`
+`We studied classical methods such as gradient boosting, as well as modern architectures such as LLMs, Diffusion, and Flow matching. We also briefly studied robustness, fairness, privacy, valuation, and causality.`

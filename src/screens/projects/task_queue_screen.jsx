@@ -18,8 +18,9 @@ function Dashboard_Link() {
   const t = useTheme
   return (
     <p style={para_style()}>
+      Observability runs against a local Prometheus + Grafana stack. Dashboard at{' '}
       <a
-        href="http://localhost:8080/dashboard"
+        href="http://localhost:3000/d/task-queue/task-queue"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -27,8 +28,9 @@ function Dashboard_Link() {
           'text-decoration': 'underline',
         }}
       >
-        Open the dashboard
-      </a>
+        localhost:3000/d/task-queue
+      </a>{' '}
+      when the stack is running locally.
     </p>
   )
 }
