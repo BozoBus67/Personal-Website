@@ -9,9 +9,10 @@ export function Others_Screen() {
         Others
       </Page_Title>
 
-      <Personal_Website />
-      <ML_Compiler />
-      <Toy_OS />
+      <div style={{ display: 'flex', 'flex-direction': 'column', gap: '2.5rem' }}>
+        <Personal_Website />
+        <ML_Compiler />
+      </div>
     </Screen_Layout>
   )
 }
@@ -22,10 +23,6 @@ function ML_Compiler() {
 
 function Personal_Website() {
   return <Project_Card title="Personal Website" blurb={personal_website_blurb} href="https://github.com/BozoBus67/Personal-Website" />
-}
-
-function Toy_OS() {
-  return <Project_Card title="Toy OS" blurb={toy_os_blurb} href="https://github.com/BozoBus67/Toy-OS" />
 }
 
 function Project_Card(props) {
@@ -70,5 +67,3 @@ const ml_compiler_blurb =
 const personal_website_blurb =
 `You're looking at it right now! This is built with SolidJS.`
 
-const toy_os_blurb =
-`I was quite dissatisfied with my school's underwhelming OS course and decided to try building one myself to learn how they actually work. This project is incomplete.`
