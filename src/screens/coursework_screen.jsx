@@ -212,7 +212,7 @@ const cs246_blurb =
 `I owe much of what I can do now as a programmer to this course.`
 
 const cs341_blurb =
-`A standard course on leetcode-style algorithms, including max-flow and NP-complete reductions.`
+`A standard course on leetcode-style algorithms, including max-flow and NP-complete reductions, with a few unusually hard dynamic programming problems.`
 
 const cs346_blurb =
 `You make an Android app in groups of 4.`
@@ -230,4 +230,4 @@ const cs466_blurb =
 `We studied various randomized algorithms and probabilistic methods, basic spectral graph theory, and approximation algorithms via linear program relaxations. Sublinear algorithms, streaming algorithms, and the multiplicative weights update method were also explored.`
 
 const cs480_blurb =
-`We studied classical methods such as gradient boosting, as well as modern architectures such as LLMs, Diffusion, and Flow matching. We also briefly studied robustness, fairness, privacy, valuation, and causality.`
+`We studied classical methods such as gradient boosting, as well as modern architectures such as LLMs, Diffusion, and Flows (but not flow matching itself). We also briefly studied robustness, fairness, privacy, valuation, and causality.`
